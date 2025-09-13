@@ -95,7 +95,7 @@ body, h2, h3 {
 }
 
 .post-block .content {
-  min-height: 325px;
+  min-height: 360px;
   max-height: 525px;
   background-color: var(--custom-section-alternate-background-color) !important;
 }
@@ -144,6 +144,7 @@ body, h2, h3 {
 
 .img-blog {
   max-height: 325px;
+  min-height: 325px;
 }
 
 /* Article page in Blog */
