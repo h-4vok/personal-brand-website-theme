@@ -1,4 +1,6 @@
-<h1 align=center>Meghna Hugo Theme</h1>
+<h1 align=center>Meghna Hugo Theme - Customised</h1>
+
+<p>This is a custom version of the Meghna Hugo theme. I had to make several changes for my own website and I need to git control them. This is not a proper fork of the theme.</p>
 
 <p align="center">Meghna is a dark single page professional Hugo website theme and crafted with all the necessary elements and features you will need to present your business.</p>
 
