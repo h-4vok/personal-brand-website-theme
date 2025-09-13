@@ -7,14 +7,14 @@ $data.banner.banner.enable }} {{ with $data.banner.banner }} {{"<!-- Welcome Sli
   {{ partial "image" (dict "Src" .bg_image_webp "Alt"
   .Title "Class" "d-none") }}
 
-  <div class="block">
+  <div class="hero-block">
     {{ if .icon }}
     <div class="video-button">
       <i class="{{ .icon }}"></i>
     </div>
     {{ end }}
     <h1>{{ .title | markdownify }}</h1>
-    <p>{{ .content | markdownify }}</p>
+    <h1>{{ .content | markdownify }}</h1>
     {{ if .button.enable }} {{ with .button }}
     <a href="{{ .link }}" class="btn btn-transparent page-scroll"
       >{{ .label }}</a

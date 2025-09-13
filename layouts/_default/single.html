@@ -2,28 +2,29 @@
 
 {{ partial "navigation.html" . }}
 
-<section class="section">
+{{ partial "single-breadcrumb.html" . }}
+
+<section class="section post-single-section">
   <div class="container">
     <div class="row">
-      <div class="col-lg-8 offset-lg-2 text-center">
-        <h1>{{ .Title }}</h1>
+      <div class="col-lg-12">
+        <h1 class="post-single-title">{{ .Title }}</h1>
         <ul class="list-inline mb-50">
-          <li class="list-inline-item"><a href="{{ `author/` | relLangURL }}{{ .Params.Author | urlize }}/">{{ .Params.Author }}</a></li>
-          <li class="list-inline-item">{{ dateFormat "Monday, Jan 2, 2006" .Date }}</li>
+          <!-- <li class="list-inline-item post-single-author">{{ .Params.Author }}</li> -->
+          <li class="list-inline-item post-single-date">{{ dateFormat "Monday, Jan 2, 2006" .Date }}</li>
         </ul>
+      </div>
+      <div class="col-lg-12 text-center">
         {{ partial "image.html" (dict "Src" .Params.Image "Alt" "Blog Image" "Class" "img-fluid mb-50 lozad") }}
       </div>
-      <div class="col-lg-8 offset-lg-2">
+      <div class="col-lg-12">
         <div class="post-single-content">
           {{ .Content }}
         </div>
         {{ if site.Params.post_share }}
         {{ partial "post-share.html" . }}
         {{ end }}
-        <!-- comments -->
-        <div class="mt-5">
-          {{ template "_internal/disqus.html" . }}
-        </div>
+
       </div>
     </div>
   </div>

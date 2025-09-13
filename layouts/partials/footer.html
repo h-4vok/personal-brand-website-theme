@@ -8,17 +8,17 @@
 				<div class="social-icon">
 					<ul class="list-inline">
 						{{ range site.Params.social }}
-						<li class="list-inline-item"><a href="{{ .link | safeURL }}"><i class="{{ .icon }}"></i></a></li>
+						<li class="list-inline-item"><a href="{{ .link | safeURL }}" target="_blank"><i class="{{ .icon }}"></i></a></li>
 						{{ end }}
 					</ul>
 				</div>
 
 				{{"<!-- copyright -->" | safeHTML}}
 				<div class="copyright text-center">
-					<a href="{{ site.Home.Permalink }}">
+					<!-- <a href="{{ site.Home.Permalink }}">
 						{{ partial "image.html" (dict "Src" site.Params.logo "Alt" site.Title ) }}
-					</a>
-					<br>
+					</a> -->
+					<!-- <br> -->
 					<p>{{ site.Params.copyright | markdownify }}</p>
 				</div>
 			</div>

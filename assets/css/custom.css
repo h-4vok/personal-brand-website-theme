@@ -1,0 +1,206 @@
+/* Variables */
+:root {
+  --custom-background-color: #f8fafc;
+  --custom-section-background-color: #F1F5F9;
+  --custom-section-alternate-background-color: #E2E8F0;
+  --custom-primary-text-color: #0f172a;
+  --custom-primary-accent-color: #57cbcc; /*#2563eb;*/
+  --custom-secondary-accent-color: #b70bf5;
+  --custom-border-lines-color: #e2e8f0;
+  --custom-secondary-accent-color-hover: #1D4ED8;
+}
+
+/* Changes pecific to light theme */
+html, body {
+  background-color: var(--custom-background-color);
+  color: var(--custom-primary-text-color) !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--custom-primary-text-color) !important;
+}
+
+a {
+  color: var(--custom-primary-accent-color) !important;
+}
+
+a:focus, a:hover {
+  color: var(--custom-secondary-accent-color) !important;
+}
+
+.navigation {
+  background: var(--custom-section-alternate-background-color) !important;
+  font-weight: 800;
+}
+
+.bg-one {
+  background: var(--custom-section-background-color) !important;
+}
+
+.block, .counters-item {
+  background: var(--custom-section-alternate-background-color) !important;
+}
+
+.hero-area .block {
+  background: transparent !important;
+}
+
+
+/* All pages */
+body, h2, h3 {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.title-font-family,
+.post-single-title, .post-single-author, .post-single-date, .post-block h3 {
+  font-family: "Merriweather", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+/* Main page */
+
+.hero-area h1 {
+  color: var(--custom-border-lines-color) !important;
+  font-weight: 800;
+}
+
+.team-member {
+  background: var(--custom-section-alternate-background-color) !important;
+}
+
+.hero-block h1 {
+  font-size: 90px;
+  text-transform: capitalize;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: white !important;
+  background: 0 0 !important;
+  z-index: 99;
+  text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+}
+
+.hero-area:before {
+  background: rgba(0, 0, 0, 0.25) !important;
+}
+.copyright p {
+  font-size: 9px;
+}
+
+.post-block .content {
+  min-height: 325px;
+  max-height: 525px;
+  background-color: var(--custom-section-alternate-background-color) !important;
+}
+
+.section#team {
+  padding: 100px 0 0 0;
+}
+
+.hero-area .block {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.post-single-content {
+  color: var(--custom-primary-text-color);
+  text-align: justify;
+}
+
+@media (max-width: 480px) {
+  .hero-area .hero-block h1 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 960px) and (min-width: 481px) {
+  .hero-area .block h1 {
+    font-size: 50px;
+  }
+}
+
+.section-bg {
+  background: var(--custom-section-background-color) !important;
+}
+
+.copyright {
+  color: var(--custom-primary-text-color) !important;
+}
+
+.social-icon ul li a {
+  background-color: var(--custom-primary-accent-color) !important;
+}
+
+.social-icon ul li a i {
+  color: var(--custom-primary-text-color) !important;
+}
+
+.img-blog {
+  max-height: 325px;
+}
+
+/* Article page in Blog */
+.post-single-title {
+  font-size: 3.5rem;
+  color: ghostwhite
+}
+
+@media screen and (max-width: 480px) {
+  .post-single-title {
+    font-size: 2rem;
+  }
+}
+
+.post-single-content p {
+  line-height: 1.7;
+  font-size: 1.3rem;
+
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.post-single-author, .post-single-date {
+  font-size: 1.4rem;
+}
+
+/* Go back partial */
+.goback-section, .post-single-section {
+  padding: 25px 0 0 0;
+}
+
+/* Breadcrumbs partial */
+.breadcrumbs-section {
+  padding: 25px 0 0 0;
+}
+
+.breadcrumb {
+  background-color: var(--custom-background-color);
+}
+
+/* Buttons */
+.btn {
+  color: var(--custom-primary-accent-color) !important; /* Ensure .btn is before .btn-main or else colors get overwritten */
+  font-weight: 600;
+  transition: .5s all;
+}
+
+.btn-main {
+  background-color: var(--custom-primary-accent-color);
+  color: white !important;
+  font-weight: 600;
+  transition: .5s all;
+}
+
+.btn-main:hover, .btn:hover {
+  background-color: var(--custom-secondary-accent-color);
+  color: white !important;
+}
+
