@@ -1,6 +1,6 @@
 /* Variables */
 :root {
-  --custom-background-color: #f8fafc;
+  --custom-background-color: #f3f4f6;
   --custom-section-background-color: #F1F5F9;
   --custom-section-alternate-background-color: #E2E8F0;
   --custom-primary-text-color: #0f172a;
@@ -100,6 +100,10 @@ body, h2, h3 {
   background-color: var(--custom-section-alternate-background-color) !important;
 }
 
+.section {
+  padding: 50px 0 0 0;
+}
+
 .section#team {
   padding: 100px 0 0 0;
 }
@@ -153,13 +157,43 @@ body, h2, h3 {
   color: ghostwhite
 }
 
+/* Style for the video <figure> wrapper */
+.video-figure {
+  /* 1. Add the spacing */
+  margin-top: 2.5em;
+  margin-bottom: 2.5em;
+}
+
+/* Style for the video caption */
+.video-figure figcaption {
+  font-size: 0.9em;
+  color: #666;
+  /* A lighter gray text */
+  text-align: center;
+  margin-top: 0.8em;
+}
+
+/* This part is tricky. The {{< youtube >}} shortcode
+  creates a responsive <div>. We need to style THAT div.
+*/
+.video-figure div {
+  /* 2. Add rounded corners */
+  border-radius: 12px;
+
+  /* 3. Add a subtle shadow to "lift" it */
+  box-shadow: 0 9px 24px rgba(0, 0, 0, 0.3);
+
+  /* 4. This is crucial: it forces the corners to apply to the iframe inside */
+  overflow: hidden;
+}
+
 @media screen and (max-width: 480px) {
   .post-single-title {
     font-size: 2rem;
   }
 }
 
-.post-single-content p, ul, a{
+.post-single-content p, ul, a, .list-inline-item{
   line-height: 1.7;
   font-size: 1.3rem;
 
@@ -172,9 +206,76 @@ body, h2, h3 {
   font-size: 1.4rem;
 }
 
+/* 1. Make in-line emphasis POP */
+/* This selector is more specific: it targets italics inside a <p>
+   tag which is inside your main .article-container */
+.post-single-section p i,
+.post-single-section p em {
+
+  /* Let's use a bolder color. This is a dark, inky blue. */
+  color: #004a80;
+
+  /* Let's try a heavier weight. 600 is "semi-bold". */
+  font-weight: 600;
+
+  /* Just in case the font's italic is very subtle */
+  font-style: italic;
+
+  /* This can sometimes help if the font is hard to render */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 2. RESET the style for blockquotes (this rule is still crucial) */
+.post-single-section blockquote i,
+.post-single-section blockquote em {
+  color: inherit;
+  font-weight: inherit;
+  font-style: italic;
+}
+
 /* Go back partial */
-.goback-section, .post-single-section {
+.goback-section {
   padding: 25px 0 0 0;
+}
+
+.post-single-section {
+  padding: 0;
+}
+
+.post-single-section div.container {
+  background-color: #FFFFFF;
+  /* White background */
+  max-width: 100%;
+
+  /* Add simple padding for mobile screens so text doesn't touch the edges */
+  padding: 1.5em;
+}
+
+@media (min-width: 768px) {
+  .post-single-section div.container {
+    /* 4. Constrain the width for comfortable reading */
+    max-width: 125ch;
+    /* 'ch' is a unit for character width. 70-80 is ideal. */
+
+    /*  Center the "page" and add space */
+    margin: 3em auto;
+    /* 'auto' centers it horizontally */
+
+    /* Add internal "padding" so text doesn't touch the edges */
+    padding: 3em 4em;
+
+    /* Add polished touches (shadow & rounded corners) */
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.07);
+    /* A very soft, modern shadow */
+  }
+}
+
+/* 8. Make sure images & videos don't break out of the container */
+.post-single-section div.containerr img,
+.post-single-section div.container .video-figure {
+  max-width: 100%;
+  height: auto;
 }
 
 /* Breadcrumbs partial */
@@ -184,6 +285,10 @@ body, h2, h3 {
 
 .breadcrumb {
   background-color: var(--custom-background-color);
+}
+
+.list-inline-item:not(:last-child) {
+  margin-right: 0rem;
 }
 
 /* Buttons */
