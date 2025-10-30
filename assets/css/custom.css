@@ -13,14 +13,26 @@
   --custom-navigation-link-color: #FFFFFF;
 }
 
-/* Changes pecific to light theme */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Lora:ital,wght@0,400;0,500;0,700;1,400&display=swap');
+
 html, body {
   background-color: var(--custom-background-color);
   color: var(--custom-primary-text-color) !important;
+  font-family: "Quattrocento Sans", sans-serif;
+  /* This is our new default */
+  line-height: 1.7;
+  color: #2c3e50;
+  /* Our dark inky color */
+  background-color: #f3f4f6;
+  /* Our light gray background */
 }
 
 h1, h2, h3, h4, h5, h6 {
   color: var(--custom-primary-text-color) !important;
+  font-family: 'Inter', sans-serif;
+  /* This is our new heading font */
+  font-weight: 700;
+  /* Make headings bold by default */
 }
 
 a {
@@ -50,6 +62,7 @@ a:hover,
 
 .navigation {
   background: var(--custom-navigation-background-color) !important;
+  font-family: 'Inter', sans-serif;
 }
 
 .navigation a {
@@ -79,14 +92,12 @@ a:hover,
 
 /* All pages */
 body, h2, h3 {
-  font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
 }
 
 .title-font-family,
 .post-single-title, .post-single-author, .post-single-date, .post-block h3 {
-  font-family: "Merriweather", serif;
   font-optical-sizing: auto;
   font-style: normal;
   font-variation-settings:
@@ -275,7 +286,6 @@ body, h2, h3 {
   line-height: 1.7;
   font-size: 1.3rem;
 
-  font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
 }
@@ -337,6 +347,7 @@ body, h2, h3 {
   margin-top: 2.5em;
   /* This creates that professional white space */
   margin-bottom: 1em;
+  font-family: "Quattrocento Sans", sans-serif;
 }
 
 .post-single-section strong {
@@ -514,4 +525,69 @@ section.funfacts-section .container{
   margin-top: 3em;
   margin-bottom: 3em;
   padding: 3em 0;
+}
+
+
+
+
+/* --- Featured Article Image Layout --- */
+
+/* 1. By default (on Mobile), the image is a full-width block. */
+.featured-article-image {
+  max-width: 100%;
+  height: auto;
+  margin: 2em 0;
+  border-radius: 12px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* 2. Media Query: For screens 992px or WIDER (desktop) */
+@media (min-width: 992px) {
+  .featured-article-image {
+    /* ⬇️ This is the magic ⬇️ */
+    float: right;
+    width: 45%;
+    /* Image takes up 45% of the container */
+
+    /* Add space so text doesn't touch it */
+    margin-top: 0.5em;
+    margin-left: 2em;
+    margin-bottom: 1em;
+  }
+}
+
+
+
+
+/* --- Drop Cap Styling --- */
+
+/* This selector targets the first letter of the first paragraph
+  inside your main content area.
+*/
+.post-single-content p:first-of-type::first-letter {
+
+  /* 1. Make it big and bold */
+  font-size: 4.5rem;
+  /* ~72px */
+  font-weight: 700;
+
+  /* 2. Use one of your new brand colors! */
+  color: #ff0054;
+  /* Your Hot Pink */
+  /* --- OR --- */
+  /* color: #ff5400; */
+  /* Your Bright Orange */
+
+  /* 3. This is the magic: it makes the text wrap around it */
+  float: left;
+
+  /* 4. Fine-tune the spacing */
+  line-height: 0.8;
+  /* Pulls the letter up to align with the top line */
+  padding-right: 0.15em;
+  /* Adds space to its right */
+  padding-bottom: 0.05em;
+  /* Adds a little space below */
+
+  font-family: "Quattrocento Sans", sans-serif;
 }

@@ -2,7 +2,7 @@
 
 {{ partial "navigation.html" . }}
 
-{{ partial "single-breadcrumb.html" . }}
+<!-- {{ partial "single-breadcrumb.html" . }} -->
 
 <div class="article-hero">
   {{ with .Params.categories }}
@@ -21,11 +21,10 @@
 <section class="section post-single-section">
   <div class="container">
     <div class="row">
-      <div class="col-lg-12 text-center">
-        {{ partial "image.html" (dict "Src" .Params.Image "Alt" "Blog Image" "Class" "img-fluid mb-50 lozad") }}
-      </div>
       <div class="col-lg-12">
         <div class="post-single-content">
+          {{ partial "image.html" (dict "Src" .Params.Image "Alt" "Blog Image" "Class" "img-fluid mb-50 lozad featured-article-image") }}
+
           {{ .Content }}
         </div>
         {{ if site.Params.post_share }}
