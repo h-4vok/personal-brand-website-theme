@@ -2,12 +2,15 @@
 :root {
   --custom-background-color: #f3f4f6;
   --custom-section-background-color: #F1F5F9;
-  --custom-section-alternate-background-color: #E2E8F0;
-  --custom-primary-text-color: #0f172a;
-  --custom-primary-accent-color: #57cbcc; /*#2563eb;*/
-  --custom-secondary-accent-color: #b70bf5;
+  --custom-section-alternate-background-color: #FFFFFF;
+  --custom-primary-text-color: #2c3e50;
+  --custom-primary-accent-color: #ff0054; /*#2563eb;*/
+  --custom-secondary-accent-color: #390099;
   --custom-border-lines-color: #e2e8f0;
   --custom-secondary-accent-color-hover: #1D4ED8;
+
+  --custom-navigation-background-color: #ff0054;
+  --custom-navigation-link-color: #FFFFFF;
 }
 
 /* Changes pecific to light theme */
@@ -22,15 +25,36 @@ h1, h2, h3, h4, h5, h6 {
 
 a {
   color: var(--custom-primary-accent-color) !important;
+
+  text-decoration: none;
+
+  /* Let's remove underlines for a cleaner look */
+  font-weight: 500;
 }
 
-a:focus, a:hover {
+a:focus,
+a:hover,
+.navigation a:focus,
+.navigation a:hover {
   color: var(--custom-secondary-accent-color) !important;
+  text-decoration: underline;
+}
+
+.navigation a:focus,
+.navigation a:hover {
+  color: #FFFFFF !important;
+  text-decoration: underline;
+  opacity: 0.9;
+  transition: 0.5s all;
 }
 
 .navigation {
-  background: var(--custom-section-alternate-background-color) !important;
-  font-weight: 800;
+  background: var(--custom-navigation-background-color) !important;
+}
+
+.navigation a {
+  color: var(--custom-navigation-link-color) !important;
+  font-weight: 800 !important;
 }
 
 .bg-one {
@@ -39,6 +63,13 @@ a:focus, a:hover {
 
 .block, .counters-item {
   background: var(--custom-section-alternate-background-color) !important;
+  border: 1px solid #e0e0e0;
+  /* Add a subtle border */
+  border-radius: 12px;
+  /* Match our other rounded corners */
+
+  /* Add a very subtle shadow to make them "pop" */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 .hero-area .block {
@@ -71,6 +102,13 @@ body, h2, h3 {
 
 .team-member {
   background: var(--custom-section-alternate-background-color) !important;
+  border: 1px solid #e0e0e0;
+    /* Add a subtle border */
+    border-radius: 12px;
+    /* Match our other rounded corners */
+
+    /* Add a very subtle shadow to make them "pop" */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 .hero-block h1 {
@@ -94,10 +132,20 @@ body, h2, h3 {
   font-size: 9px;
 }
 
+.post-block {
+  background-color: var(--custom-section-alternate-background-color) !important;
+  border: 1px solid #e0e0e0;
+  /* Add a subtle border */
+  border-radius: 12px;
+  /* Match our other rounded corners */
+
+  /* Add a very subtle shadow to make them "pop" */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
 .post-block .content {
   min-height: 360px;
   max-height: 525px;
-  background-color: var(--custom-section-alternate-background-color) !important;
 }
 
 .section {
@@ -139,11 +187,25 @@ body, h2, h3 {
 }
 
 .social-icon ul li a {
-  background-color: var(--custom-primary-accent-color) !important;
+  background-color: #FFFFFF;
+  /* Make the button background white */
+  color: #ff0054;
+  /* Make the icon/letter inside pink */
+
 }
 
 .social-icon ul li a i {
-  color: var(--custom-primary-text-color) !important;
+  background-color: #FFFFFF;
+  /* Make the button background white */
+  color: #ff0054;
+  /* Make the icon/letter inside pink */
+}
+
+.social-icon ul li a:hover,
+.social-icon ul li a:focus,
+.social-icon ul li a:hover i,
+.social-icon ul li a:focus i {
+  background-color: #FFFFFF;
 }
 
 .img-blog {
@@ -187,17 +249,20 @@ body, h2, h3 {
   overflow: hidden;
 }
 
-.post-single-content blockquote {
-  background-color: #2a2a2a; /* A dark background */
-  border-left: 5px solid #4a90e2; /* A blue left border */
-  color: #cccccc; /* A light grey text color */
-  padding: 15px 20px;
-  margin: 20px 40px; /* Indents the quote */
-  border-radius: 5px;
+.post-single-section blockquote {
+  background-color: #f8f9fa;
+  /* A very light gray background */
+  border-left: 5px solid #ffbd00;
+  /* Use our Gold accent! */
+  padding: 1.5em 2em;
+  margin: 2em 0;
+  color: #495057;
+  /* A softer, readable gray */
+  /* border-radius: 5px; */
 }
 
-.post-single-content blockquote p {
-  margin: 0; /* Removes extra spacing inside the quote */
+.post-single-section blockquote p {
+  margin: 0;
 }
 
 @media screen and (max-width: 480px) {
@@ -264,6 +329,39 @@ body, h2, h3 {
   padding: 1.5em;
 }
 
+.post-single-section h2,
+.post-single-section h3,
+.post-single-section h4 {
+  color: var(--custom-secondary-accent-color) !important;
+  font-weight: 700;
+  margin-top: 2.5em;
+  /* This creates that professional white space */
+  margin-bottom: 1em;
+}
+
+.post-single-section strong {
+  color: #ff5400;
+}
+
+.post-single-section a {
+  color: #ff0054;
+  /* Our hot pink */
+  text-decoration: none;
+  background-image: linear-gradient(to right, #ff0054, #ff0054);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  /* Starts invisible */
+  transition: background-size 0.3s ease-out, color 0.3s ease-out;
+}
+
+.post-single-section a:hover {
+  color: #390099;
+  /* Our indigo on hover */
+  background-size: 100% 2px;
+  /* Animates the underline in */
+}
+
 @media (min-width: 768px) {
   .post-single-section div.container {
     /* 4. Constrain the width for comfortable reading */
@@ -306,20 +404,114 @@ body, h2, h3 {
 
 /* Buttons */
 .btn {
-  color: var(--custom-primary-accent-color) !important; /* Ensure .btn is before .btn-main or else colors get overwritten */
-  font-weight: 600;
-  transition: .5s all;
-}
-
-.btn-main {
-  background-color: var(--custom-primary-accent-color);
-  color: white !important;
+  background-color: #ff0054;
+  color: #FFFFFF !important;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
   font-weight: 600;
   transition: .5s all;
 }
 
 .btn-main:hover, .btn:hover {
-  background-color: var(--custom-secondary-accent-color);
-  color: white !important;
+  background-color: #9e0059 !important;
+  /* Use the Rich Purple for hover */
+  color: #FFFFFF !important;
 }
 
+/** Article Hero **/
+/* This is the new Hero Block for our articles */
+.article-hero {
+  /* We'll use the Deep Indigo as a powerful background */
+  /* background-color: var(--custom-secondary-accent-color); */
+
+  background-color: #2c3e50;
+    /* Our "Inky" Dark Blue-Gray */
+    /* Your Hot Pink */
+
+  /* All text inside will be white */
+  color: #FFFFFF;
+  padding: 3.5em 2em;
+  /* Add generous padding */
+  text-align: center;
+}
+
+.article-hero .category-link {
+  color: #FFFFFF;
+  /* Make it white */
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.9rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+/* Style the main Article Title */
+.article-hero h1 {
+  color: #FFFFFF !important;
+
+  font-size: 2.8rem;
+  /* You can adjust this value */
+  font-weight: 700 !important;
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+}
+
+.article-hero h2.subtitle {
+  /* ⬇️ FIX 1: FONT COLOR ⬇️ */
+  /* A softer white creates a nice hierarchy */
+  color: rgba(255, 255, 255, 0.8) !important;
+
+  /* ⬇️ FIX 2: FONT SIZE ⬇️ */
+  font-size: 1.2rem;
+  font-weight: 300 !important;
+  /* Lighter weight */
+
+  /* Constrain the width for readability */
+  max-width: 65ch;
+  margin-left: auto;
+  margin-right: auto;
+
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.article-hero .category-link {
+  color: #ffbd00;
+
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.9rem;
+}
+
+/* Style the Subtitle (from the 'description' meta tag) */
+.article-hero .subtitle {
+  font-size: 1.2em;
+  font-weight: 300;
+  color: #e0e0e0;
+  /* A slightly softer white */
+  max-width: 65ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+
+/** Fun Facts Section **/
+section.funfacts-section {
+  background-image: linear-gradient(90deg, #ffbd00, #ff5400);
+
+  margin-top: 3em;
+  margin-bottom: 3em;
+  padding: 3em 0;
+
+  color: #2c3e50;
+}
+
+section.funfacts-section .container{
+  margin-top: 3em;
+  margin-bottom: 3em;
+  padding: 3em 0;
+}

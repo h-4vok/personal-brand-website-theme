@@ -4,16 +4,23 @@
 
 {{ partial "single-breadcrumb.html" . }}
 
+<div class="article-hero">
+  {{ with .Params.categories }}
+  <p class="category-link">
+    {{ index . 0 }}
+  </p>
+  {{ end }}
+
+  <h1>{{ .Title }}</h1>
+
+  {{ with .Params.description }}
+  <h2 class="subtitle">{{ . }}</h2>
+  {{ end }}
+</div>
+
 <section class="section post-single-section">
   <div class="container">
     <div class="row">
-      <div class="col-lg-12">
-        <h1 class="post-single-title">{{ .Title }}</h1>
-        <ul class="list-inline mb-50">
-          <!-- <li class="list-inline-item post-single-author">{{ .Params.Author }}</li> -->
-          <li class="list-inline-item post-single-date">{{ dateFormat "Monday, Jan 2, 2006" .Date }}</li>
-        </ul>
-      </div>
       <div class="col-lg-12 text-center">
         {{ partial "image.html" (dict "Src" .Params.Image "Alt" "Blog Image" "Class" "img-fluid mb-50 lozad") }}
       </div>
