@@ -74,17 +74,6 @@ a:hover,
   background: var(--custom-section-background-color) !important;
 }
 
-.block, .counters-item {
-  background: var(--custom-section-alternate-background-color) !important;
-  border: 1px solid #e0e0e0;
-  /* Add a subtle border */
-  border-radius: 12px;
-  /* Match our other rounded corners */
-
-  /* Add a very subtle shadow to make them "pop" */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-}
-
 .hero-area .block {
   background: transparent !important;
 }
@@ -519,12 +508,40 @@ section.funfacts-section {
   padding: 3em 0;
 
   color: #2c3e50;
+
+  padding: 2.5em 1em;
 }
 
 section.funfacts-section .container{
   margin-top: 3em;
   margin-bottom: 3em;
   padding: 3em 0;
+}
+
+section.funfacts-section .counters-item {
+  margin-bottom: 1.5em;
+}
+/*
+section.funfacts-section .counters-item:last-child {
+  margin-bottom: 0;
+} */
+
+@media (min-width: 768px) {
+  /* ⬅️ Your desktop breakpoint */
+
+  section.funfacts-section {
+    /* Use the larger padding we had before for desktops
+    */
+    padding: 3em 2em;
+  }
+
+    section.funfacts-section .counters-item {
+    /* ⬅️ Update this selector */
+    /* Remove the bottom margin when the cards
+      are side-by-side on desktop.
+    */
+    margin-bottom: 0;
+  }
 }
 
 
