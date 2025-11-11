@@ -81,7 +81,7 @@ jQuery(function ($) {
 	}
 
 	var html_body = $('html, body');
-	$('nav a, .page-scroll').on('click', function () { //use page-scroll class in any HTML tag for scrolling
+	$('nav a, .page-scroll, .js-smooth-scroll').on('click', function () { //use page-scroll class in any HTML tag for scrolling
 		if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
 			var target = $(this.hash);
 			target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');

@@ -1,28 +1,37 @@
-{{"<!-- end Contact Area -->" | safeHTML}}
-<footer id="footer" class="section-bg">
-	<div class="container">
-		<div class="row wow fadeInUp" data-wow-duration="500ms">
-			<div class="col-xl-12">
+<footer class="new-footer">
+  <div class="footer-container">
 
-				{{"<!-- Footer Social Links -->" | safeHTML}}
-				<div class="social-icon">
-					<ul class="list-inline">
-						{{ range site.Params.social }}
-						<li class="list-inline-item"><a href="{{ .link | safeURL }}" target="_blank"><i class="{{ .icon }}"></i></a></li>
-						{{ end }}
-					</ul>
-				</div>
+    <div class="footer-main">
 
-				{{"<!-- copyright -->" | safeHTML}}
-				<div class="copyright text-center">
-					<!-- <a href="{{ site.Home.Permalink }}">
-						{{ partial "image.html" (dict "Src" site.Params.logo "Alt" site.Title ) }}
-					</a> -->
-					<!-- <br> -->
-					<p>{{ site.Params.copyright | markdownify }}</p>
-				</div>
-			</div>
-		</div>
-	</div>
+      <div class="footer-col brand">
+        <a href="{{ site.Home.Permalink }}" class="footer-brand-link">Christian Guzman</a>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Navigation</h4>
+        <ul class="footer-list">
+          <li><a href="{{ site.Home.Permalink }}" class="js-smooth-scroll">Home</a></li>
+          <li><a href="/#about" class="js-smooth-scroll">About Me</a></li>
+          <li><a href="/blog" class="js-smooth-scroll">Latest Articles</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Social</h4>
+        <ul class="footer-list social-links">
+
+          {{ range site.Params.footer.socialLinks }}
+            <li><a href="{{ .link | safeURL }}" target="_blank" rel="noopener">{{ .name }}</a></li>
+          {{ end }}
+
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-sub">
+      <p>{{ site.Params.copyright | markdownify }}</p>
+    </div>
+
+  </div>
 </footer>
-{{"<!-- /footer -->" | safeHTML}}
