@@ -7,7 +7,9 @@
     {{ partial "preloader.html" . }}
     {{- block "main" . }}{{- end }}
   </div>
-  {{- partial "footer.html" . -}}
+  {{ partial "site-footer.html" . }}
+  {{ partial "site-scripts.html" . }}
+
 </body>
 
 </html>
