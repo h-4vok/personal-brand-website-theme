@@ -1,0 +1,31 @@
+{{ $related := .Site.RegularPages.Related . }}
+
+{{ $currentPageURL := .RelPermalink }}
+
+{{ $filteredList := slice }}
+
+{{ range $related }}
+  {{ $isCurrentPage := eq .RelPermalink $currentPageURL }}
+
+  {{ $isEnglishPath := strings.HasPrefix .File.Path "english" }}
+
+  {{ if and (not $isCurrentPage) (not $isEnglishPath) }}
+    {{ $filteredList = $filteredList | append . }}
+  {{ end }}
+{{ end }}
+
+
+{{ with $filteredList }}
+  <div class="more-like-this">
+    <h3 class="section-title">More Like This</h3>
+    <div class="related-articles-list">
+
+      {{ range first 3 . }}
+        <div class="related-article-item">
+          <h4><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
+          <p>{{ .Params.description }}</p>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+{{ end }}

@@ -581,7 +581,7 @@ section.funfacts-section .counters-item:last-child {
 /* This selector targets the first letter of the first paragraph
   inside your main content area.
 */
-.post-single-content p:first-of-type::first-letter {
+.post-single-content > p:first-of-type::first-letter {
 
   /* 1. Make it big and bold */
   font-size: 4.5rem;
@@ -954,3 +954,62 @@ section.funfacts-section .counters-item:last-child {
   }
 }
 
+
+
+
+
+
+/* --- "More Like This" Section Styling --- */
+
+.more-like-this {
+  /* Add separation from the author box */
+  margin-top: 3em;
+  padding-top: 2.5em;
+  border-top: 1px solid #e0e0e0; /* Separator line */
+}
+
+/* Style the "More Like This" h3 title */
+.more-like-this .section-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.5rem; /* Make it a clear sub-heading */
+  font-weight: 700;
+  color: #2c3e50; /* Our dark inky text */
+  margin-bottom: 1.5em;
+}
+
+.related-articles-list {
+  /* This will hold our list */
+}
+
+/* Style each article item in the list */
+.related-article-item {
+  margin-bottom: 2em; /* Add space between each item */
+}
+
+/* Style the article title link */
+.related-article-item h4 {
+  margin: 0;
+}
+
+.related-article-item h4 a {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ff0054; /* Our brand pink */
+  text-decoration: none;
+  background-image: none; /* Turn off the animated underline */
+}
+
+.related-article-item h4 a:hover {
+  color: #390099; /* Our indigo on hover */
+  text-decoration: underline;
+  background-image: none;
+}
+
+/* Style the article description */
+.related-article-item p {
+  font-family: quattrocento sans,sans-serif;
+  font-size: 0.8rem;
+  color: #555;
+  margin-top: 0.25em;
+}
