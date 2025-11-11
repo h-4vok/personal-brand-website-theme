@@ -1,0 +1,17 @@
+{{ with site.Params.authorbox }}
+  <div class="author-box">
+    <div class="author-image">
+      <img src="{{ .image | absURL }}" alt="{{ .name }}">
+    </div>
+    <div class="author-info">
+      <h4 class="author-name">{{ .name }}</h4>
+      <p class="author-bio">{{ .bio | markdownify }}</p>
+
+      <div class="author-social">
+        {{ range site.Params.footer.socialLinks }}
+          <a href="{{ .link | safeURL }}" target="_blank" rel="noopener">{{ .name }}</a>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+{{ end }}

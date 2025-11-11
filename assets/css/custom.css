@@ -854,3 +854,103 @@ section.funfacts-section .counters-item:last-child {
   border: none !important;
   box-shadow: none !important;
 }
+
+
+
+/* --- Author Box Styling --- */
+.author-box {
+  display: flex; /* This creates the 2-column layout */
+  flex-direction: row; /* Side-by-side on desktop */
+  align-items: center; /* Aligns items to the top */
+
+  margin-top: 3em; /* Space above the box */
+  padding-top: 2.5em; /* Space inside the box */
+  border-top: 1px solid #e0e0e0; /* Separator line */
+}
+
+/* 1. The Photo */
+.author-image {
+  flex-basis: 100px; /* Fixed width for the image */
+  flex-shrink: 0;
+  margin-right: 1.5em;
+}
+
+.author-image img {
+  width: 100px; /* Make image fill its container */
+  height: 100px;
+  border-radius: 50%; /* Make it a circle */
+  object-fit: cover; /* Ensures image covers the circle */
+}
+
+/* 2. The Bio & Info */
+.author-info {
+  flex-basis: 100%;
+}
+
+.author-name {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #2c3e50; /* Our dark inky text */
+  margin: 0 0 0.25em 0;
+}
+
+.author-bio {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 0 0 1em 0;
+}
+
+.author-bio p {
+  margin: 0; /* Remove default paragraph margins */
+}
+
+/* 3. The Social Links */
+.author-social a {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #ff0054; /* Our brand pink */
+  text-decoration: none;
+  margin-right: 1.25em;
+
+  /* Reset link styles */
+  background-image: none;
+}
+
+.author-social a:hover {
+  color: #390099; /* Our indigo */
+  text-decoration: underline;
+}
+
+
+/* This rule is more specific and will override the drop cap style */
+.author-box p:first-of-type::first-letter {
+  /* Reset all the drop cap styles to normal */
+  font-size: inherit;   /* Use the paragraph's normal font size */
+  font-weight: inherit; /* Use the paragraph's normal font weight */
+  color: inherit;     /* Use the paragraph's normal text color */
+  float: none;        /* This is the key: stop it from floating */
+  line-height: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+/* 4. Mobile Stacking */
+@media (max-width: 768px) {
+  .author-box {
+    flex-direction: column; /* Stack on mobile */
+    align-items: center; /* Center everything */
+    text-align: center;
+  }
+
+  .author-image {
+    margin-right: 0;
+    margin-bottom: 1em;
+  }
+
+  .author-social a {
+    margin: 0 0.75em;
+  }
+}
+
