@@ -23,13 +23,27 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="post-single-content">
+
+          <div class="article-meta">
+
+            <div class="reading-time">
+              <i class="ti-timer"></i> {{ .ReadingTime }} min read
+            </div>
+
+            {{ if site.Params.post_share }}
+              <div class="share-icons">
+                {{ partial "post-share.html" . }}
+              </div>
+            {{ end }}
+
+          </div>
+
           {{ partial "image.html" (dict "Src" .Params.Image "Alt" "Blog Image" "Class" "img-fluid mb-50 lozad featured-article-image") }}
 
           {{ .Content }}
+
         </div>
-        {{ if site.Params.post_share }}
-        {{ partial "post-share.html" . }}
-        {{ end }}
+
 
       </div>
     </div>

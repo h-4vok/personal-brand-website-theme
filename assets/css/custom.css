@@ -716,3 +716,108 @@ section.funfacts-section .counters-item:last-child {
   }
 }
 
+
+/* --- New Article Meta Bar --- */
+.article-meta {
+  display: flex;
+  justify-content: space-between; /* Puts reading time on left, share on right */
+  align-items: center;
+  margin-bottom: 2em; /* Space before the featured image */
+  padding-bottom: 1.5em; /* Space before the underline */
+  border-bottom: 1px solid #e0e0e0; /* A clean separator line */
+}
+
+.reading-time {
+  font-family: 'Inter', sans-serif;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.reading-time i {
+  margin-right: 0.5em;
+  color: #ff0054; /* Our brand pink */
+}
+
+/* --- New Article Meta Bar --- */
+.article-meta {
+  display: flex;
+  flex-direction: column; /* This creates the stacked layout */
+  align-items: flex-start; /* Aligns everything to the left */
+
+  margin-bottom: 2em;
+  padding-bottom: 1.5em;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* --- 1. Reading Time Styling --- */
+.reading-time {
+  margin-bottom: 0.5em; /* A tight margin */
+  font-family: 'Inter', sans-serif;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.reading-time .ti-timer {
+  margin-right: 0.5em;
+  color: #ff0054;
+}
+.social-share.pt-4 {
+  padding-top: 0 !important;
+}
+
+/* --- 2. Share Icon Styling (New, More Specific Rules) --- */
+
+/* This targets the <div> wrapper */
+.article-meta .share-icons {
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+}
+
+/* This styles the 'Share:' text coming from your partial */
+.article-meta .share-icons .share-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-right: 1em;
+  color: #2c3e50; /* Our dark inky text */
+}
+
+/* This targets the 'ul' inside the partial */
+.article-meta .share-icons .social-icon ul {
+  margin: 0;
+  padding-left: 0; /* Remove default padding */
+}
+
+/* This targets the 'li' (list items) */
+.article-meta .share-icons .social-icon ul li {
+  display: inline-block; /* Make them horizontal */
+  margin-left: 0.5em;
+  list-style-type: none; /* Remove any bullets */
+}
+
+/* THIS IS THE MOST IMPORTANT RULE.
+  It overrides the theme's default square/colored <a> tag.
+*/
+.article-meta .share-icons .social-icon ul li a {
+  background: #f3f4f6 !important; /* Our light gray page background */
+  color: #555 !important; /* A neutral icon color */
+  font-size: 1rem !important;
+  width: 32px !important;
+  height: 32px !important;
+  line-height: 32px !important; /* Vertically centers the icon */
+  text-align: center !important;
+  border: none !important;
+  border-radius: 50% !important; /* Make them circles */
+  transition: all 0.2s ease-out;
+
+  /* Reset any old theme styles */
+  padding: 0;
+  margin: 0;
+}
+
+/* Finally, set the hover state */
+.article-meta .share-icons .social-icon ul li a:hover {
+  background: #ff0054 !important; /* Our brand pink on hover */
+  color: #FFFFFF !important;
+}
