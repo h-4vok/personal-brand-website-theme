@@ -768,56 +768,89 @@ section.funfacts-section .counters-item:last-child {
 /* --- 2. Share Icon Styling (New, More Specific Rules) --- */
 
 /* This targets the <div> wrapper */
-.article-meta .share-icons {
-  display: flex;
-  align-items: center;
-  margin-top: 0;
+.article-meta .social-share {
+  padding-top: 0.5em !important;
 }
 
-/* This styles the 'Share:' text coming from your partial */
-.article-meta .share-icons .share-title {
+.article-meta .social-share h4 {
   font-family: 'Inter', sans-serif;
-  font-size: 0.9rem;
-  font-weight: 500;
-  margin-right: 1em;
+  font-size: 1.1rem;
+  font-weight: 600;
   color: #2c3e50; /* Our dark inky text */
+  margin-top: 0;
+  margin-bottom: 0.75em;
+  /* Reset padding from your 'pt-4' fix */
+  padding-top: 0 !important;
 }
 
-/* This targets the 'ul' inside the partial */
-.article-meta .share-icons .social-icon ul {
-  margin: 0;
-  padding-left: 0; /* Remove default padding */
+/* This targets the <a> tag link */
+.article-meta .resp-sharing-button__link {
+  display: inline-block; /* Makes sure they stay in a line */
+  margin: 0 0.5em 0.5em 0; /* Adds spacing between icons */
 }
 
-/* This targets the 'li' (list items) */
-.article-meta .share-icons .social-icon ul li {
-  display: inline-block; /* Make them horizontal */
-  margin-left: 0.5em;
-  list-style-type: none; /* Remove any bullets */
-}
-
-/* THIS IS THE MOST IMPORTANT RULE.
-  It overrides the theme's default square/colored <a> tag.
+/* THIS IS THE MAIN OVERRIDE.
+  It targets the visible <div> button.
 */
-.article-meta .share-icons .social-icon ul li a {
-  background: #f3f4f6 !important; /* Our light gray page background */
-  color: #555 !important; /* A neutral icon color */
-  font-size: 1rem !important;
-  width: 32px !important;
-  height: 32px !important;
-  line-height: 32px !important; /* Vertically centers the icon */
-  text-align: center !important;
-  border: none !important;
-  border-radius: 50% !important; /* Make them circles */
-  transition: all 0.2s ease-out;
+.article-meta .resp-sharing-button {
+  /* 1. Override the default colors (blue, red, etc.) */
+  background-color: #f3f4f6 !important; /* Our light gray */
+  border-color: #f3f4f6 !important;
 
-  /* Reset any old theme styles */
-  padding: 0;
-  margin: 0;
+  /* 2. Override the size and shape */
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50% !important; /* Make it a circle */
+
+  /* 3. Center the icon inside */
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 0 !important; /* Remove any default padding */
+  margin: 0 !important;
+
+  /* 4. Add our transition */
+  transition: all 0.2s ease-out;
 }
 
-/* Finally, set the hover state */
-.article-meta .share-icons .social-icon ul li a:hover {
-  background: #ff0054 !important; /* Our brand pink on hover */
-  color: #FFFFFF !important;
+/* This targets the SVG icon *inside* the button */
+.article-meta .resp-sharing-button svg {
+  width: 22px;
+  height: 22px;
+  fill: #555 !important; /* Our neutral icon color */
+  transition: fill 0.2s ease-out;
+}
+
+/* THIS IS THE HOVER EFFECT.
+  We target the <a> tag on hover, but change the <div> and <svg> inside.
+*/
+.article-meta .resp-sharing-button__link:hover .resp-sharing-button {
+  /* 1. Change background to our brand pink */
+  background-color: #ff0054 !important;
+  border-color: #ff0054 !important;
+}
+
+/* 2. Change the icon to white on hover */
+.article-meta .resp-sharing-button__link:hover .resp-sharing-button svg {
+  fill: #FFFFFF !important;
+}
+
+/* This targets the <a> tag that wraps the button */
+.article-meta .resp-sharing-button__link {
+  /* ⬇️ THE FIX ⬇️ */
+  /* Remove any default underline or background */
+  text-decoration: none !important;
+  background-image: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* This targets the <a> tag on HOVER */
+.article-meta .resp-sharing-button__link:hover {
+  /* ⬇️ THE FIX ⬇️ */
+  /* We explicitly tell it NOT to do anything on hover */
+  text-decoration: none !important;
+  background-image: none !important;
+  border: none !important;
+  box-shadow: none !important;
 }
