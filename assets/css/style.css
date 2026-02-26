@@ -48,12 +48,12 @@ pre {
 ::-moz-selection {
   /* Code for Firefox */
   color: #fff;
-  background: #ff0054;
+  background: #6D28D9;
 }
 
 ::selection {
   color: #fff;
-  background: #ff0054;
+  background: #6D28D9;
 }
 
 hr {
@@ -127,7 +127,7 @@ a:hover {
 
 .btn-transparent:hover,
 .btn-transparent:focus {
-  background-color: #ff0054;
+  background-color: #6D28D9;
   border: 1px solid transparent;
   color: #fff;
 }
@@ -149,7 +149,7 @@ a:hover {
   position: absolute;
   top: -4px;
   width: 50px;
-  background-color: #ff0054;
+  background-color: #6D28D9;
 }
 
 .color {
@@ -227,11 +227,11 @@ a:hover {
 
 a:focus,
 a:hover {
-  color: #ff0054;
+  color: #6D28D9;
 }
 
 .btn-main {
-  background: #ff0054;
+  background: #6D28D9;
   color: #fff;
   display: inline-block;
   font-size: 14px;
@@ -319,7 +319,7 @@ a:hover {
 }
 
 .title h2 span {
-  color: #ff0054;
+  color: #6D28D9;
 }
 
 .title p {
@@ -364,7 +364,7 @@ a:hover {
 }
 
 .header-bradcrumb a:hover {
-  color: #ff0054;
+  color: #6D28D9;
 }
 
 .slick-slide {
@@ -428,7 +428,7 @@ a:hover {
 .navbar-dark .navbar-nav .nav-link.active,
 .navbar-dark .navbar-nav .nav-link.show,
 .navbar-dark .navbar-nav .show>.nav-link {
-  color: #ff0054;
+  color: #6D28D9;
 }
 
 .navbar-toggler:focus {
@@ -472,7 +472,7 @@ a:hover {
 
 .hero-area .block .video-button {
   background: #fff;
-  color: #ff0054;
+  color: #6D28D9;
   display: inline-block;
   height: 60px;
   width: 60px;
@@ -567,7 +567,7 @@ a:hover {
 }
 
 .about .block:hover {
-  border-bottom: 2px solid #ff0054;
+  border-bottom: 2px solid #6D28D9;
 }
 
 .about .block:hover .icon-box {
@@ -639,7 +639,7 @@ a:hover {
 
 .about-2 .content-block .media i {
   font-size: 30px;
-  color: #ff0054;
+  color: #6D28D9;
 }
 
 .about-2 .content-block .media h4 {
@@ -719,12 +719,12 @@ a:hover {
 
 .form-meghna input:hover,
 .form-meghna textarea:hover {
-  border-color: #ff0054;
+  border-color: #6D28D9;
 }
 
 #contact-submit {
   border: 1px solid rgba(236, 239, 241, 0.07);
-  background: #ff0054;
+  background: #6D28D9;
   padding: 12px 0;
   width: 100%;
   margin: 0;
@@ -821,7 +821,7 @@ a:hover {
 }
 
 .price-title h3 {
-  color: #ff0054;
+  color: #6D28D9;
   margin: 0 0 10px;
   text-transform: uppercase;
 }
@@ -832,7 +832,7 @@ a:hover {
 }
 
 .price-title .value {
-  color: #ff0054;
+  color: #6D28D9;
   font-size: 30px;
 }
 
@@ -882,7 +882,7 @@ a:hover {
 }
 
 .portfolio-filter .btn.active {
-  border-color: #ff0054;
+  border-color: #6D28D9;
 }
 
 .portfolio-block {
@@ -941,7 +941,7 @@ a:hover {
 }
 
 .portfolio-block .caption .search-icon {
-  background: #ff0054;
+  background: #6D28D9;
   width: 50px;
   height: 50px;
   color: #fff;
@@ -987,13 +987,13 @@ a:hover {
 
 .service-2 .service-item:hover i {
   background: #fff;
-  color: #ff0054;
+  color: #6D28D9;
 }
 
 .service-2 .service-item i {
   font-size: 30px;
   display: inline-block;
-  background: #ff0054 none repeat scroll 0 0;
+  background: #6D28D9 none repeat scroll 0 0;
   border-radius: 30px;
   box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.1);
   color: #fff;
@@ -1026,7 +1026,7 @@ a:hover {
 }
 
 .skill-bar .progress .progress-bar {
-  background: #ff0054;
+  background: #6D28D9;
 }
 
 /*=================================================================
@@ -1105,7 +1105,7 @@ a:hover {
 
 .member-photo .mask ul li a:hover {
   background-color: #fff;
-  color: #ff0054;
+  color: #6D28D9;
   border: 1px solid transparent;
 }
 
@@ -1186,7 +1186,7 @@ a:hover {
 
 .owl-controls .owl-page.active span,
 .owl-controls .owl-page:hover span {
-  background-color: #ff0054;
+  background-color: #6D28D9;
   border: 2px solid transparent;
 }
 
@@ -1280,7 +1280,7 @@ a:hover {
 }
 
 .post-meta a {
-  color: #ff0054;
+  color: #6D28D9;
 }
 
 .post-meta>span {
@@ -1341,7 +1341,7 @@ a:hover {
 }
 
 .next-prev a:hover {
-  color: #ff0054;
+  color: #6D28D9;
 }
 
 .next-prev .prev-post i {
@@ -1364,7 +1364,7 @@ a:hover {
 }
 
 .social-profile ul li a i:hover {
-  color: #ff0054;
+  color: #6D28D9;
 }
 
 .comments-section {
@@ -1412,7 +1412,7 @@ a:hover {
 }
 
 .comment-wrap .media .media-heading a {
-  color: #ff0054;
+  color: #6D28D9;
   font-size: 13px;
 }
 
@@ -1439,7 +1439,7 @@ a:hover {
 .comment-reply-form input:focus,
 .comment-reply-form textarea:focus {
   box-shadow: none;
-  border: 1px solid #ff0054;
+  border: 1px solid #6D28D9;
 }
 
 .comment-reply-form textarea,
@@ -1497,7 +1497,7 @@ a:hover {
   font: inherit;
   padding: 10px;
   margin-top: 20px;
-  outline-color: #F76C5E;
+  outline-color: #6D28D9;
   width: 100%;
 }
 
@@ -1541,7 +1541,7 @@ input#e-mail,
 }
 
 .social-icon ul li a:hover {
-  background: #ff0054;
+  background: #6D28D9;
 }
 
 .social-icon ul li a:hover i {
@@ -1584,8 +1584,8 @@ input#e-mail,
 }
 
 #scrollUp:hover {
-  background-color: #ff0054;
-  border: 1px solid #ff0054;
+  background-color: #6D28D9;
+  border: 1px solid #6D28D9;
 }
 
 /*=================================================================
@@ -2011,7 +2011,7 @@ blockquote {
 }
 
 .form-control-meghna .form-control:focus {
-  border-color: #ff0054;
+  border-color: #6D28D9;
   box-shadow: 0 0 0 0.2rem rgba(0, 174, 255, 0.432);
 }
 
@@ -2265,8 +2265,8 @@ figcaption {
 }
 
 .pagination .page-item .page-link:hover {
-  background: #ff0054;
-  border-color: #ff0054;
+  background: #6D28D9;
+  border-color: #6D28D9;
   color: #fff
 }
 
@@ -2276,9 +2276,9 @@ figcaption {
 }
 
 .pagination .page-item.active .page-link {
-  background: #ff0054;
+  background: #6D28D9;
   color: #fff;
-  border-color: #ff0054;
+  border-color: #6D28D9;
 }
 
 #select-language {

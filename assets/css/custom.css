@@ -4,12 +4,12 @@
   --custom-section-background-color: #F1F5F9;
   --custom-section-alternate-background-color: #FFFFFF;
   --custom-primary-text-color: #2c3e50;
-  --custom-primary-accent-color: #ff0054; /*#2563eb;*/
+  --custom-primary-accent-color: #6D28D9; 
   --custom-secondary-accent-color: #390099;
   --custom-border-lines-color: #e2e8f0;
   --custom-secondary-accent-color-hover: #1D4ED8;
 
-  --custom-navigation-background-color: #ff0054;
+  --custom-navigation-background-color: #6D28D9;
   --custom-navigation-link-color: #FFFFFF;
 }
 
@@ -189,7 +189,7 @@ body, h2, h3 {
 .social-icon ul li a {
   background-color: #FFFFFF;
   /* Make the button background white */
-  color: #ff0054;
+  color: #6D28D9;
   /* Make the icon/letter inside pink */
 
 }
@@ -197,7 +197,7 @@ body, h2, h3 {
 .social-icon ul li a i {
   background-color: #FFFFFF;
   /* Make the button background white */
-  color: #ff0054;
+  color: #6D28D9;
   /* Make the icon/letter inside pink */
 }
 
@@ -340,14 +340,14 @@ body, h2, h3 {
 }
 
 .post-single-section strong {
-  color: #ff5400;
+  color: #6D28D9;
 }
 
 .post-single-section a {
-  color: #ff0054;
+  color: #6D28D9;
   /* Our hot pink */
   text-decoration: none;
-  background-image: linear-gradient(to right, #ff0054, #ff0054);
+  background-image: linear-gradient(to right, #6D28D9, #6D28D9);
   background-position: 0% 100%;
   background-repeat: no-repeat;
   background-size: 0% 2px;
@@ -404,7 +404,7 @@ body, h2, h3 {
 
 /* Buttons */
 .btn {
-  background-color: #ff0054;
+  background-color: #6D28D9;
   color: #FFFFFF !important;
   border: none;
   border-radius: 8px;
@@ -414,7 +414,7 @@ body, h2, h3 {
 }
 
 .btn-main:hover, .btn:hover {
-  background-color: #9e0059 !important;
+  background-color: #6D28D9 !important;
   /* Use the Rich Purple for hover */
   color: #FFFFFF !important;
 }
@@ -501,7 +501,7 @@ body, h2, h3 {
 
 /** Fun Facts Section **/
 section.funfacts-section {
-  background-image: linear-gradient(90deg, #ffbd00, #ff5400);
+  background-image: linear-gradient(90deg, #ffbd00, #6D28D9);
 
   margin-top: 3em;
   margin-bottom: 3em;
@@ -589,10 +589,10 @@ section.funfacts-section .counters-item:last-child {
   font-weight: 700;
 
   /* 2. Use one of your new brand colors! */
-  color: #ff0054;
+  color: #6D28D9;
   /* Your Hot Pink */
   /* --- OR --- */
-  /* color: #ff5400; */
+  /* color: #6D28D9; */
   /* Your Bright Orange */
 
   /* 3. This is the magic: it makes the text wrap around it */
@@ -735,7 +735,7 @@ section.funfacts-section .counters-item:last-child {
 
 .reading-time i {
   margin-right: 0.5em;
-  color: #ff0054; /* Our brand pink */
+  color: #6D28D9; /* Our brand pink */
 }
 
 /* --- New Article Meta Bar --- */
@@ -759,7 +759,7 @@ section.funfacts-section .counters-item:last-child {
 
 .reading-time .ti-timer {
   margin-right: 0.5em;
-  color: #ff0054;
+  color: #6D28D9;
 }
 .social-share.pt-4 {
   padding-top: 0 !important;
@@ -826,8 +826,8 @@ section.funfacts-section .counters-item:last-child {
 */
 .article-meta .resp-sharing-button__link:hover .resp-sharing-button {
   /* 1. Change background to our brand pink */
-  background-color: #ff0054 !important;
-  border-color: #ff0054 !important;
+  background-color: #6D28D9 !important;
+  border-color: #6D28D9 !important;
 }
 
 /* 2. Change the icon to white on hover */
@@ -910,7 +910,7 @@ section.funfacts-section .counters-item:last-child {
   font-family: 'Inter', sans-serif;
   font-weight: 600;
   font-size: 0.9rem;
-  color: #ff0054; /* Our brand pink */
+  color: #6D28D9; /* Our brand pink */
   text-decoration: none;
   margin-right: 1.25em;
 
@@ -995,7 +995,7 @@ section.funfacts-section .counters-item:last-child {
   font-family: 'Inter', sans-serif;
   font-size: 1.1rem;
   font-weight: 600;
-  color: #ff0054; /* Our brand pink */
+  color: #6D28D9; /* Our brand pink */
   text-decoration: none;
   background-image: none; /* Turn off the animated underline */
 }
