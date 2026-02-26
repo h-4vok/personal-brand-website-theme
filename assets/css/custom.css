@@ -1,6 +1,6 @@
-/* Variables */
+/** Section: Design Tokens **/
 :root {
-  /* Surface palette */
+
   --surface-base: #f3f4f6;
   --surface-muted: #F1F5F9;
   --surface-soft: #f8f9fa;
@@ -9,7 +9,6 @@
   --surface-darker: #292F36;
   --surface-ink: #242930;
 
-  /* Text palette */
   --text-base: #2c3e50;
   --text-muted: #737f8a;
   --text-secondary: #495057;
@@ -19,7 +18,6 @@
   --text-inverse-soft: rgba(255, 255, 255, 0.8);
   --text-inverse-subtle: rgba(255, 255, 255, 0.5);
 
-  /* Brand palette */
   --brand-primary: #6D28D9;
   --brand-primary-hover: #1D4ED8;
   --brand-secondary: #390099;
@@ -27,15 +25,12 @@
   --brand-highlight: #ffbd00;
   --brand-deep: #004a80;
 
-  /* Accent/border palette */
   --border-subtle: #e2e8f0;
   --border-card: #e0e0e0;
 
-  /* Overlay helpers */
   --overlay-soft: rgba(0, 0, 0, 0.25);
   --overlay-hero: rgba(0, 0, 0, 0.63);
 
-  /* Legacy aliases for compatibility */
   --custom-background-color: var(--surface-base);
   --custom-section-background-color: var(--surface-muted);
   --custom-section-alternate-background-color: var(--surface-card);
@@ -48,8 +43,10 @@
   --custom-navigation-link-color: var(--text-inverse);
 }
 
+/** Section: Typography **/
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Lora:ital,wght@0,400;0,500;0,700;1,400&display=swap');
 
+/** Section: Base / Reset **/
 html, body {
   background-color: var(--surface-base);
   color: var(--text-base) !important;
@@ -60,9 +57,9 @@ html, body {
 h1, h2, h3, h4, h5, h6 {
   color: var(--custom-primary-text-color) !important;
   font-family: 'Inter', sans-serif;
-  /* This is our new heading font */
+
   font-weight: 700;
-  /* Make headings bold by default */
+
 }
 
 a {
@@ -70,7 +67,6 @@ a {
 
   text-decoration: none;
 
-  /* Let's remove underlines for a cleaner look */
   font-weight: 500;
 }
 
@@ -90,6 +86,7 @@ a:hover,
   transition: 0.5s all;
 }
 
+/** Section: Navigation **/
 .navigation {
   background: var(--custom-navigation-background-color) !important;
   font-family: 'Inter', sans-serif;
@@ -106,10 +103,10 @@ a:hover,
 
 .hero-area .block {
   background: transparent !important;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
-
-/* All pages */
 body, h2, h3 {
   font-optical-sizing: auto;
   font-style: normal;
@@ -123,8 +120,7 @@ body, h2, h3 {
     "wdth" 100;
 }
 
-/* Main page */
-
+/** Section: Home Components **/
 .hero-area h1 {
   color: var(--custom-border-lines-color) !important;
   font-weight: 800;
@@ -133,11 +129,9 @@ body, h2, h3 {
 .team-member {
   background: var(--custom-section-alternate-background-color) !important;
   border: 1px solid var(--border-card);
-    /* Add a subtle border */
-    border-radius: 12px;
-    /* Match our other rounded corners */
 
-    /* Add a very subtle shadow to make them "pop" */
+    border-radius: 12px;
+
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
@@ -165,11 +159,9 @@ body, h2, h3 {
 .post-block {
   background-color: var(--custom-section-alternate-background-color) !important;
   border: 1px solid var(--border-card);
-  /* Add a subtle border */
-  border-radius: 12px;
-  /* Match our other rounded corners */
 
-  /* Add a very subtle shadow to make them "pop" */
+  border-radius: 12px;
+
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
@@ -184,11 +176,6 @@ body, h2, h3 {
 
 .section#team {
   padding: 100px 0 0 0;
-}
-
-.hero-area .block {
-  padding-left: 15px;
-  padding-right: 15px;
 }
 
 .post-single-content {
@@ -218,17 +205,16 @@ body, h2, h3 {
 
 .social-icon ul li a {
   background-color: var(--surface-card);
-  /* Make the button background white */
+
   color: var(--brand-primary);
-  /* Make the icon/letter inside pink */
 
 }
 
 .social-icon ul li a i {
   background-color: var(--surface-card);
-  /* Make the button background white */
+
   color: var(--brand-primary);
-  /* Make the icon/letter inside pink */
+
 }
 
 .social-icon ul li a:hover,
@@ -243,51 +229,44 @@ body, h2, h3 {
   min-height: 325px;
 }
 
-/* Article page in Blog */
+/** Section: Article Typography **/
 .post-single-title {
   font-size: 3.5rem;
   color: var(--text-inverse);
 }
 
-/* Style for the video <figure> wrapper */
 .video-figure {
-  /* 1. Add the spacing */
+
   margin-top: 2.5em;
   margin-bottom: 2.5em;
 }
 
-/* Style for the video caption */
 .video-figure figcaption {
   font-size: 0.9em;
   color: var(--text-muted);
-  /* A lighter gray text */
+
   text-align: center;
   margin-top: 0.8em;
 }
 
-/* This part is tricky. The {{< youtube >}} shortcode
-  creates a responsive <div>. We need to style THAT div.
-*/
 .video-figure div {
-  /* 2. Add rounded corners */
+
   border-radius: 12px;
 
-  /* 3. Add a subtle shadow to "lift" it */
   box-shadow: 0 9px 24px rgba(0, 0, 0, 0.3);
 
-  /* 4. This is crucial: it forces the corners to apply to the iframe inside */
   overflow: hidden;
 }
 
 .post-single-section blockquote {
   background-color: var(--surface-soft);
-  /* A very light gray background */
+
   border-left: 5px solid var(--brand-highlight);
-  /* Use our Gold accent! */
+
   padding: 1.5em 2em;
   margin: 2em 0;
   color: var(--text-secondary);
-  /* border-radius: 5px; */
+
 }
 
 .post-single-section blockquote p {
@@ -312,26 +291,18 @@ body, h2, h3 {
   font-size: 1.4rem;
 }
 
-/* 1. Make in-line emphasis POP */
-/* This selector is more specific: it targets italics inside a <p>
-   tag which is inside your main .article-container */
 .post-single-section p i,
 .post-single-section p em {
 
-  /* Let's use a bolder color. This is a dark, inky blue. */
   color: #004a80;
 
-  /* Let's try a heavier weight. 600 is "semi-bold". */
   font-weight: 600;
 
-  /* Just in case the font's italic is very subtle */
   font-style: italic;
 
-  /* This can sometimes help if the font is hard to render */
   -webkit-font-smoothing: antialiased;
 }
 
-/* 2. RESET the style for blockquotes (this rule is still crucial) */
 .post-single-section blockquote i,
 .post-single-section blockquote em {
   color: inherit;
@@ -339,21 +310,20 @@ body, h2, h3 {
   font-style: italic;
 }
 
-/* Go back partial */
 .goback-section {
   padding: 25px 0 0 0;
 }
 
+/** Section: Article Layout **/
 .post-single-section {
   padding: 0;
 }
 
 .post-single-section div.container {
   background-color: var(--surface-card);
-  /* White background */
+
   max-width: 100%;
 
-  /* Add simple padding for mobile screens so text doesn't touch the edges */
   padding: 1.5em;
 }
 
@@ -363,7 +333,7 @@ body, h2, h3 {
   color: var(--custom-secondary-accent-color) !important;
   font-weight: 700;
   margin-top: 2.5em;
-  /* This creates that professional white space */
+
   margin-bottom: 1em;
   font-family: "Quattrocento Sans", sans-serif;
 }
@@ -374,51 +344,44 @@ body, h2, h3 {
 
 .post-single-section a {
   color: var(--brand-primary);
-  /* Our hot pink */
+
   text-decoration: none;
   background-image: linear-gradient(to right, var(--brand-primary), var(--brand-primary));
   background-position: 0% 100%;
   background-repeat: no-repeat;
   background-size: 0% 2px;
-  /* Starts invisible */
+
   transition: background-size 0.3s ease-out, color 0.3s ease-out;
 }
 
 .post-single-section a:hover {
   color: var(--brand-secondary);
-  /* Our indigo on hover */
+
   background-size: 100% 2px;
-  /* Animates the underline in */
+
 }
 
 @media (min-width: 768px) {
   .post-single-section div.container {
-    /* 4. Constrain the width for comfortable reading */
+
     max-width: 125ch;
-    /* 'ch' is a unit for character width. 70-80 is ideal. */
 
-    /*  Center the "page" and add space */
     margin: 3em auto;
-    /* 'auto' centers it horizontally */
 
-    /* Add internal "padding" so text doesn't touch the edges */
     padding: 3em 4em;
 
-    /* Add polished touches (shadow & rounded corners) */
     border-radius: 12px;
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.07);
-    /* A very soft, modern shadow */
+
   }
 }
 
-/* 8. Make sure images & videos don't break out of the container */
-.post-single-section div.containerr img,
+.post-single-section div.container img,
 .post-single-section div.container .video-figure {
   max-width: 100%;
   height: auto;
 }
 
-/* Breadcrumbs partial */
 .breadcrumbs-section {
   padding: 25px 0 0 0;
 }
@@ -430,15 +393,13 @@ body, h2, h3 {
 .list-inline-item:not(:last-child) {
   margin-right: 0rem;
 }
-
-/** Article Hero **/
-  /* This is the new Hero Block for our articles */
-  .article-hero {
+/** Section: Article Hero Component **/
+.article-hero {
     background-color: var(--text-base);
-    /* All text inside will be white */
+
     color: var(--text-inverse);
     padding: 3.5em 2em;
-    /* Add generous padding */
+
     text-align: center;
   }
 
@@ -452,26 +413,23 @@ body, h2, h3 {
     border-radius: 4px;
   }
 
-  /* Style the main Article Title */
   .article-hero h1 {
     color: var(--text-inverse) !important;
 
     font-size: 2.8rem;
-    /* You can adjust this value */
+
     font-weight: 700 !important;
     margin-top: 0.25em;
     margin-bottom: 0.25em;
   }
 
   .article-hero h2.subtitle {
-    /* A softer white creates a nice hierarchy */
+
     color: var(--text-inverse-soft) !important;
 
     font-size: 1.2rem;
     font-weight: 300 !important;
-    /* Lighter weight */
 
-    /* Constrain the width for readability */
     max-width: 65ch;
     margin-left: auto;
     margin-right: auto;
@@ -479,20 +437,17 @@ body, h2, h3 {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   }
 
-  /* Style the Subtitle (from the 'description' meta tag) */
   .article-hero .subtitle {
     font-size: 1.2em;
     font-weight: 300;
     color: var(--text-muted);
-    /* A slightly softer white */
+
     max-width: 65ch;
     margin-left: auto;
     margin-right: auto;
   }
 
-
-
-  /** Fun Facts Section **/
+/** Section: Fun Facts Component **/
 section.funfacts-section {
   background-image: linear-gradient(90deg, var(--brand-highlight), var(--brand-primary));
 
@@ -514,35 +469,21 @@ section.funfacts-section .container{
 section.funfacts-section .counters-item {
   margin-bottom: 1.5em;
 }
-/*
-section.funfacts-section .counters-item:last-child {
-  margin-bottom: 0;
-} */
 
 @media (min-width: 768px) {
-  /* ⬅️ Your desktop breakpoint */
 
   section.funfacts-section {
-    /* Use the larger padding we had before for desktops
-    */
+
     padding: 3em 2em;
   }
 
     section.funfacts-section .counters-item {
-    /* ⬅️ Update this selector */
-    /* Remove the bottom margin when the cards
-      are side-by-side on desktop.
-    */
+
     margin-bottom: 0;
   }
 }
 
-
-
-
-/* --- Featured Article Image Layout --- */
-
-/* 1. By default (on Mobile), the image is a full-width block. */
+/** Section: Featured Image Component **/
 .featured-article-image {
   max-width: 100%;
   height: auto;
@@ -551,78 +492,56 @@ section.funfacts-section .counters-item:last-child {
   box-shadow: 0 5px 18px rgba(0, 0, 0, 0.12);
 }
 
-/* 2. Media Query: For screens 992px or WIDER (desktop) */
 @media (min-width: 992px) {
   .featured-article-image {
-    /* ⬇️ This is the magic ⬇️ */
+
     float: right;
     width: 45%;
-    /* Image takes up 45% of the container */
 
-    /* Add space so text doesn't touch it */
     margin-top: 0.5em;
     margin-left: 2em;
     margin-bottom: 1em;
   }
 }
 
-
-
-
-/* --- Drop Cap Styling --- */
-
-/* This selector targets the first letter of the first paragraph
-  inside your main content area.
-*/
+/** Section: Drop Cap Utility **/
 .post-single-content > p:first-of-type::first-letter {
 
-  /* 1. Make it big and bold */
   font-size: 4.5rem;
-  /* ~72px */
+
   font-weight: 700;
 
-  /* 2. Use one of your new brand colors! */
   color: var(--brand-primary);
-  /* Your Hot Pink */
-  /* --- OR --- */
-  /* color: var(--brand-primary); */
-  /* Your Bright Orange */
 
-  /* 3. This is the magic: it makes the text wrap around it */
   float: left;
 
-  /* 4. Fine-tune the spacing */
   line-height: 0.8;
-  /* Pulls the letter up to align with the top line */
+
   padding-right: 0.15em;
-  /* Adds space to its right */
+
   padding-bottom: 0.05em;
-  /* Adds a little space below */
 
   font-family: "Quattrocento Sans", sans-serif;
 }
 
-
-/* -- Footer -- */
-/* --- New Footer Design --- */
-
+/** Section: Footer Components **/
 .new-footer {
-  /* 1. The Main Container */
-  background-color: var(--brand-secondary); /* Our Deep Indigo */
+
+  background-color: var(--brand-secondary); 
   color: var(--text-inverse);
-  padding: 4em 2em; /* Generous padding */
+  padding: 4em 2em; 
   margin: 12em auto 0 auto;
 }
 
 .footer-container {
-  max-width: 1140px; /* Or whatever your site's max-width is */
-  margin: 0 auto; /* Centers the content (brand, links) */
+  max-width: 1140px; 
+  margin: 0 auto; 
 }
 
 .footer-main {
-  /* 2. The Column Layout */
+
   display: flex;
-  flex-wrap: wrap; /* Allows it to stack on mobile */
+  flex-wrap: wrap; 
   justify-content: space-between;
   padding-bottom: 2em;
 }
@@ -631,9 +550,8 @@ section.funfacts-section .counters-item:last-child {
   padding: 1em 0;
 }
 
-/* 3. Column Styling */
 .footer-col.brand a {
-  font-family: 'Inter', sans-serif; /* Your heading font */
+  font-family: 'Inter', sans-serif; 
   font-size: 1.8rem;
   font-weight: 700;
   color: var(--text-inverse);
@@ -661,17 +579,16 @@ section.funfacts-section .counters-item:last-child {
 }
 
 .footer-list a {
-  color: rgba(255, 255, 255, 0.7); /* Slightly transparent white for links */
+  color: rgba(255, 255, 255, 0.7); 
   text-decoration: none;
   transition: color 0.2s ease-out;
 }
 
 .footer-list a:hover {
-  color: var(--text-inverse); /* Bright white on hover */
+  color: var(--text-inverse); 
   text-decoration: none;
 }
 
-/* 4. The Sub-Footer (Copyright) */
 .footer-sub {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   padding-top: 2em;
@@ -679,72 +596,47 @@ section.funfacts-section .counters-item:last-child {
 }
 
 .footer-sub p {
-  /* ⬇️ THIS IS THE FIX ⬇️ */
-  color: rgba(255, 255, 255, 0.5); /* Faded white */
+
+  color: rgba(255, 255, 255, 0.5); 
   font-size: 0.9rem;
   margin: 0;
   text-align: center;
 }
 
 .new-footer .footer-list a {
-  color: rgba(255, 255, 255, 0.7) !important; /* Faded white (not pink) */
+  color: rgba(255, 255, 255, 0.7) !important; 
   text-decoration: none;
-  font-weight: 500; /* Reset any global font-weight */
+  font-weight: 500; 
   transition: color 0.2s ease-out;
 }
 
 .new-footer .footer-list a:hover {
-  color: var(--text-inverse) !important; /* Bright white */
+  color: var(--text-inverse) !important; 
   text-decoration: underline;
 }
 
-
-/* 5. Mobile Styles */
 @media (max-width: 768px) {
   .footer-main {
-    flex-direction: column; /* Stack columns on mobile */
+    flex-direction: column; 
   }
   .footer-col {
     padding: 1.5em 0;
   }
 }
 
-
-/* --- New Article Meta Bar --- */
+/** Section: Article Meta Component **/
 .article-meta {
   display: flex;
-  justify-content: space-between; /* Puts reading time on left, share on right */
-  align-items: center;
-  margin-bottom: 2em; /* Space before the featured image */
-  padding-bottom: 1.5em; /* Space before the underline */
-  border-bottom: 1px solid var(--border-card); /* A clean separator line */
-}
-
-.reading-time {
-  font-family: 'Inter', sans-serif;
-  color: var(--text-inkwashed);
-  font-size: 0.9rem;
-}
-
-.reading-time i {
-  margin-right: 0.5em;
-  color: var(--brand-primary); /* Our brand pink */
-}
-
-/* --- New Article Meta Bar --- */
-.article-meta {
-  display: flex;
-  flex-direction: column; /* This creates the stacked layout */
-  align-items: flex-start; /* Aligns everything to the left */
+  flex-direction: column; 
+  align-items: flex-start; 
 
   margin-bottom: 2em;
   padding-bottom: 1.5em;
   border-bottom: 1px solid var(--border-card);
 }
 
-/* --- 1. Reading Time Styling --- */
 .reading-time {
-  margin-bottom: 0.5em; /* A tight margin */
+  margin-bottom: 0.5em; 
   font-family: 'Inter', sans-serif;
   color: var(--text-inkwashed);
   font-size: 0.9rem;
@@ -758,9 +650,6 @@ section.funfacts-section .counters-item:last-child {
   padding-top: 0 !important;
 }
 
-/* --- 2. Share Icon Styling (New, More Specific Rules) --- */
-
-/* This targets the <div> wrapper */
 .article-meta .social-share {
   padding-top: 0.5em !important;
 }
@@ -769,113 +658,88 @@ section.funfacts-section .counters-item:last-child {
   font-family: 'Inter', sans-serif;
   font-size: 1.1rem;
   font-weight: 600;
-  color: var(--text-base); /* Our dark inky text */
+  color: var(--text-base); 
   margin-top: 0;
   margin-bottom: 0.75em;
-  /* Reset padding from your 'pt-4' fix */
+
   padding-top: 0 !important;
 }
 
-/* This targets the <a> tag link */
 .article-meta .resp-sharing-button__link {
-  display: inline-block; /* Makes sure they stay in a line */
-  margin: 0 0.5em 0.5em 0; /* Adds spacing between icons */
+  display: inline-block;
+  margin: 0 0.5em 0.5em 0;
+  text-decoration: none !important;
+  background-image: none !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
-/* THIS IS THE MAIN OVERRIDE.
-  It targets the visible <div> button.
-*/
 .article-meta .resp-sharing-button {
-  /* 1. Override the default colors (blue, red, etc.) */
-  background-color: #f3f4f6 !important; /* Our light gray */
+
+  background-color: #f3f4f6 !important; 
   border-color: #f3f4f6 !important;
 
-  /* 2. Override the size and shape */
   width: 44px !important;
   height: 44px !important;
-  border-radius: 50% !important; /* Make it a circle */
+  border-radius: 50% !important; 
 
-  /* 3. Center the icon inside */
   display: flex !important;
   align-items: center;
   justify-content: center;
-  padding: 0 !important; /* Remove any default padding */
+  padding: 0 !important; 
   margin: 0 !important;
 
-  /* 4. Add our transition */
   transition: all 0.2s ease-out;
 }
 
-/* This targets the SVG icon *inside* the button */
 .article-meta .resp-sharing-button svg {
   width: 22px;
   height: 22px;
-  fill: var(--text-inkwashed) !important; /* Our neutral icon color */
+  fill: var(--text-inkwashed) !important; 
   transition: fill 0.2s ease-out;
 }
 
-/* THIS IS THE HOVER EFFECT.
-  We target the <a> tag on hover, but change the <div> and <svg> inside.
-*/
 .article-meta .resp-sharing-button__link:hover .resp-sharing-button {
-  /* 1. Change background to our brand pink */
+
   background-color: var(--brand-primary) !important;
   border-color: var(--brand-primary) !important;
 }
 
-/* 2. Change the icon to white on hover */
 .article-meta .resp-sharing-button__link:hover .resp-sharing-button svg {
   fill: #FFFFFF !important;
 }
 
-/* This targets the <a> tag that wraps the button */
-.article-meta .resp-sharing-button__link {
-  /* ⬇️ THE FIX ⬇️ */
-  /* Remove any default underline or background */
-  text-decoration: none !important;
-  background-image: none !important;
-  border: none !important;
-  box-shadow: none !important;
-}
-
-/* This targets the <a> tag on HOVER */
 .article-meta .resp-sharing-button__link:hover {
-  /* ⬇️ THE FIX ⬇️ */
-  /* We explicitly tell it NOT to do anything on hover */
   text-decoration: none !important;
   background-image: none !important;
   border: none !important;
   box-shadow: none !important;
 }
 
-
-
-/* --- Author Box Styling --- */
+/** Section: Author Box Component **/
 .author-box {
-  display: flex; /* This creates the 2-column layout */
-  flex-direction: row; /* Side-by-side on desktop */
-  align-items: center; /* Aligns items to the top */
+  display: flex; 
+  flex-direction: row; 
+  align-items: center; 
 
-  margin-top: 3em; /* Space above the box */
-  padding-top: 2.5em; /* Space inside the box */
-  border-top: 1px solid var(--border-card); /* Separator line */
+  margin-top: 3em; 
+  padding-top: 2.5em; 
+  border-top: 1px solid var(--border-card); 
 }
 
-/* 1. The Photo */
 .author-image {
-  flex-basis: 100px; /* Fixed width for the image */
+  flex-basis: 100px; 
   flex-shrink: 0;
   margin-right: 1.5em;
 }
 
 .author-image img {
-  width: 100px; /* Make image fill its container */
+  width: 100px; 
   height: 100px;
-  border-radius: 50%; /* Make it a circle */
-  object-fit: cover; /* Ensures image covers the circle */
+  border-radius: 50%; 
+  object-fit: cover; 
 }
 
-/* 2. The Bio & Info */
 .author-info {
   flex-basis: 100%;
 }
@@ -884,7 +748,7 @@ section.funfacts-section .counters-item:last-child {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 1.3rem;
-  color: var(--text-base); /* Our dark inky text */
+  color: var(--text-base); 
   margin: 0 0 0.25em 0;
 }
 
@@ -895,45 +759,40 @@ section.funfacts-section .counters-item:last-child {
 }
 
 .author-bio p {
-  margin: 0; /* Remove default paragraph margins */
+  margin: 0; 
 }
 
-/* 3. The Social Links */
 .author-social a {
   font-family: 'Inter', sans-serif;
   font-weight: 600;
   font-size: 0.9rem;
-  color: var(--brand-primary); /* Our brand pink */
+  color: var(--brand-primary); 
   text-decoration: none;
   margin-right: 1.25em;
 
-  /* Reset link styles */
   background-image: none;
 }
 
 .author-social a:hover {
-  color: var(--brand-secondary); /* Our indigo */
+  color: var(--brand-secondary); 
   text-decoration: underline;
 }
 
-
-/* This rule is more specific and will override the drop cap style */
 .author-box p:first-of-type::first-letter {
-  /* Reset all the drop cap styles to normal */
-  font-size: inherit;   /* Use the paragraph's normal font size */
-  font-weight: inherit; /* Use the paragraph's normal font weight */
-  color: inherit;     /* Use the paragraph's normal text color */
-  float: none;        /* This is the key: stop it from floating */
+
+  font-size: inherit;   
+  font-weight: inherit; 
+  color: inherit;     
+  float: none;        
   line-height: inherit;
   padding: 0;
   margin: 0;
 }
 
-/* 4. Mobile Stacking */
 @media (max-width: 768px) {
   .author-box {
-    flex-direction: column; /* Stack on mobile */
-    align-items: center; /* Center everything */
+    flex-direction: column; 
+    align-items: center; 
     text-align: center;
   }
 
@@ -947,39 +806,30 @@ section.funfacts-section .counters-item:last-child {
   }
 }
 
-
-
-
-
-
-/* --- "More Like This" Section Styling --- */
-
+/** Section: Related Content Component **/
 .more-like-this {
-  /* Add separation from the author box */
+
   margin-top: 3em;
   padding-top: 2.5em;
-  border-top: 1px solid var(--border-card); /* Separator line */
+  border-top: 1px solid var(--border-card); 
 }
 
-/* Style the "More Like This" h3 title */
 .more-like-this .section-title {
   font-family: 'Inter', sans-serif;
-  font-size: 1.5rem; /* Make it a clear sub-heading */
+  font-size: 1.5rem; 
   font-weight: 700;
-  color: var(--text-base); /* Our dark inky text */
+  color: var(--text-base); 
   margin-bottom: 1.5em;
 }
 
 .related-articles-list {
-  /* This will hold our list */
+
 }
 
-/* Style each article item in the list */
 .related-article-item {
-  margin-bottom: 2em; /* Add space between each item */
+  margin-bottom: 2em; 
 }
 
-/* Style the article title link */
 .related-article-item h4 {
   margin: 0;
 }
@@ -988,18 +838,17 @@ section.funfacts-section .counters-item:last-child {
   font-family: 'Inter', sans-serif;
   font-size: 1.1rem;
   font-weight: 600;
-  color: var(--brand-primary); /* Our brand pink */
+  color: var(--brand-primary); 
   text-decoration: none;
-  background-image: none; /* Turn off the animated underline */
+  background-image: none; 
 }
 
 .related-article-item h4 a:hover {
-  color: var(--brand-secondary); /* Our indigo on hover */
+  color: var(--brand-secondary); 
   text-decoration: underline;
   background-image: none;
 }
 
-/* Style the article description */
 .related-article-item p {
   font-family: quattrocento sans,sans-serif;
   font-size: 0.8rem;
