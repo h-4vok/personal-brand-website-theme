@@ -1,30 +1,60 @@
 /* Variables */
 :root {
-  --custom-background-color: #f3f4f6;
-  --custom-section-background-color: #F1F5F9;
-  --custom-section-alternate-background-color: #FFFFFF;
-  --custom-primary-text-color: #2c3e50;
-  --custom-primary-accent-color: #6D28D9; 
-  --custom-secondary-accent-color: #390099;
-  --custom-border-lines-color: #e2e8f0;
-  --custom-secondary-accent-color-hover: #1D4ED8;
+  /* Surface palette */
+  --surface-base: #f3f4f6;
+  --surface-muted: #F1F5F9;
+  --surface-soft: #f8f9fa;
+  --surface-card: #FFFFFF;
+  --surface-dark: #353b43;
+  --surface-darker: #292F36;
+  --surface-ink: #242930;
 
-  --custom-navigation-background-color: #6D28D9;
-  --custom-navigation-link-color: #FFFFFF;
+  /* Text palette */
+  --text-base: #2c3e50;
+  --text-muted: #737f8a;
+  --text-secondary: #495057;
+  --text-inkwashed: #555;
+  --text-light: #afbac4;
+  --text-inverse: #FFFFFF;
+  --text-inverse-soft: rgba(255, 255, 255, 0.8);
+  --text-inverse-subtle: rgba(255, 255, 255, 0.5);
+
+  /* Brand palette */
+  --brand-primary: #6D28D9;
+  --brand-primary-hover: #1D4ED8;
+  --brand-secondary: #390099;
+  --brand-cta: #4F46E5;
+  --brand-highlight: #ffbd00;
+  --brand-deep: #004a80;
+
+  /* Accent/border palette */
+  --border-subtle: #e2e8f0;
+  --border-card: #e0e0e0;
+
+  /* Overlay helpers */
+  --overlay-soft: rgba(0, 0, 0, 0.25);
+  --overlay-hero: rgba(0, 0, 0, 0.63);
+
+  /* Legacy aliases for compatibility */
+  --custom-background-color: var(--surface-base);
+  --custom-section-background-color: var(--surface-muted);
+  --custom-section-alternate-background-color: var(--surface-card);
+  --custom-primary-text-color: var(--text-base);
+  --custom-primary-accent-color: var(--brand-primary);
+  --custom-secondary-accent-color: var(--brand-secondary);
+  --custom-secondary-accent-color-hover: var(--brand-primary-hover);
+  --custom-border-lines-color: var(--border-subtle);
+  --custom-navigation-background-color: var(--brand-primary);
+  --custom-navigation-link-color: var(--text-inverse);
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Lora:ital,wght@0,400;0,500;0,700;1,400&display=swap');
 
 html, body {
-  background-color: var(--custom-background-color);
-  color: var(--custom-primary-text-color) !important;
+  background-color: var(--surface-base);
+  color: var(--text-base) !important;
   font-family: "Quattrocento Sans", sans-serif;
-  /* This is our new default */
   line-height: 1.7;
-  color: #2c3e50;
-  /* Our dark inky color */
-  background-color: #f3f4f6;
-  /* Our light gray background */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -48,13 +78,13 @@ a:focus,
 a:hover,
 .navigation a:focus,
 .navigation a:hover {
-  color: var(--custom-secondary-accent-color) !important;
+  color: var(--brand-secondary) !important;
   text-decoration: underline;
 }
 
 .navigation a:focus,
 .navigation a:hover {
-  color: #FFFFFF !important;
+  color: var(--text-inverse) !important;
   text-decoration: underline;
   opacity: 0.9;
   transition: 0.5s all;
@@ -102,7 +132,7 @@ body, h2, h3 {
 
 .team-member {
   background: var(--custom-section-alternate-background-color) !important;
-  border: 1px solid #e0e0e0;
+  border: 1px solid var(--border-card);
     /* Add a subtle border */
     border-radius: 12px;
     /* Match our other rounded corners */
@@ -134,7 +164,7 @@ body, h2, h3 {
 
 .post-block {
   background-color: var(--custom-section-alternate-background-color) !important;
-  border: 1px solid #e0e0e0;
+  border: 1px solid var(--border-card);
   /* Add a subtle border */
   border-radius: 12px;
   /* Match our other rounded corners */
@@ -187,17 +217,17 @@ body, h2, h3 {
 }
 
 .social-icon ul li a {
-  background-color: #FFFFFF;
+  background-color: var(--surface-card);
   /* Make the button background white */
-  color: #6D28D9;
+  color: var(--brand-primary);
   /* Make the icon/letter inside pink */
 
 }
 
 .social-icon ul li a i {
-  background-color: #FFFFFF;
+  background-color: var(--surface-card);
   /* Make the button background white */
-  color: #6D28D9;
+  color: var(--brand-primary);
   /* Make the icon/letter inside pink */
 }
 
@@ -205,7 +235,7 @@ body, h2, h3 {
 .social-icon ul li a:focus,
 .social-icon ul li a:hover i,
 .social-icon ul li a:focus i {
-  background-color: #FFFFFF;
+  background-color: var(--surface-card);
 }
 
 .img-blog {
@@ -216,7 +246,7 @@ body, h2, h3 {
 /* Article page in Blog */
 .post-single-title {
   font-size: 3.5rem;
-  color: ghostwhite
+  color: var(--text-inverse);
 }
 
 /* Style for the video <figure> wrapper */
@@ -229,7 +259,7 @@ body, h2, h3 {
 /* Style for the video caption */
 .video-figure figcaption {
   font-size: 0.9em;
-  color: #666;
+  color: var(--text-muted);
   /* A lighter gray text */
   text-align: center;
   margin-top: 0.8em;
@@ -250,14 +280,13 @@ body, h2, h3 {
 }
 
 .post-single-section blockquote {
-  background-color: #f8f9fa;
+  background-color: var(--surface-soft);
   /* A very light gray background */
-  border-left: 5px solid #ffbd00;
+  border-left: 5px solid var(--brand-highlight);
   /* Use our Gold accent! */
   padding: 1.5em 2em;
   margin: 2em 0;
-  color: #495057;
-  /* A softer, readable gray */
+  color: var(--text-secondary);
   /* border-radius: 5px; */
 }
 
@@ -320,7 +349,7 @@ body, h2, h3 {
 }
 
 .post-single-section div.container {
-  background-color: #FFFFFF;
+  background-color: var(--surface-card);
   /* White background */
   max-width: 100%;
 
@@ -340,14 +369,14 @@ body, h2, h3 {
 }
 
 .post-single-section strong {
-  color: #6D28D9;
+  color: var(--brand-primary);
 }
 
 .post-single-section a {
-  color: #6D28D9;
+  color: var(--brand-primary);
   /* Our hot pink */
   text-decoration: none;
-  background-image: linear-gradient(to right, #6D28D9, #6D28D9);
+  background-image: linear-gradient(to right, var(--brand-primary), var(--brand-primary));
   background-position: 0% 100%;
   background-repeat: no-repeat;
   background-size: 0% 2px;
@@ -356,7 +385,7 @@ body, h2, h3 {
 }
 
 .post-single-section a:hover {
-  color: #390099;
+  color: var(--brand-secondary);
   /* Our indigo on hover */
   background-size: 100% 2px;
   /* Animates the underline in */
@@ -402,112 +431,76 @@ body, h2, h3 {
   margin-right: 0rem;
 }
 
-/* Buttons */
-.btn {
-  background-color: #6D28D9;
-  color: #FFFFFF !important;
-  border: none;
-  border-radius: 8px;
-  padding: 10px 20px;
-  font-weight: 600;
-  transition: .5s all;
-}
-
-.btn-main:hover, .btn:hover {
-  background-color: #6D28D9 !important;
-  /* Use the Rich Purple for hover */
-  color: #FFFFFF !important;
-}
-
 /** Article Hero **/
-/* This is the new Hero Block for our articles */
-.article-hero {
-  /* We'll use the Deep Indigo as a powerful background */
-  /* background-color: var(--custom-secondary-accent-color); */
+  /* This is the new Hero Block for our articles */
+  .article-hero {
+    background-color: var(--text-base);
+    /* All text inside will be white */
+    color: var(--text-inverse);
+    padding: 3.5em 2em;
+    /* Add generous padding */
+    text-align: center;
+  }
 
-  background-color: #2c3e50;
-    /* Our "Inky" Dark Blue-Gray */
-    /* Your Hot Pink */
+  .article-hero .category-link {
+    color: var(--brand-highlight);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
 
-  /* All text inside will be white */
-  color: #FFFFFF;
-  padding: 3.5em 2em;
-  /* Add generous padding */
-  text-align: center;
-}
+  /* Style the main Article Title */
+  .article-hero h1 {
+    color: var(--text-inverse) !important;
 
-.article-hero .category-link {
-  color: #FFFFFF;
-  /* Make it white */
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-size: 0.9rem;
-  padding: 2px 8px;
-  border-radius: 4px;
-}
+    font-size: 2.8rem;
+    /* You can adjust this value */
+    font-weight: 700 !important;
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+  }
 
-/* Style the main Article Title */
-.article-hero h1 {
-  color: #FFFFFF !important;
+  .article-hero h2.subtitle {
+    /* A softer white creates a nice hierarchy */
+    color: var(--text-inverse-soft) !important;
 
-  font-size: 2.8rem;
-  /* You can adjust this value */
-  font-weight: 700 !important;
-  margin-top: 0.25em;
-  margin-bottom: 0.25em;
-}
+    font-size: 1.2rem;
+    font-weight: 300 !important;
+    /* Lighter weight */
 
-.article-hero h2.subtitle {
-  /* ⬇️ FIX 1: FONT COLOR ⬇️ */
-  /* A softer white creates a nice hierarchy */
-  color: rgba(255, 255, 255, 0.8) !important;
+    /* Constrain the width for readability */
+    max-width: 65ch;
+    margin-left: auto;
+    margin-right: auto;
 
-  /* ⬇️ FIX 2: FONT SIZE ⬇️ */
-  font-size: 1.2rem;
-  font-weight: 300 !important;
-  /* Lighter weight */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  }
 
-  /* Constrain the width for readability */
-  max-width: 65ch;
-  margin-left: auto;
-  margin-right: auto;
-
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-}
-
-.article-hero .category-link {
-  color: #ffbd00;
-
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-size: 0.9rem;
-}
-
-/* Style the Subtitle (from the 'description' meta tag) */
-.article-hero .subtitle {
-  font-size: 1.2em;
-  font-weight: 300;
-  color: #e0e0e0;
-  /* A slightly softer white */
-  max-width: 65ch;
-  margin-left: auto;
-  margin-right: auto;
-}
+  /* Style the Subtitle (from the 'description' meta tag) */
+  .article-hero .subtitle {
+    font-size: 1.2em;
+    font-weight: 300;
+    color: var(--text-muted);
+    /* A slightly softer white */
+    max-width: 65ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
 
 
-
-/** Fun Facts Section **/
+  /** Fun Facts Section **/
 section.funfacts-section {
-  background-image: linear-gradient(90deg, #ffbd00, #6D28D9);
+  background-image: linear-gradient(90deg, var(--brand-highlight), var(--brand-primary));
 
   margin-top: 3em;
   margin-bottom: 3em;
   padding: 3em 0;
 
-  color: #2c3e50;
+  color: var(--text-base);
 
   padding: 2.5em 1em;
 }
@@ -589,10 +582,10 @@ section.funfacts-section .counters-item:last-child {
   font-weight: 700;
 
   /* 2. Use one of your new brand colors! */
-  color: #6D28D9;
+  color: var(--brand-primary);
   /* Your Hot Pink */
   /* --- OR --- */
-  /* color: #6D28D9; */
+  /* color: var(--brand-primary); */
   /* Your Bright Orange */
 
   /* 3. This is the magic: it makes the text wrap around it */
@@ -615,8 +608,8 @@ section.funfacts-section .counters-item:last-child {
 
 .new-footer {
   /* 1. The Main Container */
-  background-color: #390099; /* Our Deep Indigo */
-  color: #FFFFFF;
+  background-color: var(--brand-secondary); /* Our Deep Indigo */
+  color: var(--text-inverse);
   padding: 4em 2em; /* Generous padding */
   margin: 12em auto 0 auto;
 }
@@ -643,7 +636,7 @@ section.funfacts-section .counters-item:last-child {
   font-family: 'Inter', sans-serif; /* Your heading font */
   font-size: 1.8rem;
   font-weight: 700;
-  color: #FFFFFF;
+  color: var(--text-inverse);
   text-decoration: none;
 }
 
@@ -651,7 +644,7 @@ section.funfacts-section .counters-item:last-child {
   font-family: 'Inter', sans-serif;
   font-size: 1.1rem;
   font-weight: 600;
-  color: #FFFFFF !important;
+  color: var(--text-inverse) !important;
   margin-bottom: 1em;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -674,7 +667,7 @@ section.funfacts-section .counters-item:last-child {
 }
 
 .footer-list a:hover {
-  color: #FFFFFF; /* Bright white on hover */
+  color: var(--text-inverse); /* Bright white on hover */
   text-decoration: none;
 }
 
@@ -701,7 +694,7 @@ section.funfacts-section .counters-item:last-child {
 }
 
 .new-footer .footer-list a:hover {
-  color: #FFFFFF !important; /* Bright white */
+  color: var(--text-inverse) !important; /* Bright white */
   text-decoration: underline;
 }
 
@@ -724,18 +717,18 @@ section.funfacts-section .counters-item:last-child {
   align-items: center;
   margin-bottom: 2em; /* Space before the featured image */
   padding-bottom: 1.5em; /* Space before the underline */
-  border-bottom: 1px solid #e0e0e0; /* A clean separator line */
+  border-bottom: 1px solid var(--border-card); /* A clean separator line */
 }
 
 .reading-time {
   font-family: 'Inter', sans-serif;
-  color: #555;
+  color: var(--text-inkwashed);
   font-size: 0.9rem;
 }
 
 .reading-time i {
   margin-right: 0.5em;
-  color: #6D28D9; /* Our brand pink */
+  color: var(--brand-primary); /* Our brand pink */
 }
 
 /* --- New Article Meta Bar --- */
@@ -746,20 +739,20 @@ section.funfacts-section .counters-item:last-child {
 
   margin-bottom: 2em;
   padding-bottom: 1.5em;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid var(--border-card);
 }
 
 /* --- 1. Reading Time Styling --- */
 .reading-time {
   margin-bottom: 0.5em; /* A tight margin */
   font-family: 'Inter', sans-serif;
-  color: #555;
+  color: var(--text-inkwashed);
   font-size: 0.9rem;
 }
 
 .reading-time .ti-timer {
   margin-right: 0.5em;
-  color: #6D28D9;
+  color: var(--brand-primary);
 }
 .social-share.pt-4 {
   padding-top: 0 !important;
@@ -776,7 +769,7 @@ section.funfacts-section .counters-item:last-child {
   font-family: 'Inter', sans-serif;
   font-size: 1.1rem;
   font-weight: 600;
-  color: #2c3e50; /* Our dark inky text */
+  color: var(--text-base); /* Our dark inky text */
   margin-top: 0;
   margin-bottom: 0.75em;
   /* Reset padding from your 'pt-4' fix */
@@ -817,7 +810,7 @@ section.funfacts-section .counters-item:last-child {
 .article-meta .resp-sharing-button svg {
   width: 22px;
   height: 22px;
-  fill: #555 !important; /* Our neutral icon color */
+  fill: var(--text-inkwashed) !important; /* Our neutral icon color */
   transition: fill 0.2s ease-out;
 }
 
@@ -826,8 +819,8 @@ section.funfacts-section .counters-item:last-child {
 */
 .article-meta .resp-sharing-button__link:hover .resp-sharing-button {
   /* 1. Change background to our brand pink */
-  background-color: #6D28D9 !important;
-  border-color: #6D28D9 !important;
+  background-color: var(--brand-primary) !important;
+  border-color: var(--brand-primary) !important;
 }
 
 /* 2. Change the icon to white on hover */
@@ -865,7 +858,7 @@ section.funfacts-section .counters-item:last-child {
 
   margin-top: 3em; /* Space above the box */
   padding-top: 2.5em; /* Space inside the box */
-  border-top: 1px solid #e0e0e0; /* Separator line */
+  border-top: 1px solid var(--border-card); /* Separator line */
 }
 
 /* 1. The Photo */
@@ -891,13 +884,13 @@ section.funfacts-section .counters-item:last-child {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 1.3rem;
-  color: #2c3e50; /* Our dark inky text */
+  color: var(--text-base); /* Our dark inky text */
   margin: 0 0 0.25em 0;
 }
 
 .author-bio {
   font-size: 0.95rem;
-  color: #555;
+  color: var(--text-inkwashed);
   margin: 0 0 1em 0;
 }
 
@@ -910,7 +903,7 @@ section.funfacts-section .counters-item:last-child {
   font-family: 'Inter', sans-serif;
   font-weight: 600;
   font-size: 0.9rem;
-  color: #6D28D9; /* Our brand pink */
+  color: var(--brand-primary); /* Our brand pink */
   text-decoration: none;
   margin-right: 1.25em;
 
@@ -919,7 +912,7 @@ section.funfacts-section .counters-item:last-child {
 }
 
 .author-social a:hover {
-  color: #390099; /* Our indigo */
+  color: var(--brand-secondary); /* Our indigo */
   text-decoration: underline;
 }
 
@@ -965,7 +958,7 @@ section.funfacts-section .counters-item:last-child {
   /* Add separation from the author box */
   margin-top: 3em;
   padding-top: 2.5em;
-  border-top: 1px solid #e0e0e0; /* Separator line */
+  border-top: 1px solid var(--border-card); /* Separator line */
 }
 
 /* Style the "More Like This" h3 title */
@@ -973,7 +966,7 @@ section.funfacts-section .counters-item:last-child {
   font-family: 'Inter', sans-serif;
   font-size: 1.5rem; /* Make it a clear sub-heading */
   font-weight: 700;
-  color: #2c3e50; /* Our dark inky text */
+  color: var(--text-base); /* Our dark inky text */
   margin-bottom: 1.5em;
 }
 
@@ -995,13 +988,13 @@ section.funfacts-section .counters-item:last-child {
   font-family: 'Inter', sans-serif;
   font-size: 1.1rem;
   font-weight: 600;
-  color: #6D28D9; /* Our brand pink */
+  color: var(--brand-primary); /* Our brand pink */
   text-decoration: none;
   background-image: none; /* Turn off the animated underline */
 }
 
 .related-article-item h4 a:hover {
-  color: #390099; /* Our indigo on hover */
+  color: var(--brand-secondary); /* Our indigo on hover */
   text-decoration: underline;
   background-image: none;
 }
@@ -1010,6 +1003,6 @@ section.funfacts-section .counters-item:last-child {
 .related-article-item p {
   font-family: quattrocento sans,sans-serif;
   font-size: 0.8rem;
-  color: #555;
+  color: var(--text-inkwashed);
   margin-top: 0.25em;
 }
