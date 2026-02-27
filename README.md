@@ -1,6 +1,6 @@
-<h1 align="center">Meghna Hugo Theme — Custom Layer</h1>
+<h1 align="center">Severe Meghna Hugo Theme Variation</h1>
 
-This repository contains the site-specific adaptations of the Meghna Hugo theme. It keeps the original layout and experience but adds a streamlined CSS pipeline, linting + formatting guardrails, and focused usability tweaks for the owning site.
+This repository houses a **severe rewrite** of the Meghna Hugo theme that powers [christianguzman.uk](https://christianguzman.uk). While it builds on the same overall structure, the experience, markup hooks, and especially the tooling around the CSS pipeline have been rebuilt to match the site’s specific needs.
 
 <p align="center">
   <a href="https://demo.gethugothemes.com/meghna" target="_blank" rel="noreferrer">✨ Live demo</a> │
