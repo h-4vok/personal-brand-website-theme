@@ -51,6 +51,12 @@ a:hover,
   transition: 0.5s all;
 }
 
+@media (width >= 992px) {
+  .navigation .navbar-nav .nav-item + .nav-item {
+    margin-left: 1.8rem;
+  }
+}
+
 .bg-one {
   background: var(--custom-section-background-color) !important;
 }
