@@ -4,8 +4,13 @@
 {{ end }}
 
 {{ "<!-- JS Plugins -->" | safeHTML }}
+{{ $assetVersion := now.Unix }}
 {{ range site.Params.plugins.js}}
+{{ if or (hasPrefix .link "http://") (hasPrefix .link "https://") }}
 <script src="{{ .link | absURL }}"></script>
+{{ else }}
+<script src="{{ printf "%s?v=%d" (.link | absURL) $assetVersion }}"></script>
+{{ end }}
 {{ end }}
 
 {{ "<!-- Main Script -->" | safeHTML }}
