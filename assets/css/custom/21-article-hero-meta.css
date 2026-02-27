@@ -1,0 +1,130 @@
+/** Section: Article Hero Component **/
+.article-hero {
+  background-color: var(--text-base);
+  color: var(--text-inverse);
+  padding: 3.5em 2em;
+  text-align: center;
+}
+
+.article-hero .category-link {
+  border-radius: 4px;
+  color: var(--brand-highlight);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 2px 8px;
+  text-transform: uppercase;
+}
+
+.article-hero h1 {
+  color: var(--text-inverse) !important;
+  font-size: 2.8rem;
+  font-weight: 700 !important;
+  margin-bottom: 0.25em;
+  margin-top: 0.25em;
+}
+
+.article-hero h2.subtitle {
+  color: var(--text-inverse-soft) !important;
+  font-size: 1.2rem;
+  font-weight: 300 !important;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 65ch;
+  text-shadow: 1px 1px 3px rgb(0 0 0 / 50%);
+}
+
+.article-hero .subtitle {
+  color: var(--text-muted);
+  font-size: 1.2em;
+  font-weight: 300;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 65ch;
+}
+
+/** Section: Article Meta Component **/
+.article-meta {
+  align-items: flex-start;
+  border-bottom: 1px solid var(--border-card);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2em;
+  padding-bottom: 1.5em;
+}
+
+.reading-time {
+  color: var(--text-inkwashed);
+  font-family: Inter, sans-serif;
+  font-size: 0.9rem;
+  margin-bottom: 0.5em;
+}
+
+.reading-time .ti-timer {
+  color: var(--brand-primary);
+  margin-right: 0.5em;
+}
+
+.social-share.pt-4 {
+  padding-top: 0 !important;
+}
+
+.article-meta .social-share {
+  padding-top: 0.5em !important;
+}
+
+.article-meta .social-share h4 {
+  color: var(--text-base);
+  font-family: Inter, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.75em;
+  margin-top: 0;
+  padding-top: 0 !important;
+}
+
+.article-meta .resp-sharing-button__link {
+  background-image: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  display: inline-block;
+  margin: 0 0.5em 0.5em 0;
+  text-decoration: none !important;
+}
+
+.article-meta .resp-sharing-button {
+  align-items: center;
+  background-color: #f3f4f6 !important;
+  border-color: #f3f4f6 !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  height: 44px !important;
+  justify-content: center;
+  margin: 0 !important;
+  padding: 0 !important;
+  transition: all 0.2s ease-out;
+  width: 44px !important;
+}
+
+.article-meta .resp-sharing-button svg {
+  fill: var(--text-inkwashed) !important;
+  height: 22px;
+  transition: fill 0.2s ease-out;
+  width: 22px;
+}
+
+.article-meta .resp-sharing-button__link:hover .resp-sharing-button {
+  background-color: var(--brand-primary) !important;
+  border-color: var(--brand-primary) !important;
+}
+
+.article-meta .resp-sharing-button__link:hover .resp-sharing-button svg {
+  fill: #fff !important;
+}
+
+.article-meta .resp-sharing-button__link:hover {
+  background-image: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+}

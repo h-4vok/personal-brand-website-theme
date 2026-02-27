@@ -21,9 +21,21 @@
 	{{ $styles := resources.Get "css/style.css" | minify }}
 	<link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
 
-	{{"<!-- Custom stylesheet - for your changes -->" |safeHTML}}
-	{{ $custom := resources.Get "css/custom.css" | minify }}
-  <link rel="stylesheet" href="{{ $custom.Permalink }}" media="screen">
+	{{"<!-- Custom stylesheet bundle -->" |safeHTML}}
+	{{ $customParts := slice
+		(resources.Get "css/custom/00-fonts.css")
+		(resources.Get "css/custom/01-tokens.css")
+		(resources.Get "css/custom/02-base-navigation.css")
+		(resources.Get "css/custom/10-home.css")
+		(resources.Get "css/custom/20-article-core.css")
+		(resources.Get "css/custom/21-article-hero-meta.css")
+		(resources.Get "css/custom/22-article-author-related.css")
+		(resources.Get "css/custom/23-article-effects.css")
+		(resources.Get "css/custom/30-funfacts.css")
+		(resources.Get "css/custom/40-footer.css")
+	}}
+	{{ $custom := $customParts | resources.Concat "css/custom.bundle.css" | minify }}
+	<link rel="stylesheet" href="{{ $custom.Permalink }}" media="screen">
 
 	{{ "<!--Favicon-->" | safeHTML }}
 	<!-- <link rel="shortcut icon" href="{{ `images/favicon.ico` | absURL }}" type="image/x-icon"> -->

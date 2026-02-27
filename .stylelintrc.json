@@ -2,7 +2,21 @@
   "extends": ["stylelint-config-standard"],
   "plugins": ["stylelint-order"],
   "rules": {
-    "order/properties-alphabetical-order": true
+    "order/properties-alphabetical-order": true,
+    "selector-class-pattern": [
+      "^[a-z0-9]+(?:[\\-_][a-z0-9]+)*(?:__[a-z0-9]+)?(?:--[a-z0-9]+)?$",
+      {
+        "resolveNestedSelectors": true
+      }
+    ]
   },
-  "ignoreFiles": ["static/plugins/**/*.css", "**/*.min.css"]
+  "ignoreFiles": ["static/plugins/**/*.css", "**/*.min.css", "assets/css/style.css"],
+  "overrides": [
+    {
+      "files": ["assets/css/custom/**/*.css"],
+      "rules": {
+        "no-descending-specificity": null
+      }
+    }
+  ]
 }

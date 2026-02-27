@@ -1,0 +1,131 @@
+/** Section: Author Box Component **/
+.author-box {
+  align-items: center;
+  border-top: 1px solid var(--border-card);
+  display: flex;
+  flex-direction: row;
+  margin-top: 3em;
+  padding-top: 2.5em;
+}
+
+.author-image {
+  flex-basis: 100px;
+  flex-shrink: 0;
+  margin-right: 1.5em;
+}
+
+.author-image img {
+  border-radius: 50%;
+  height: 100px;
+  object-fit: cover;
+  width: 100px;
+}
+
+.author-info {
+  flex-basis: 100%;
+}
+
+.author-name {
+  color: var(--text-base);
+  font-family: Inter, sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0 0 0.25em;
+}
+
+.author-bio {
+  color: var(--text-inkwashed);
+  font-size: 0.95rem;
+  margin: 0 0 1em;
+}
+
+.author-bio p {
+  margin: 0;
+}
+
+.author-social a {
+  background-image: none;
+  color: var(--brand-primary);
+  font-family: Inter, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-right: 1.25em;
+  text-decoration: none;
+}
+
+.author-social a:hover {
+  color: var(--brand-secondary);
+  text-decoration: underline;
+}
+
+.author-box p:first-of-type::first-letter {
+  color: inherit;
+  float: none;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+@media (width <= 768px) {
+  .author-box {
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .author-image {
+    margin-bottom: 1em;
+    margin-right: 0;
+  }
+
+  .author-social a {
+    margin: 0 0.75em;
+  }
+}
+
+/** Section: Related Content Component **/
+.more-like-this {
+  border-top: 1px solid var(--border-card);
+  margin-top: 3em;
+  padding-top: 2.5em;
+}
+
+.more-like-this .section-title {
+  color: var(--text-base);
+  font-family: Inter, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5em;
+}
+
+.related-article-item {
+  margin-bottom: 2em;
+}
+
+.related-article-item h4 {
+  margin: 0;
+}
+
+.related-article-item h4 a {
+  background-image: none;
+  color: var(--brand-primary);
+  font-family: Inter, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.related-article-item h4 a:hover {
+  background-image: none;
+  color: var(--brand-secondary);
+  text-decoration: underline;
+}
+
+.related-article-item p {
+  color: var(--text-inkwashed);
+  font-family: "quattrocento sans", sans-serif;
+  font-size: 0.8rem;
+  margin-top: 0.25em;
+}

@@ -1,0 +1,30 @@
+/** Section: Featured Image Component **/
+.featured-article-image {
+  border-radius: 12px;
+  box-shadow: 0 5px 18px rgb(0 0 0 / 12%);
+  height: auto;
+  margin: 2em 0;
+  max-width: 100%;
+}
+
+@media (width >= 992px) {
+  .featured-article-image {
+    float: right;
+    margin-bottom: 1em;
+    margin-left: 2em;
+    margin-top: 0.5em;
+    width: 45%;
+  }
+}
+
+/** Section: Drop Cap Utility **/
+.post-single-content > p:first-of-type::first-letter {
+  color: var(--brand-primary);
+  float: left;
+  font-family: "Quattrocento Sans", sans-serif;
+  font-size: 4.5rem;
+  font-weight: 700;
+  line-height: 0.8;
+  padding-bottom: 0.05em;
+  padding-right: 0.15em;
+}

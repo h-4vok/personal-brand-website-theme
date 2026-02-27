@@ -1,0 +1,79 @@
+/** Section: Base / Reset **/
+html,
+body {
+  background-color: var(--surface-base);
+  color: var(--text-base) !important;
+  font-family: "Quattrocento Sans", sans-serif;
+  line-height: 1.7;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--custom-primary-text-color) !important;
+  font-family: Inter, sans-serif;
+  font-weight: 700;
+}
+
+a {
+  color: var(--custom-primary-accent-color) !important;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/** Section: Navigation **/
+.navigation {
+  background: var(--custom-navigation-background-color) !important;
+  font-family: Inter, sans-serif;
+}
+
+.navigation a {
+  color: var(--custom-navigation-link-color) !important;
+  font-weight: 800 !important;
+}
+
+a:focus,
+a:hover,
+.navigation a:focus,
+.navigation a:hover {
+  color: var(--brand-secondary) !important;
+  text-decoration: underline;
+}
+
+.navigation a:focus,
+.navigation a:hover {
+  color: var(--text-inverse) !important;
+  opacity: 0.9;
+  text-decoration: underline;
+  transition: 0.5s all;
+}
+
+.bg-one {
+  background: var(--custom-section-background-color) !important;
+}
+
+.hero-area .block {
+  background: transparent !important;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+body,
+h2,
+h3 {
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.title-font-family,
+.post-single-title,
+.post-single-author,
+.post-single-date,
+.post-block h3 {
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
