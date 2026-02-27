@@ -1,148 +1,75 @@
-<h1 align=center>Meghna Hugo Theme - Customised</h1>
+<h1 align="center">Meghna Hugo Theme — Custom Layer</h1>
 
-<p>This is a custom version of the Meghna Hugo theme. I had to make several changes for my own website and I need to git control them. This is not a proper fork of the theme.</p>
-
-<p align="center">Meghna is a dark single page professional Hugo website theme and crafted with all the necessary elements and features you will need to present your business.</p>
-
-
-<h2 align="center"> <a target="_blank" href="https://demo.gethugothemes.com/meghna" rel="nofollow">👀Demo</a> | <a  target="_blank" href="https://pagespeed.web.dev/report?url=https%3A%2F%2Fdemo.gethugothemes.com%2Fmeghna%2Fsite%2F&form_factor=desktop">Page Speed (99%)🚀</a> </h2>
-
-<p align=center>
-  <a href="https://github.com/gohugoio/hugo/releases/tag/v0.147.2" alt="Contributors">
-    <img src="https://img.shields.io/static/v1?label=min-HUGO-version&message=0.147.2&color=f00&logo=hugo" />
-  </a>
-
-  <a href="https://github.com/themefisher/meghna-hugo/blob/master/LICENSE">
-    <img src="https://img.shields.io/github/license/themefisher/meghna-hugo" alt="license"></a>
-
-  <img src="https://img.shields.io/github/languages/code-size/themefisher/meghna-hugo" alt="code size">
-
-  <a href="https://github.com/themefisher/meghna-hugo/graphs/contributors">
-    <img src="https://img.shields.io/github/contributors/themefisher/meghna-hugo" alt="contributors"></a>
-
-  <a href="https://twitter.com/intent/follow?screen_name=gethugothemes">
-    <img src="https://img.shields.io/twitter/follow/gethugothemes?style=social&logo=twitter"
-      alt="follow on Twitter"></a>
-</p>
-
----
+This repository contains the site-specific adaptations of the Meghna Hugo theme. It keeps the original layout and experience but adds a streamlined CSS pipeline, linting + formatting guardrails, and focused usability tweaks for the owning site.
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/37659754/54068559-44d79a80-4278-11e9-9601-f58d6879989c.gif"
-    alt="screenshot" width="100%">
+  <a href="https://demo.gethugothemes.com/meghna" target="_blank" rel="noreferrer">✨ Live demo</a> │
+  <a href="https://pagespeed.web.dev/report?url=https%3A%2F%2Fdemo.gethugothemes.com%2Fmeghna%2Fsite%2F&form_factor=desktop" target="_blank" rel="noreferrer">PageSpeed 99%</a>
 </p>
 
 ---
 
-## 🔑Key Features
-- 🌍 Multilingual Support (with Language Selector)
-- 📚 Taxonomies
-- 🔍 SEO Friendly
-- 📄 Onepage
-- 📝 Blog Support
-- 🔘 Smooth Scroll
-- 📬 Contact Form Support
-- 🗺️ Google Map Support
-- 🖼️ WebP with Fallback Image Support
-- 🔧 Uses Hugo's Asset Generator with Pipelining, Fingerprinting, Bundling, and Minification by Default
+## Overview
+- **Deterministic custom bundle**: `assets/css/custom/` now delivers ten narrowly scoped files (fonts, tokens, navigation, home, article, footer, etc.) that Hugo concatenates via `layouts/partials/head.html` into one minified bundle. Cascade order mirrors the legacy `custom.css`.
+- **Per-file linting**: `stylelint` + `stylelint-order` enforce property ordering and warn about selector smells only on the custom CSS fragments, while `style.css` is explicitly ignored to avoid third-party churn.
+- **Formatting + hooks**: Prettier (`assets/css/**/*.css`) and Husky + lint-staged keep staged CSS files formatted and linted before every commit.
 
+---
 
-## 🔧Local development
-
+## Getting Started
 ```bash
-# clone the repository
-git clone git@github.com:themefisher/meghna-hugo.git
-
-# cd in the project directory
-$ npm run project-setup
-
-# Start local dev server
-$ npm run dev
+git clone git@github.com:h-4vok/personal-brand-website-theme.git
+cd personal-brand-website-theme/themes/meghna-hugo
+npm install
+npm run project-setup
+npm run dev
 ```
 
-Or Check out [Full Documentation](https://docs.gethugothemes.com/meghna/?ref=github).
+Refer to the upstream [Meghna documentation](https://docs.gethugothemes.com/meghna/?ref=github) for additional Hugo-specific knobs.
+
+---
 
 ## CSS Quality
+| Task | Description |
+| --- | --- |
+| `npm run lint:css` | Run Stylelint on `assets/css/**/*.css` (custom bundle only). |
+| `npm run lint:css:fix` | Auto-fix fixable lint problems. |
+| `npm run format:css` | Format staged CSS with Prettier. |
+| `npm run format:css:check` | Check formatting without modifying files. |
+| `npm run quality:css` | Combines `lint:css` + `format:css:check`. |
 
-```bash
-# lint CSS
-npm run lint:css
+Vendor assets under `static/plugins/**` remain outside linting/formatting scope.
 
-# lint and auto-fix CSS
-npm run lint:css:fix
+### Pre-commit (Husky + lint-staged)
+- Hooks are installed via `npm run prepare`.
+- On commit, staged CSS files run `prettier --write`, `stylelint --fix`, then `stylelint`.
+- Commits that leave lint errors block until they are resolved.
 
-# format CSS
-npm run format:css
+---
 
-# check CSS formatting only
-npm run format:css:check
-```
+## Asset structure
+1. `assets/css/custom/` — modular fragments (fonts, tokens, navigation, hero, articles, fun facts, footer).
+2. `layouts/partials/head.html` — builds a Hugo `slice`, concatenates them to `custom.bundle.css`, and minifies the result before emitting a single `<link>` tag.
+3. The old `custom.css` file is removed; refer to the new fragments for targeted tweaks.
 
-Pre-commit checks run automatically with Husky and lint-staged on staged CSS files (`assets/css/**/*.css`).
-Vendor CSS under `static/plugins/**` is excluded from lint/format checks.
+This split keeps each file below ~200 lines when possible without sacrificing semantic grouping.
 
+---
 
+## Contributing
+- Keep visual regressions in check by running `npm run lint:css` and `npm run format:css` before pushing.
+- When adding styles, place them in the appropriate `assets/css/custom/NN-*.css` file and update `head.html` if you need to insert a new ordering slot.
+- If you introduce new CSS tokens/aliases, add them to `01-tokens.css` so they remain discoverable.
 
-## 🔧Deployment and hosting
+Pull requests should reference the CSS quality status and, if they touch assets, run the new tooling locally.
 
-[![Deploy to
-Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/themefisher/meghna-hugo)
+---
 
-Follow the steps.
+## Reporting issues
+Open issues at https://github.com/h-4vok/personal-brand-website-theme/issues. Include reproduction steps, screenshots, and logs for tooling regressions.
 
-<!-- reporting issue -->
-## 🐞Reporting Issues
+---
 
-We use GitHub Issues as the official bug tracker for the Meghna Template. Please Search [existing
-issues](https://github.com/themefisher/meghna-hugo/issues). Someone may have already reported the same problem.
-If your problem or idea has not been addressed yet, feel free to [open a new
-issue](https://github.com/themefisher/meghna-hugo/issues).
-
-## 📱Submit Your Website To Our Showcase
-
-Are you using Meghna Hugo theme? Submit it to our [showcase](https://gethugothemes.com/showcase). 
-
-Our showcase aims to demonstrate to the world what amazing websites people like you have created utilizing our Hugo themes and to show that Hugo has tremendous capabilities as a Static Site Generator. 
-
-View all the websites powered by Meghna Hugo from [here](https://gethugothemes.com/showcase?theme=meghna). 
-
-[Submit](https://gethugothemes.com/showcase?submit=show) your Meghna Hugo powered website.
-
-
-<!-- licence -->
-## 📄License
-
-Copyright &copy; Designed by [Themefisher](https://themefisher.com) & Developed by
-[Gethugothemes](https://gethugothemes.com)
-
-**Code License:** Released under the [MIT](https://github.com/themefisher/meghna-hugo/blob/master/LICENSE) license.
-
-**Image license:** The images are only for demonstration purposes. They have their licenses. We don't have permission to
-share those images.
-
-<!-- resources -->
-## 🙏Special Thanks
-
-- [Bootstrap](https://getbootstrap.com/docs/4.3/getting-started/introduction/)
-- [Jquery](https://jquery.com/download/)
-- [Themify Icons](https://themify.me/themify-icons)
-- [Lozad](https://apoorv.pro/lozad.js/)
-- [Magnific Popup](https://dimsemenov.com/plugins/magnific-popup/)
-- [Slick Slider](https://kenwheeler.github.io/slick/)
-- [Shuffle](https://vestride.github.io/Shuffle/)
-- [Google Fonts](http://fonts.google.com/)
-- [All Contributors](https://github.com/themefisher/meghna-hugo/graphs/contributors)
-
-## 👨‍💻Hire Us
-
-Besides developing unique, blazing-fast Hugo themes, we also provide customized services. We specialize in creating affordable, high-quality static websites based on Hugo.
-
-If you need to customize the theme or complete website development from scratch, you can hire us. **Check Our
-[Services](https://gethugothemes.com/services/?utm_source=meghna_github&utm_medium=referral&utm_campaign=github_theme_readme)**
-
-<!-- premium themes -->
-## 💎Premium Themes By Us
-
-| [![Mega-Bundle-HUGO](https://demo.gethugothemes.com/thumbnails/bundle.png?)](https://gethugothemes.com/bundle/?utm_source=meghna_github&utm_medium=referral&utm_campaign=github_theme_readme) | [![Bigspring](https://demo.gethugothemes.com/thumbnails/bigspring.png)](https://gethugothemes.com/products/bigspring/) | [![Bizcraft](https://demo.gethugothemes.com/thumbnails/bizcraft.png)](https://gethugothemes.com/products/bizcraft/) |
-|:---:|:---:|:---:|
-| **Get 55+ Premium Hugo Themes Bundle** | **Bigspring** | **Bizcraft** |
+## License
+**Code:** MIT (same as upstream Meghna).  
+**Images:** Demo visuals are illustrative; individual licences may apply.
