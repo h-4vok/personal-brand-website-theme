@@ -49,11 +49,6 @@ pre {
   color: var(--text-inverse);
 }
 
-::selection {
-  background: var(--brand-primary);
-  color: var(--text-inverse);
-}
-
 hr {
   border-top: 1px solid rgb(255 255 255 / 10%);
 }
@@ -109,6 +104,7 @@ a:hover {
   color: var(--text-inverse);
   padding: 10px 30px;
   transition: all 0.3s ease-in 0s;
+  cursor: pointer;
 }
 
 .btn-transparent {
@@ -120,6 +116,13 @@ a:hover {
   background-color: var(--brand-primary);
   border: 1px solid transparent;
   color: var(--text-inverse);
+}
+
+.btn:focus,
+.btn.active:focus,
+.btn:active:focus {
+  outline: 0;
+  box-shadow: none;
 }
 
 .border-meghna {
@@ -158,11 +161,6 @@ a:hover {
 }
 
 .btn.active:focus,
-.btn:active:focus,
-.btn:focus {
-  outline: 0;
-}
-
 .bg-one {
   background-color: var(--surface-dark);
 }
@@ -184,15 +182,6 @@ a:hover {
 
 .inline-block {
   display: inline-block;
-}
-
-.btn {
-  cursor: pointer;
-}
-
-.btn.focus,
-.btn:focus {
-  box-shadow: none;
 }
 
 figure {
