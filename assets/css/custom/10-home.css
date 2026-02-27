@@ -1,0 +1,101 @@
+/** Section: Home Components **/
+.hero-area h1 {
+  color: var(--custom-border-lines-color) !important;
+  font-weight: 800;
+}
+
+.team-member {
+  background: var(--custom-section-alternate-background-color) !important;
+  border: 1px solid var(--border-card);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgb(0 0 0 / 5%);
+}
+
+.hero-block h1 {
+  background: 0 0 !important;
+  color: white !important;
+  font-size: 90px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+  text-align: center;
+  text-transform: capitalize;
+  z-index: 99;
+}
+
+.hero-area::before {
+  background: rgb(0 0 0 / 25%) !important;
+}
+
+.copyright p {
+  font-size: 9px;
+}
+
+.post-block {
+  background-color: var(--custom-section-alternate-background-color) !important;
+  border: 1px solid var(--border-card);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgb(0 0 0 / 5%);
+}
+
+.post-block .content {
+  max-height: 525px;
+  min-height: 360px;
+}
+
+.section {
+  padding: 50px 0 0;
+}
+
+.section#team {
+  padding: 100px 0 0;
+}
+
+.post-single-content {
+  color: var(--custom-primary-text-color);
+  text-align: justify;
+}
+
+@media (width <= 480px) {
+  .hero-area .hero-block h1 {
+    font-size: 30px;
+  }
+}
+
+@media (width <= 960px) and (width >= 481px) {
+  .hero-area .block h1 {
+    font-size: 50px;
+  }
+}
+
+.section-bg {
+  background: var(--custom-section-background-color) !important;
+}
+
+.copyright {
+  color: var(--custom-primary-text-color) !important;
+}
+
+.social-icon ul li a {
+  background-color: var(--surface-card);
+  color: var(--brand-primary);
+}
+
+.social-icon ul li a i {
+  background-color: var(--surface-card);
+  color: var(--brand-primary);
+}
+
+.social-icon ul li a:hover,
+.social-icon ul li a:focus,
+.social-icon ul li a:hover i,
+.social-icon ul li a:focus i {
+  background-color: var(--surface-card);
+}
+
+.img-blog {
+  max-height: 325px;
+  min-height: 325px;
+}

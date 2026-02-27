@@ -1,0 +1,38 @@
+/** Section: Design Tokens **/
+:root {
+  --surface-base: #f3f4f6;
+  --surface-muted: #f1f5f9;
+  --surface-soft: #f8f9fa;
+  --surface-card: #fff;
+  --surface-dark: #353b43;
+  --surface-darker: #292f36;
+  --surface-ink: #242930;
+  --text-base: #2c3e50;
+  --text-muted: #737f8a;
+  --text-secondary: #495057;
+  --text-inkwashed: #555;
+  --text-light: #afbac4;
+  --text-inverse: #fff;
+  --text-inverse-soft: rgb(255 255 255 / 80%);
+  --text-inverse-subtle: rgb(255 255 255 / 50%);
+  --brand-primary: #6d28d9;
+  --brand-primary-hover: #1d4ed8;
+  --brand-secondary: #390099;
+  --brand-cta: #4f46e5;
+  --brand-highlight: #ffbd00;
+  --brand-deep: #004a80;
+  --border-subtle: #e2e8f0;
+  --border-card: #e0e0e0;
+  --overlay-soft: rgb(0 0 0 / 25%);
+  --overlay-hero: rgb(0 0 0 / 63%);
+  --custom-background-color: var(--surface-base);
+  --custom-section-background-color: var(--surface-muted);
+  --custom-section-alternate-background-color: var(--surface-card);
+  --custom-primary-text-color: var(--text-base);
+  --custom-primary-accent-color: var(--brand-primary);
+  --custom-secondary-accent-color: var(--brand-secondary);
+  --custom-secondary-accent-color-hover: var(--brand-primary-hover);
+  --custom-border-lines-color: var(--border-subtle);
+  --custom-navigation-background-color: var(--brand-primary);
+  --custom-navigation-link-color: var(--text-inverse);
+}

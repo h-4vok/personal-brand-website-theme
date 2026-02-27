@@ -17,7 +17,7 @@
         </div>
       </div>
       {{"<!-- /section title -->" | safeHTML}}
-      {{ $paginator := .Paginate .Data.Pages }}
+      {{ $paginator := .Paginate .Data.Pages 9 }}
       {{ range $paginator.Pages }}
       {{ .Render "article" }}
       {{ end }}

@@ -1,0 +1,109 @@
+/** Section: Footer Components **/
+.new-footer {
+  background-color: var(--brand-secondary);
+  color: var(--text-inverse);
+  margin: 12em auto 0;
+  padding: 4em 2em;
+}
+
+.footer-container {
+  margin: 0 auto;
+  max-width: 1140px;
+}
+
+.footer-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 2em;
+}
+
+.footer-col {
+  padding: 1em 0;
+}
+
+.footer-col.brand a {
+  font-family: Inter, sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.new-footer .footer-brand-headline,
+.new-footer .footer-brand-headline:visited {
+  color: var(--brand-highlight) !important;
+  text-decoration: none;
+  transition: color 0.2s ease-out;
+}
+
+.new-footer .footer-brand-headline:hover,
+.new-footer .footer-brand-headline:focus-visible {
+  color: var(--text-inverse) !important;
+  text-decoration: none;
+}
+
+.footer-heading {
+  color: var(--text-inverse) !important;
+  font-family: Inter, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 1em;
+  text-transform: uppercase;
+}
+
+.footer-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-list li {
+  margin-bottom: 0.75em;
+}
+
+.footer-list a {
+  color: rgb(255 255 255 / 70%);
+  text-decoration: none;
+  transition: color 0.2s ease-out;
+}
+
+.footer-list a:hover {
+  color: var(--text-inverse);
+  text-decoration: none;
+}
+
+.footer-sub {
+  border-top: 1px solid rgb(255 255 255 / 20%);
+  margin-top: 2em;
+  padding-top: 2em;
+}
+
+.footer-sub p {
+  color: rgb(255 255 255 / 50%);
+  font-size: 0.9rem;
+  margin: 0;
+  text-align: center;
+}
+
+.new-footer .footer-list a {
+  color: rgb(255 255 255 / 70%) !important;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease-out;
+}
+
+.new-footer .footer-list a:hover {
+  color: var(--text-inverse) !important;
+  text-decoration: underline;
+}
+
+@media (width <= 768px) {
+  .footer-main {
+    flex-direction: column;
+  }
+
+  .footer-col {
+    padding: 1.5em 0;
+  }
+}
