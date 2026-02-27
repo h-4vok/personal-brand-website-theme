@@ -1,75 +1,72 @@
-<h1 align="center">Severe Meghna Hugo Theme Variation</h1>
+<h1 align="center">Christian Guzman Hugo Theme</h1>
 
-This repository houses a **severe rewrite** of the Meghna Hugo theme that powers [christianguzman.uk](https://christianguzman.uk). While it builds on the same overall structure, the experience, markup hooks, and especially the tooling around the CSS pipeline have been rebuilt to match the site’s specific needs.
+This repository powers the css-intensive experience behind [christianguzman.uk](https://christianguzman.uk). The layout, tooling, and documentation have been rewritten so the site can ship exactly what Christian needs.
 
 <p align="center">
-  <a href="https://demo.gethugothemes.com/meghna" target="_blank" rel="noreferrer">✨ Live demo</a> │
-  <a href="https://pagespeed.web.dev/report?url=https%3A%2F%2Fdemo.gethugothemes.com%2Fmeghna%2Fsite%2F&form_factor=desktop" target="_blank" rel="noreferrer">PageSpeed 99%</a>
+  <a href="https://christianguzman.uk" target="_blank" rel="noreferrer">Visit the site</a> │
+  <a href="https://christianguzman.uk/blog" target="_blank" rel="noreferrer">Read Christian’s blog</a>
 </p>
 
 ---
 
 ## Overview
-- **Deterministic custom bundle**: `assets/css/custom/` now delivers ten narrowly scoped files (fonts, tokens, navigation, home, article, footer, etc.) that Hugo concatenates via `layouts/partials/head.html` into one minified bundle. Cascade order mirrors the legacy `custom.css`.
-- **Per-file linting**: `stylelint` + `stylelint-order` enforce property ordering and warn about selector smells only on the custom CSS fragments, while `style.css` is explicitly ignored to avoid third-party churn.
-- **Formatting + hooks**: Prettier (`assets/css/**/*.css`) and Husky + lint-staged keep staged CSS files formatted and linted before every commit.
+- **Christian-first identity**: All metadata and documentation now speak to the Christian Guzman brand, so there is no confusion about who owns, maintains, and deploys this repo.
+- **Modular custom styles**: Ten purpose-built fragments under `assets/css/custom/` are concatenated in `layouts/partials/head.html` to recreate the cascade of the legacy `custom.css` while keeping each file focused.
+- **CSS guardrails**: Stylelint + Stylelint Order enforce property ordering on `assets/css/**/*.css`, Prettier keeps formatting consistent, and Husky + lint-staged run both on staged files before every commit.
+- **Single-theme focus**: All assets live here. The earlier bundled demo site was removed, so this repo serves strictly as the Christian Guzman presentation layer.
 
 ---
 
-## Getting Started
+## Getting started
 ```bash
 git clone git@github.com:h-4vok/personal-brand-website-theme.git
-cd personal-brand-website-theme/themes/meghna-hugo
+cd personal-brand-website-theme/themes/<theme-folder>
 npm install
-npm run project-setup
 npm run dev
 ```
 
-Refer to the upstream [Meghna documentation](https://docs.gethugothemes.com/meghna/?ref=github) for additional Hugo-specific knobs.
+This repo lives inside your theme directory (`themes/<theme-folder>`) and Hugo consumes it directly when you point your project at that folder.
 
 ---
 
 ## CSS Quality
 | Task | Description |
 | --- | --- |
-| `npm run lint:css` | Run Stylelint on `assets/css/**/*.css` (custom bundle only). |
-| `npm run lint:css:fix` | Auto-fix fixable lint problems. |
-| `npm run format:css` | Format staged CSS with Prettier. |
-| `npm run format:css:check` | Check formatting without modifying files. |
-| `npm run quality:css` | Combines `lint:css` + `format:css:check`. |
+| `npm run lint:css` | Run Stylelint across the custom CSS fragments. |
+| `npm run lint:css:fix` | Apply Stylelint auto-fixes where possible. |
+| `npm run format:css` | Format all CSS that lives under `assets/css/**`. |
+| `npm run format:css:check` | Dry-run Prettier check for CSS files. |
+| `npm run quality:css` | Run `lint:css` + `format:css:check` as a combined validation step. |
 
-Vendor assets under `static/plugins/**` remain outside linting/formatting scope.
+Vendor or third-party assets (`static/plugins/**`, `**/*.min.css`) are excluded via `.stylelintignore` and `.prettierignore`.
 
 ### Pre-commit (Husky + lint-staged)
-- Hooks are installed via `npm run prepare`.
-- On commit, staged CSS files run `prettier --write`, `stylelint --fix`, then `stylelint`.
-- Commits that leave lint errors block until they are resolved.
+- Hooks install via `npm run prepare`.
+- On `git commit`, staged CSS runs `prettier --write`, `stylelint --fix`, then `stylelint`.
+- Commits fail until Stylelint reports clean output.
 
 ---
 
 ## Asset structure
-1. `assets/css/custom/` — modular fragments (fonts, tokens, navigation, hero, articles, fun facts, footer).
-2. `layouts/partials/head.html` — builds a Hugo `slice`, concatenates them to `custom.bundle.css`, and minifies the result before emitting a single `<link>` tag.
-3. The old `custom.css` file is removed; refer to the new fragments for targeted tweaks.
-
-This split keeps each file below ~200 lines when possible without sacrificing semantic grouping.
+1. `assets/css/custom/00-...40-...css` — modular CSS fragments that are concatenated and minified before emission.
+2. `layouts/partials/head.html` — builds the Hugo slice, merges assets into `custom.bundle.css`, and emits a single `<link>`.
+3. `assets/css/style.css` — the default theme styles shipped with the theme remain untouched; only the custom fragments are linted/formatting-managed.
 
 ---
 
 ## Contributing
-- Keep visual regressions in check by running `npm run lint:css` and `npm run format:css` before pushing.
-- When adding styles, place them in the appropriate `assets/css/custom/NN-*.css` file and update `head.html` if you need to insert a new ordering slot.
-- If you introduce new CSS tokens/aliases, add them to `01-tokens.css` so they remain discoverable.
-
-Pull requests should reference the CSS quality status and, if they touch assets, run the new tooling locally.
+- When updating styles, add the rules to the relevant `assets/css/custom/NN-*.css` file and keep the cascade order stable.
+- If you need new tokens, add them to `assets/css/custom/01-tokens.css` so the other fragments can reuse them.
+- Run `npm run format:css` and `npm run lint:css` before pushing; Husky ensures staged files are reported early.
+- Somebody else on Christian’s team must sign off on visual regressions before deploying to production.
 
 ---
 
 ## Reporting issues
-Open issues at https://github.com/h-4vok/personal-brand-website-theme/issues. Include reproduction steps, screenshots, and logs for tooling regressions.
+Open an issue at [https://github.com/h-4vok/personal-brand-website-theme/issues](https://github.com/h-4vok/personal-brand-website-theme/issues). Include reproduction steps, screenshots, and tooling logs if the problem involves linting or formatting.
 
 ---
 
 ## License
-**Code:** MIT (same as upstream Meghna).  
-**Images:** Demo visuals are illustrative; individual licences may apply.
+**Code:** MIT (see `LICENSE`).  
+**Images:** Demo visuals are illustrative; please check their original sources.

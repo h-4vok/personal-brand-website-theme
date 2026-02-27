@@ -11,7 +11,7 @@
 				<div class="title text-center wow fadeIn" data-wow-duration="500ms">
 					<h2>{{ with .title }} {{ index (split . " ") 0 | safeHTML }} {{ end }}<span class="color">
 							{{ with .title }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}</span></h2>
-					<div class="border-meghna"></div>
+					<div class="border-guzman"></div>
 				</div>
 			</div>
 			{{"<!-- /section title -->" | safeHTML}}
@@ -37,7 +37,7 @@
 			{{ if .contact_form.enable }}
 			{{ with .contact_form }}
 			<div class="col-lg-6 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
-				<form id="contact-form" class="form-meghna" method="post" action="{{ .form_action }}" role="form">
+				<form id="contact-form" class="form-guzman" method="post" action="{{ .form_action }}" role="form">
 					<div class="form-group">
 						<input type="text" placeholder="{{ .name }}" class="form-control" name="name" id="name">
 					</div>

@@ -1,10 +1,10 @@
 /*
-Template Name: Meghna Responsive HTML5/CSS3 Business Template
-Author: Themefisher
-Author URI: www.Themefisher.com
-Description: Meghna Responsive HTML5/CSS3 Portfolio Template
+Template Name: Christian Guzman Personal Brand Theme
+Author: Christian Guzman
+Author URI: https://christianguzman.uk
+Description: The Hugo pack for christianguzman.uk, built with adaptive styles and editorial layouts.
 Version: 1.3
-Tags: one-page, single-page, portfolio, custom-colors, post-formats, responsive, html5, css3
+Tags: one-page, personal-brand, editorial, responsive, html5, css3
 */
 
 /** Section: Media Query Helpers **/
@@ -125,7 +125,7 @@ a:hover {
   box-shadow: none;
 }
 
-.border-meghna {
+.border-guzman {
   border-top: 2px solid rgb(236 239 241 / 7%);
   height: 1px;
   margin: 15px auto 0;
@@ -133,7 +133,7 @@ a:hover {
   width: 30%;
 }
 
-.border-meghna::before {
+.border-guzman::before {
   background-color: var(--brand-primary);
   content: "";
   height: 6px;
@@ -662,7 +662,7 @@ a:hover {
   margin-bottom: 60px;
 }
 
-.form-meghna .form-control {
+.form-guzman .form-control {
   background-color: transparent;
   border: 1px solid rgb(236 239 241 / 7%);
   border-radius: 0;
@@ -670,13 +670,13 @@ a:hover {
   padding: 5px 10px;
 }
 
-.form-meghna .form-control:focus {
+.form-guzman .form-control:focus {
   border-color: none;
   box-shadow: none;
 }
 
-.form-meghna input:hover,
-.form-meghna textarea:hover {
+.form-guzman input:hover,
+.form-guzman textarea:hover {
   border-color: var(--brand-primary);
 }
 
@@ -693,7 +693,7 @@ a:hover {
   border-color: #2c9091;
 }
 
-.form-meghna ::placeholder {
+.form-guzman ::placeholder {
   color: #ddd !important;
 }
 
@@ -1944,14 +1944,14 @@ blockquote {
   margin: 0;
 }
 
-.form-control-meghna .form-control {
+.form-control-guzman .form-control {
   background-color: transparent;
   border: 1px solid rgb(236 239 241 / 7%);
   color: #ddd;
   padding: 5px 10px;
 }
 
-.form-control-meghna .form-control:focus {
+.form-control-guzman .form-control:focus {
   border-color: var(--brand-primary);
   box-shadow: 0 0 0 0.2rem rgb(0 174 255 / 43.2%);
 }

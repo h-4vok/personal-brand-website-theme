@@ -1,13 +1,13 @@
-name = "Meghna Hugo"
+name = "Christian Guzman Personal Theme"
 license = "MIT"
-licenselink = "https://github.com/themefisher/meghna-hugo/blob/master/LICENSE"
-description = "Meghna Hugo is a responsive, minimalist, lightweight, and fast loading one-page business theme built with HTML5/CSS3, Hugo, JavaScript, and JQuery."
-homepage = "https://gethugothemes.com/products/meghna-hugo-theme/"
-demosite = "https://demo.gethugothemes.com/meghna/"
-tags = ['landing-page', 'google-analytics', 'fast', 'modern', 'minimal', 'minimalistic', 'business', 'agency-template', 'themefisher', 'hugo-theme', 'hugo-templates', 'bootstrap', 'blog', 'responsive', 'portfolio', 'single-page', 'dark', 'clean', 'simple', 'company', 'creative', 'contact-form', 'custom-themes', 'mobile', 'gethugothemes']
+licenselink = "https://github.com/h-4vok/personal-brand-website-theme/blob/main/LICENSE"
+description = "The custom CSS-heavy Hugo presentation layer used for christianguzman.uk, focused on Christian Guzman’s portfolio and editorial work."
+homepage = "https://christianguzman.uk"
+demosite = "https://christianguzman.uk"
+tags = ['personal-brand', 'portfolio', 'journal', 'css-focus', 'responsive', 'christian-guzman', 'landing-page', 'blog', 'dark', 'clean', 'agency']
 features = ['bootstrap','responsive']
 min_version = "0.147.2"
 
 [author]
-  name = "Themefisher"
-  homepage = "https://themefisher.com/hugo-themes"
+  name = "Christian Guzman"
+  homepage = "https://christianguzman.uk"
