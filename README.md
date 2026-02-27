@@ -62,6 +62,25 @@ $ npm run dev
 
 Or Check out [Full Documentation](https://docs.gethugothemes.com/meghna/?ref=github).
 
+## CSS Quality
+
+```bash
+# lint CSS
+npm run lint:css
+
+# lint and auto-fix CSS
+npm run lint:css:fix
+
+# format CSS
+npm run format:css
+
+# check CSS formatting only
+npm run format:css:check
+```
+
+Pre-commit checks run automatically with Husky and lint-staged on staged CSS files (`assets/css/**/*.css`).
+Vendor CSS under `static/plugins/**` is excluded from lint/format checks.
+
 
 
 ## 🔧Deployment and hosting

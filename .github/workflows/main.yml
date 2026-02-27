@@ -54,6 +54,10 @@ jobs:
       - name: Install npm dependencies
         run: npm install
 
+      - name: CSS quality checks
+        run: npm run quality:css
+        continue-on-error: true
+
       - name: Publish to GitHub Pages
         run: npm run build
 

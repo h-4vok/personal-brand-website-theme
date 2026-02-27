@@ -12,6 +12,28 @@
     "test:example": "cd exampleSite; hugo server --themesDir ../.. --disableFastRender --navigateToChanged --templateMetrics --templateMetricsHints --buildDrafts --buildExpired --buildFuture --watch --forceSyncStatic -e production --minify",
     "update-modules": "node ./scripts/clearModules.js && hugo mod clean --all && hugo mod get -u ./... && hugo mod tidy",
     "project-setup": "node ./scripts/projectSetup.js",
-    "theme-setup": "node ./scripts/themeSetup.js"
+    "theme-setup": "node ./scripts/themeSetup.js",
+    "lint:css": "stylelint \"assets/css/**/*.css\"",
+    "lint:css:fix": "stylelint \"assets/css/**/*.css\" --fix",
+    "format:css": "prettier --write \"assets/css/**/*.css\"",
+    "format:css:check": "prettier --check \"assets/css/**/*.css\"",
+    "quality:css": "npm run lint:css && npm run format:css:check",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "assets/css/**/*.css": [
+      "prettier --write",
+      "stylelint --fix",
+      "stylelint"
+    ]
+  },
+  "devDependencies": {
+    "husky": "^8.0.3",
+    "lint-staged": "^12.5.0",
+    "prettier": "^3.8.1",
+    "prettier-plugin-go-template": "^0.0.15",
+    "stylelint": "^15.11.0",
+    "stylelint-config-standard": "^34.0.0",
+    "stylelint-order": "^6.0.3"
   }
 }

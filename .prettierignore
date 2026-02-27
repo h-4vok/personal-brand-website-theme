@@ -1,0 +1,4 @@
+static/plugins/**
+public/**
+resources/**
+node_modules/**
