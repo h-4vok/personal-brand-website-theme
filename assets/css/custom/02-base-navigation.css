@@ -27,14 +27,15 @@ a {
 
 /** Section: Navigation **/
 .navigation {
-  background: var(--custom-navigation-background-color) !important;
+  backdrop-filter: blur(6px);
+  background: rgb(249 248 246 / 88%) !important;
   border-bottom: 1px solid rgb(17 17 17 / 10%);
   font-family: Inter, sans-serif;
+  width: 100%;
 }
 
 .navigation .navbar {
-  backdrop-filter: blur(6px);
-  background: rgb(249 248 246 / 88%);
+  background: transparent;
 }
 
 .navigation .navbar-brand {

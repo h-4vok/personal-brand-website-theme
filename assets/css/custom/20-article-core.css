@@ -128,9 +128,10 @@ a,
   .post-single-section div.container {
     border-radius: 12px;
     box-shadow: 0 5px 25px rgb(0 0 0 / 7%);
-    margin: 3em auto;
-    max-width: 125ch;
+    margin: 3em auto 0;
+    max-width: 1140px;
     padding: 3em 4em;
+    width: 100%;
   }
 }
 
