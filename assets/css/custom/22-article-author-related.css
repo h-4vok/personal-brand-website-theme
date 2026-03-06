@@ -137,8 +137,8 @@
 .related-article-item p {
   color: var(--text-inkwashed);
   font-family: Inter, sans-serif;
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   letter-spacing: 0.02em;
   margin-top: 0.25em;
-  text-transform: uppercase;
+  text-transform: none !important;
 }
