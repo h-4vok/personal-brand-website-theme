@@ -36,3 +36,15 @@
   --custom-navigation-background-color: var(--brand-primary);
   --custom-navigation-link-color: var(--text-inverse);
 }
+
+/* Global visual scale target: emulate 125% browser zoom */
+html {
+  font-size: 125%;
+}
+
+@supports (zoom: 1) {
+  html {
+    font-size: 100%;
+    zoom: 1.25;
+  }
+}
