@@ -38,7 +38,9 @@
 
           </div>
 
-          {{ partial "image.html" (dict "Src" .Params.Image "Alt" "Blog Image" "Class" "img-fluid mb-50 lozad featured-article-image") }}
+          {{ if ne .Type "manifesto" }}
+            {{ partial "image.html" (dict "Src" .Params.Image "Alt" "Blog Image" "Class" "img-fluid mb-50 lozad featured-article-image") }}
+          {{ end }}
 
           {{ .Content }}
 
