@@ -65,6 +65,15 @@ a:hover,
   transition: 0.24s ease;
 }
 
+.power-thesis__btn,
+.power-thesis__btn:visited,
+.power-thesis__btn:hover,
+.power-thesis__btn:focus,
+.power-thesis__btn:active {
+  text-decoration: none !important;
+  text-decoration-color: transparent !important;
+}
+
 .navigation .navbar-toggler {
   border-color: rgb(17 17 17 / 20%);
 }

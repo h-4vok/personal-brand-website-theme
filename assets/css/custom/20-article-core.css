@@ -103,7 +103,7 @@ a,
   color: var(--text-base);
 }
 
-.post-single-section a {
+.post-single-section a:not(.power-thesis__btn) {
   background-image: linear-gradient(
     to right,
     var(--text-muted),
@@ -119,7 +119,7 @@ a,
     color 0.3s ease-out;
 }
 
-.post-single-section a:hover {
+.post-single-section a:not(.power-thesis__btn):hover {
   background-size: 100% 2px;
   color: var(--brand-primary);
 }
