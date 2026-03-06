@@ -99,3 +99,112 @@
   max-height: 325px;
   min-height: 325px;
 }
+
+/* Power Thesis Hero */
+.power-thesis {
+  padding: clamp(6.5rem, 14vh, 10rem) 0 clamp(7rem, 13vh, 10.5rem);
+}
+
+.power-thesis__inner {
+  margin: 0 auto 80px;
+  max-width: 76rem;
+}
+
+.power-thesis__headline {
+  color: #fff;
+  font-size: clamp(2.25rem, 7vw, 5rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin: 0 auto;
+  max-width: 18ch;
+  text-wrap: balance;
+}
+
+.power-thesis__subheadline {
+  color: #1a1a1a;
+  font-size: clamp(1.125rem, 2.9vw, 1.5rem);
+  font-weight: 500;
+  line-height: 1.4;
+  margin: clamp(1.2rem, 3vw, 1.75rem) auto 0;
+  max-width: 600px;
+}
+
+.power-thesis__actions {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  justify-content: center;
+  margin-top: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.power-thesis__btn {
+  border: 1px solid transparent;
+  border-radius: 4px;
+  display: inline-flex;
+  font-size: 1rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1.2;
+  min-width: min(100%, 20rem);
+  padding: 12px 24px;
+  text-decoration: none;
+  transition: all 0.22s ease;
+  width: 100%;
+}
+
+.power-thesis__btn--primary {
+  background: #000;
+  border-color: #000;
+  color: #fff;
+  margin-bottom: 0.75rem;
+}
+
+.power-thesis__btn--primary:hover,
+.power-thesis__btn--primary:focus {
+  background: #111;
+  border-color: #111;
+  color: #fff;
+}
+
+.power-thesis__btn--ghost {
+  background: transparent;
+  border: 1px solid #000;
+  color: #000;
+}
+
+.power-thesis__btn--ghost:hover,
+.power-thesis__btn--ghost:focus {
+  background: rgb(0 0 0 / 5%);
+  border-color: #000;
+  color: #000;
+}
+
+@media (width >= 768px) {
+  .power-thesis {
+    padding: clamp(7.5rem, 16vh, 12rem) 0 clamp(8rem, 14vh, 11rem);
+  }
+
+  .power-thesis__subheadline {
+    margin-top: 2rem;
+  }
+
+  .power-thesis__inner {
+    margin-bottom: 96px;
+  }
+
+  .power-thesis__actions {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .power-thesis__btn {
+    min-width: 15.5rem;
+    width: auto;
+  }
+
+  .power-thesis__btn--primary {
+    margin-bottom: 0;
+  }
+}
