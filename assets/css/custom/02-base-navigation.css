@@ -96,6 +96,7 @@ a:hover,
     justify-content: space-between;
     padding-bottom: 0.38rem;
     padding-top: 0.38rem;
+    position: relative;
   }
 
   .navigation .navbar-brand {
@@ -117,13 +118,21 @@ a:hover,
   }
 
   .navigation .navbar-collapse.show {
-    padding-top: 0.6rem;
+    background: var(--surface-base);
+    border-top: 0;
+    box-shadow: none;
+    background: var(--surface-base);
+    display: block !important;
+    margin-top: 0;
+    padding: 0.7rem 0.9rem 0.95rem;
+    position: static;
+    width: 100%;
   }
 
   .navigation .navbar:has(.navbar-collapse.show) .navbar-brand {
-    opacity: 0;
-    pointer-events: none;
-    visibility: hidden;
+    max-width: calc(100% - 52px);
+    opacity: 1 !important;
+    visibility: visible;
   }
 
   .navigation .navbar-toggler {
@@ -137,7 +146,9 @@ a:hover,
     justify-content: center;
     margin-left: auto;
     padding: 0;
+    position: relative;
     width: 32px;
+    z-index: 1100;
   }
 
   .navigation .navbar-toggler:focus,
@@ -174,29 +185,29 @@ a:hover,
   }
 
   .navigation .navbar-collapse .navbar-nav {
+    margin: 0 auto !important;
     text-align: center;
     width: 100%;
   }
 
   .navigation .navbar-collapse .navbar-nav .nav-item {
+    margin-bottom: 0.85rem;
     width: 100%;
   }
 
   .navigation .navbar-collapse .navbar-nav .nav-link {
-    display: inline-block;
+    display: block;
     font-family: Inter, sans-serif;
-    font-size: 1.2rem;
+    font-size: 0.7rem;
     font-weight: 500 !important;
-    letter-spacing: 0.01em;
-    padding: 0.7rem 0;
-    text-transform: none;
+    letter-spacing: 0.1em;
+    line-height: 1.2;
+    padding: 0.36rem 0;
+    text-transform: uppercase;
   }
 
-  .navigation .navbar-collapse .navbar-nav .nav-item:last-child .nav-link {
-    border: 1px solid var(--text-base);
-    border-radius: 4px;
-    margin-top: 0.5rem;
-    padding: 0.62rem 1.2rem;
+  .navigation .navbar-collapse .navbar-nav .nav-item:last-child {
+    margin-bottom: 0.85rem;
   }
 }
 
