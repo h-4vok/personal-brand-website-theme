@@ -9,7 +9,9 @@
 
       <div class="author-social">
         {{ range site.Params.footer.socialLinks }}
+          {{ if eq (lower .name) "linkedin" }}
           <a href="{{ .link | safeURL }}" target="_blank" rel="noopener">{{ .name }}</a>
+          {{ end }}
         {{ end }}
       </div>
     </div>

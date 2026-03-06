@@ -2,7 +2,9 @@
 
 {{ partial "navigation.html" . }}
 
+{{ if not (hasPrefix .RelPermalink "/articles/") }}
 {{ partial "blog-breadcrumb.html" . }}
+{{ end }}
 
 {{"<!-- Start Blog Section -->" | safeHTML}}
 <section id="blog" class="section">

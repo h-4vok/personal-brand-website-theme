@@ -87,9 +87,9 @@
 .footer-sub p {
   color: var(--text-base);
   font-family: Inter, sans-serif;
-  font-size: 0.9rem;
+  font-size: 0.74rem;
   font-weight: 600;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.14em;
   margin: 0;
   text-align: center;
   text-transform: uppercase;
