@@ -1,14 +1,14 @@
 /** Section: Design Tokens **/
 :root {
-  --surface-base: #f3f4f6;
-  --surface-muted: #f1f5f9;
-  --surface-soft: #f8f9fa;
+  --surface-base: #f9f8f6;
+  --surface-muted: #f1f0ee;
+  --surface-soft: #f5f4f2;
   --surface-card: #fff;
   --surface-dark: #353b43;
   --surface-darker: #292f36;
   --surface-ink: #242930;
-  --text-base: #2c3e50;
-  --text-muted: #737f8a;
+  --text-base: #111;
+  --text-muted: #64748b;
   --text-secondary: #495057;
   --text-inkwashed: #555;
   --text-light: #afbac4;
@@ -33,8 +33,8 @@
   --custom-secondary-accent-color: var(--brand-secondary);
   --custom-secondary-accent-color-hover: var(--brand-primary-hover);
   --custom-border-lines-color: var(--border-subtle);
-  --custom-navigation-background-color: var(--brand-primary);
-  --custom-navigation-link-color: var(--text-inverse);
+  --custom-navigation-background-color: transparent;
+  --custom-navigation-link-color: var(--text-base);
 }
 
 /* Global visual scale target: emulate 125% browser zoom */

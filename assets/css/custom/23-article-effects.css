@@ -19,9 +19,9 @@
 
 /** Section: Drop Cap Utility **/
 .post-single-content > p:first-of-type::first-letter {
-  color: var(--brand-primary);
+  color: var(--text-base);
   float: left;
-  font-family: "Quattrocento Sans", sans-serif;
+  font-family: "EB Garamond", serif;
   font-size: 4.5rem;
   font-weight: 700;
   line-height: 0.8;

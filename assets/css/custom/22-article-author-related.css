@@ -28,14 +28,18 @@
 .author-name {
   color: var(--text-base);
   font-family: Inter, sans-serif;
-  font-size: 1.3rem;
-  font-weight: 700;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
   margin: 0 0 0.25em;
+  text-transform: uppercase;
 }
 
 .author-bio {
   color: var(--text-inkwashed);
+  font-family: Inter, sans-serif;
   font-size: 0.95rem;
+  line-height: 1.6;
   margin: 0 0 1em;
 }
 
@@ -45,7 +49,7 @@
 
 .author-social a {
   background-image: none;
-  color: var(--brand-primary);
+  color: var(--text-base);
   font-family: Inter, sans-serif;
   font-size: 0.9rem;
   font-weight: 600;
@@ -54,8 +58,10 @@
 }
 
 .author-social a:hover {
-  color: var(--brand-secondary);
+  color: var(--text-base);
   text-decoration: underline;
+  text-decoration-color: var(--brand-primary);
+  text-decoration-thickness: 2px;
 }
 
 .author-box p:first-of-type::first-letter {
@@ -95,9 +101,11 @@
 .more-like-this .section-title {
   color: var(--text-base);
   font-family: Inter, sans-serif;
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
   margin-bottom: 1.5em;
+  text-transform: uppercase;
 }
 
 .related-article-item {
@@ -110,22 +118,27 @@
 
 .related-article-item h4 a {
   background-image: none;
-  color: var(--brand-primary);
-  font-family: Inter, sans-serif;
-  font-size: 1.1rem;
+  color: var(--text-base);
+  font-family: "EB Garamond", serif;
+  font-size: 1.35rem;
   font-weight: 600;
+  letter-spacing: -0.02em;
   text-decoration: none;
 }
 
 .related-article-item h4 a:hover {
   background-image: none;
-  color: var(--brand-secondary);
+  color: var(--text-base);
   text-decoration: underline;
+  text-decoration-color: var(--brand-primary);
+  text-decoration-thickness: 2px;
 }
 
 .related-article-item p {
   color: var(--text-inkwashed);
-  font-family: "quattrocento sans", sans-serif;
-  font-size: 0.8rem;
+  font-family: Inter, sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
   margin-top: 0.25em;
+  text-transform: uppercase;
 }

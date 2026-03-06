@@ -1,14 +1,15 @@
 /** Section: Article Hero Component **/
 .article-hero {
-  background-color: var(--text-base);
-  color: var(--text-inverse);
-  padding: 3.5em 2em;
+  background-color: var(--surface-muted);
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--text-base);
+  padding: 4.25em 2em;
   text-align: center;
 }
 
 .article-hero .category-link {
   border-radius: 4px;
-  color: var(--brand-highlight);
+  color: var(--text-base);
   font-size: 0.9rem;
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -17,21 +18,22 @@
 }
 
 .article-hero h1 {
-  color: var(--text-inverse) !important;
-  font-size: 2.8rem;
+  color: var(--text-base) !important;
+  font-family: "EB Garamond", serif;
+  font-size: clamp(2.7rem, 4.6vw, 4rem);
   font-weight: 700 !important;
+  letter-spacing: -0.03em;
   margin-bottom: 0.25em;
   margin-top: 0.25em;
 }
 
 .article-hero h2.subtitle {
-  color: var(--text-inverse-soft) !important;
+  color: var(--text-muted) !important;
   font-size: 1.2rem;
-  font-weight: 300 !important;
+  font-weight: 500 !important;
   margin-left: auto;
   margin-right: auto;
   max-width: 65ch;
-  text-shadow: 1px 1px 3px rgb(0 0 0 / 50%);
 }
 
 .article-hero .subtitle {
@@ -54,14 +56,14 @@
 }
 
 .reading-time {
-  color: var(--text-inkwashed);
+  color: var(--text-muted);
   font-family: Inter, sans-serif;
   font-size: 0.9rem;
   margin-bottom: 0.5em;
 }
 
 .reading-time .ti-timer {
-  color: var(--brand-primary);
+  color: var(--text-muted);
   margin-right: 0.5em;
 }
 
@@ -114,12 +116,13 @@
 }
 
 .article-meta .resp-sharing-button__link:hover .resp-sharing-button {
-  background-color: var(--brand-primary) !important;
-  border-color: var(--brand-primary) !important;
+  background-color: var(--surface-card) !important;
+  border: 1px solid var(--text-base) !important;
+  border-color: var(--text-base) !important;
 }
 
 .article-meta .resp-sharing-button__link:hover .resp-sharing-button svg {
-  fill: #fff !important;
+  fill: var(--text-base) !important;
 }
 
 .article-meta .resp-sharing-button__link:hover {

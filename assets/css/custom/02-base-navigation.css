@@ -3,8 +3,8 @@ html,
 body {
   background-color: var(--surface-base);
   color: var(--text-base) !important;
-  font-family: "Quattrocento Sans", sans-serif;
-  line-height: 1.7;
+  font-family: Inter, "Quattrocento Sans", sans-serif;
+  line-height: 1.6;
 }
 
 h1,
@@ -14,12 +14,13 @@ h4,
 h5,
 h6 {
   color: var(--custom-primary-text-color) !important;
-  font-family: Inter, sans-serif;
+  font-family: "EB Garamond", serif;
   font-weight: 700;
+  letter-spacing: -0.03em;
 }
 
 a {
-  color: var(--custom-primary-accent-color) !important;
+  color: var(--text-base) !important;
   font-weight: 500;
   text-decoration: none;
 }
@@ -27,28 +28,49 @@ a {
 /** Section: Navigation **/
 .navigation {
   background: var(--custom-navigation-background-color) !important;
+  border-bottom: 1px solid rgb(17 17 17 / 10%);
   font-family: Inter, sans-serif;
+}
+
+.navigation .navbar {
+  backdrop-filter: blur(6px);
+  background: rgb(249 248 246 / 88%);
+}
+
+.navigation .navbar-brand {
+  color: var(--text-base) !important;
+  font-family: "EB Garamond", serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 .navigation a {
   color: var(--custom-navigation-link-color) !important;
-  font-weight: 800 !important;
+  font-size: 0.85rem;
+  font-weight: 600 !important;
+  letter-spacing: 0.05em;
+  text-decoration-thickness: 1px;
+  text-transform: uppercase;
+  text-underline-offset: 0.22em;
 }
 
 a:focus,
 a:hover,
 .navigation a:focus,
 .navigation a:hover {
-  color: var(--brand-secondary) !important;
+  color: var(--text-base) !important;
   text-decoration: underline;
+  text-decoration-color: var(--brand-primary);
+  transition: 0.24s ease;
 }
 
-.navigation a:focus,
-.navigation a:hover {
-  color: var(--text-inverse) !important;
-  opacity: 0.9;
-  text-decoration: underline;
-  transition: 0.5s all;
+.navigation .navbar-toggler {
+  border-color: rgb(17 17 17 / 20%);
+}
+
+.navigation .navbar-toggler-icon {
+  filter: brightness(0.1);
 }
 
 @media (width >= 992px) {

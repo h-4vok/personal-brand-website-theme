@@ -1,7 +1,9 @@
 /** Section: Article Typography **/
 .post-single-title {
-  color: var(--text-inverse);
+  color: var(--text-base);
+  font-family: "EB Garamond", serif;
   font-size: 3.5rem;
+  letter-spacing: -0.03em;
 }
 
 .video-figure {
@@ -45,15 +47,15 @@ a,
 
 .post-single-section p i,
 .post-single-section p em {
-  color: #004a80;
+  color: var(--text-base);
   -webkit-font-smoothing: antialiased;
   font-style: italic;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .post-single-section blockquote {
   background-color: var(--surface-soft);
-  border-left: 5px solid var(--brand-highlight);
+  border-left: 2px solid var(--text-muted);
   color: var(--text-secondary);
   margin: 2em 0;
   padding: 1.5em 2em;
@@ -85,30 +87,32 @@ a,
   padding: 1.5em;
 }
 
+.post-single-section h1,
 .post-single-section h2,
 .post-single-section h3,
 .post-single-section h4 {
-  color: var(--custom-secondary-accent-color) !important;
-  font-family: "Quattrocento Sans", sans-serif;
+  color: var(--text-base) !important;
+  font-family: "EB Garamond", serif;
   font-weight: 700;
-  margin-bottom: 1em;
-  margin-top: 2.5em;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+  margin-top: 3rem;
 }
 
 .post-single-section strong {
-  color: var(--brand-primary);
+  color: var(--text-base);
 }
 
 .post-single-section a {
   background-image: linear-gradient(
     to right,
-    var(--brand-primary),
-    var(--brand-primary)
+    var(--text-muted),
+    var(--text-muted)
   );
   background-position: 0% 100%;
   background-repeat: no-repeat;
   background-size: 0% 2px;
-  color: var(--brand-primary);
+  color: var(--text-base);
   text-decoration: none;
   transition:
     background-size 0.3s ease-out,
@@ -117,7 +121,7 @@ a,
 
 .post-single-section a:hover {
   background-size: 100% 2px;
-  color: var(--brand-secondary);
+  color: var(--brand-primary);
 }
 
 @media (width >= 768px) {
@@ -137,11 +141,42 @@ a,
 }
 
 .breadcrumbs-section {
-  padding: 25px 0 0;
+  padding: 22px 0 0;
 }
 
 .breadcrumb {
-  background-color: var(--custom-background-color);
+  background-color: transparent;
+  color: var(--text-muted);
+  font-family: Inter, sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+.breadcrumb .breadcrumb-item,
+.breadcrumb .list-inline-item {
+  color: var(--text-muted);
+}
+
+.breadcrumb .breadcrumb-item a {
+  color: var(--text-base) !important;
+  text-decoration: none;
+}
+
+.breadcrumb .breadcrumb-item a:hover,
+.breadcrumb .breadcrumb-item a:focus {
+  color: var(--text-base) !important;
+  text-decoration: underline;
+  text-decoration-color: var(--brand-primary);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.18em;
+}
+
+.breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+  color: var(--text-muted);
+  padding-right: 0.4rem;
 }
 
 .list-inline-item:not(:last-child) {

@@ -1,7 +1,8 @@
 /** Section: Footer Components **/
 .new-footer {
-  background-color: var(--brand-secondary);
-  color: var(--text-inverse);
+  background-color: var(--surface-muted);
+  border-top: 1px solid #e2e8f0;
+  color: var(--text-base);
   margin: 12em auto 0;
   padding: 4em 2em;
 }
@@ -23,7 +24,7 @@
 }
 
 .footer-col.brand a {
-  font-family: Inter, sans-serif;
+  font-family: "EB Garamond", serif;
   font-size: 1.8rem;
   font-weight: 700;
   text-decoration: none;
@@ -31,19 +32,21 @@
 
 .new-footer .footer-brand-headline,
 .new-footer .footer-brand-headline:visited {
-  color: var(--brand-highlight) !important;
+  color: var(--text-base) !important;
   text-decoration: none;
   transition: color 0.2s ease-out;
 }
 
 .new-footer .footer-brand-headline:hover,
 .new-footer .footer-brand-headline:focus-visible {
-  color: var(--text-inverse) !important;
-  text-decoration: none;
+  color: var(--text-base) !important;
+  text-decoration: underline;
+  text-decoration-color: var(--brand-primary);
+  text-decoration-thickness: 2px;
 }
 
 .footer-heading {
-  color: var(--text-inverse) !important;
+  color: var(--text-base) !important;
   font-family: Inter, sans-serif;
   font-size: 1.1rem;
   font-weight: 600;
@@ -63,39 +66,47 @@
 }
 
 .footer-list a {
-  color: rgb(255 255 255 / 70%);
+  color: var(--text-base);
   text-decoration: none;
   transition: color 0.2s ease-out;
 }
 
 .footer-list a:hover {
-  color: var(--text-inverse);
-  text-decoration: none;
+  color: var(--text-base);
+  text-decoration: underline;
+  text-decoration-color: var(--brand-primary);
+  text-decoration-thickness: 2px;
 }
 
 .footer-sub {
-  border-top: 1px solid rgb(255 255 255 / 20%);
+  border-top: 1px solid #e2e8f0;
   margin-top: 2em;
   padding-top: 2em;
 }
 
 .footer-sub p {
-  color: rgb(255 255 255 / 50%);
+  color: var(--text-base);
+  font-family: Inter, sans-serif;
   font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
   margin: 0;
   text-align: center;
+  text-transform: uppercase;
 }
 
 .new-footer .footer-list a {
-  color: rgb(255 255 255 / 70%) !important;
+  color: var(--text-base) !important;
   font-weight: 500;
   text-decoration: none;
   transition: color 0.2s ease-out;
 }
 
 .new-footer .footer-list a:hover {
-  color: var(--text-inverse) !important;
+  color: var(--text-base) !important;
   text-decoration: underline;
+  text-decoration-color: var(--brand-primary);
+  text-decoration-thickness: 2px;
 }
 
 @media (width <= 768px) {

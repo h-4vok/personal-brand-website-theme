@@ -157,28 +157,55 @@
 .power-thesis__btn--primary {
   background: #000;
   border-color: #000;
-  color: #fff;
+  color: var(--text-inverse) !important;
   margin-bottom: 0.75rem;
+}
+
+.power-thesis__actions .power-thesis__btn--primary {
+  color: var(--text-inverse) !important;
 }
 
 .power-thesis__btn--primary:hover,
 .power-thesis__btn--primary:focus {
   background: #111;
   border-color: #111;
-  color: #fff;
+  color: var(--text-inverse) !important;
 }
 
 .power-thesis__btn--ghost {
   background: transparent;
-  border: 1px solid #000;
-  color: #000;
+  border: 1px solid var(--text-base);
+  color: var(--text-base) !important;
 }
 
 .power-thesis__btn--ghost:hover,
 .power-thesis__btn--ghost:focus {
   background: rgb(0 0 0 / 5%);
-  border-color: #000;
-  color: #000;
+  border-color: var(--text-base);
+  color: var(--text-base) !important;
+}
+
+#blog .title .color {
+  color: var(--text-base) !important;
+}
+
+#blog .border-guzman,
+#blog .border-guzman::before {
+  background-color: var(--text-base) !important;
+}
+
+#blog .all-post .btn-main {
+  background-color: #000 !important;
+  border: 1px solid #000 !important;
+  color: var(--text-inverse) !important;
+}
+
+#blog .all-post .btn-main:hover,
+#blog .all-post .btn-main:focus {
+  background-color: var(--surface-card) !important;
+  border-color: #000 !important;
+  box-shadow: inset 0 -2px 0 var(--brand-primary);
+  color: #000 !important;
 }
 
 @media (width >= 768px) {
