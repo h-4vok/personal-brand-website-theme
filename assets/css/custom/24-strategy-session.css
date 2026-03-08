@@ -1,0 +1,106 @@
+/** Section: Strategy Session **/
+.strategy-session-page {
+  background: var(--surface-base);
+  padding: 7rem 0 6rem;
+}
+
+.strategy-session-shell {
+  color: var(--text-base);
+  font-family: "EB Garamond", serif;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.strategy-session-hero {
+  border-bottom: 1px solid rgb(17 17 17 / 12%);
+  margin-bottom: 3rem;
+  padding-bottom: 3rem;
+}
+
+.strategy-session-hero h1,
+.strategy-session-content h2,
+.strategy-session-content p {
+  font-family: "EB Garamond", serif;
+}
+
+.strategy-session-hero h1 {
+  font-size: clamp(2.6rem, 5vw, 4.3rem);
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+  margin: 0;
+}
+
+.strategy-session-intro {
+  color: rgb(17 17 17 / 82%);
+  font-size: clamp(1.35rem, 2.2vw, 1.7rem);
+  line-height: 1.5;
+  margin: 1.5rem 0 0;
+}
+
+.strategy-session-content h2 {
+  font-size: clamp(2rem, 4vw, 2.85rem);
+  line-height: 1.02;
+  margin: 0 0 1rem;
+}
+
+.strategy-session-content p {
+  color: rgb(17 17 17 / 82%);
+  font-size: clamp(1.25rem, 2vw, 1.55rem);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.strategy-session-content > h2 + p {
+  margin-bottom: 1.75rem;
+}
+
+.strategy-session-content > h2:not(:first-child) {
+  margin-top: 3.5rem;
+}
+
+.strategy-session-page .manifesto-cta {
+  margin: 0;
+}
+
+.strategy-session-page .power-thesis__btn {
+  align-items: center;
+  background: #000;
+  border: 1px solid #000;
+  border-radius: 0;
+  color: #fff;
+  display: inline-flex;
+  font-family: "EB Garamond", serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  justify-content: center;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  min-height: 56px;
+  padding: 0.95rem 1.5rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+.strategy-session-page .power-thesis__btn:hover,
+.strategy-session-page .power-thesis__btn:focus {
+  background: #111;
+  box-shadow: 0 12px 24px rgb(0 0 0 / 16%);
+  color: #fff;
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+@media (width <= 767px) {
+  .strategy-session-page {
+    padding: 6rem 0 4.5rem;
+  }
+
+  .strategy-session-page .power-thesis__btn {
+    width: 100%;
+  }
+}
