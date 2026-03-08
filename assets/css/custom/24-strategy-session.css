@@ -13,13 +13,16 @@
 
 .strategy-session-hero {
   border-bottom: 1px solid rgb(17 17 17 / 12%);
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
   padding-bottom: 3rem;
 }
 
 .strategy-session-hero h1,
 .strategy-session-content h2,
-.strategy-session-content p {
+.strategy-session-content p,
+.strategy-session-content li,
+.strategy-session-format h3,
+.strategy-session-format p {
   font-family: "EB Garamond", serif;
 }
 
@@ -30,11 +33,27 @@
   margin: 0;
 }
 
-.strategy-session-intro {
+.strategy-session-subtitle {
   color: rgb(17 17 17 / 82%);
-  font-size: clamp(1.35rem, 2.2vw, 1.7rem);
+  font-size: clamp(1.25rem, 2vw, 1.55rem);
   line-height: 1.5;
   margin: 1.5rem 0 0;
+  max-width: 42rem;
+}
+
+.strategy-session-content {
+  display: grid;
+  gap: 2rem;
+}
+
+.strategy-session-block {
+  padding: 0;
+}
+
+.strategy-session-block--business {
+  background: #f4f3f1;
+  border: 1px solid rgb(17 17 17 / 8%);
+  padding: 2rem;
 }
 
 .strategy-session-content h2 {
@@ -43,19 +62,47 @@
   margin: 0 0 1rem;
 }
 
-.strategy-session-content p {
+.strategy-session-context,
+.strategy-session-format p {
   color: rgb(17 17 17 / 82%);
   font-size: clamp(1.25rem, 2vw, 1.55rem);
   line-height: 1.6;
   margin: 0;
 }
 
-.strategy-session-content > h2 + p {
-  margin-bottom: 1.75rem;
+.strategy-session-list {
+  list-style: none;
+  margin: 1.75rem 0;
+  padding: 0;
 }
 
-.strategy-session-content > h2:not(:first-child) {
+.strategy-session-list li {
+  border-top: 1px solid rgb(17 17 17 / 10%);
+  color: rgb(17 17 17 / 82%);
+  font-size: clamp(1.15rem, 1.7vw, 1.35rem);
+  line-height: 1.55;
+  padding: 1rem 0;
+}
+
+.strategy-session-list li:last-child {
+  border-bottom: 1px solid rgb(17 17 17 / 10%);
+}
+
+.strategy-session-list__label {
+  color: #000;
+  font-weight: 700;
+}
+
+.strategy-session-format {
+  border-top: 1px solid rgb(17 17 17 / 12%);
   margin-top: 3.5rem;
+  padding-top: 2rem;
+}
+
+.strategy-session-format h3 {
+  font-size: clamp(1.7rem, 3vw, 2.15rem);
+  line-height: 1.05;
+  margin: 0 0 0.85rem;
 }
 
 .strategy-session-page .manifesto-cta {
@@ -98,6 +145,10 @@
 @media (width <= 767px) {
   .strategy-session-page {
     padding: 6rem 0 4.5rem;
+  }
+
+  .strategy-session-block--business {
+    padding: 1.4rem;
   }
 
   .strategy-session-page .power-thesis__btn {
