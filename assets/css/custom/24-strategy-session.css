@@ -12,15 +12,21 @@
 }
 
 .strategy-session-hero {
+  align-items: end;
   border-bottom: 1px solid rgb(17 17 17 / 12%);
-  margin-bottom: 3.5rem;
-  padding-bottom: 3rem;
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: minmax(0, 3fr) minmax(260px, 2fr);
+  margin-bottom: 4rem;
+  padding-bottom: 3.5rem;
 }
 
 .strategy-session-hero h1,
 .strategy-session-content h2,
 .strategy-session-content p,
 .strategy-session-content li,
+.strategy-session-not-for h3,
+.strategy-session-not-for p,
 .strategy-session-format h3,
 .strategy-session-format p {
   font-family: "EB Garamond", serif;
@@ -41,19 +47,50 @@
   max-width: 42rem;
 }
 
+.strategy-session-hero__media {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.strategy-session-portrait {
+  border: 1px solid rgb(17 17 17 / 14%);
+  display: block;
+  filter: grayscale(100%) saturate(0.75) contrast(1.05);
+  height: auto;
+  max-width: 300px;
+  width: 100%;
+}
+
 .strategy-session-content {
   display: grid;
-  gap: 2rem;
+  gap: 0;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 }
 
 .strategy-session-block {
-  padding: 0;
+  background: transparent;
+  min-height: 100%;
+  padding: 0 2rem 0 0;
+  transition: background-color 180ms ease;
+}
+
+.strategy-session-block:hover {
+  background: rgb(246 242 236 / 65%);
 }
 
 .strategy-session-block--business {
-  background: #f4f3f1;
-  border: 1px solid rgb(17 17 17 / 8%);
-  padding: 2rem;
+  border-left: 1px solid #e2e8f0;
+  padding: 0 0 0 2rem;
+}
+
+.strategy-session-eyebrow {
+  color: rgb(17 17 17 / 54%);
+  font-family: Inter, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  margin: 0 0 1rem;
+  text-transform: uppercase;
 }
 
 .strategy-session-content h2 {
@@ -65,7 +102,7 @@
 .strategy-session-context,
 .strategy-session-format p {
   color: rgb(17 17 17 / 82%);
-  font-size: clamp(1.25rem, 2vw, 1.55rem);
+  font-size: clamp(1.2rem, 1.85vw, 1.45rem);
   line-height: 1.6;
   margin: 0;
 }
@@ -79,8 +116,6 @@
 .strategy-session-list li {
   border-top: 1px solid rgb(17 17 17 / 10%);
   color: rgb(17 17 17 / 82%);
-  font-size: clamp(1.15rem, 1.7vw, 1.35rem);
-  line-height: 1.55;
   padding: 1rem 0;
 }
 
@@ -90,19 +125,60 @@
 
 .strategy-session-list__label {
   color: #000;
+  display: block;
+  font-family: "EB Garamond", serif;
+  font-size: 1.2rem;
   font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 0.25rem;
+}
+
+.strategy-session-list li span:last-child {
+  color: rgb(17 17 17 / 74%);
+  display: block;
+  font-family: Inter, sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.01em;
+  line-height: 1.55;
+}
+
+.strategy-session-not-for {
+  margin: 4rem auto 0;
+  max-width: 34rem;
+  text-align: center;
+}
+
+.strategy-session-not-for h3 {
+  font-size: clamp(1.8rem, 3vw, 2.3rem);
+  line-height: 1.05;
+  margin: 0 0 0.85rem;
+}
+
+.strategy-session-not-for p {
+  color: rgb(17 17 17 / 72%);
+  font-size: 1.15rem;
+  line-height: 1.6;
+  margin: 0;
 }
 
 .strategy-session-format {
-  border-top: 1px solid rgb(17 17 17 / 12%);
-  margin-top: 3.5rem;
-  padding-top: 2rem;
+  border: 1px solid rgb(17 17 17 / 12%);
+  margin-top: 3rem;
+  padding: 1.5rem 1.65rem;
 }
 
 .strategy-session-format h3 {
   font-size: clamp(1.7rem, 3vw, 2.15rem);
   line-height: 1.05;
   margin: 0 0 0.85rem;
+}
+
+.strategy-session-format__note {
+  color: rgb(17 17 17 / 60%);
+  font-family: Inter, sans-serif;
+  font-size: 0.83rem;
+  letter-spacing: 0.01em;
+  margin-top: 0.9rem;
 }
 
 .strategy-session-page .manifesto-cta {
@@ -147,8 +223,33 @@
     padding: 6rem 0 4.5rem;
   }
 
+  .strategy-session-hero {
+    align-items: start;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+  }
+
+  .strategy-session-hero__media {
+    justify-content: flex-start;
+  }
+
+  .strategy-session-portrait {
+    max-width: 240px;
+  }
+
+  .strategy-session-content {
+    gap: 2rem;
+    grid-template-columns: 1fr;
+  }
+
+  .strategy-session-block {
+    padding: 0;
+  }
+
   .strategy-session-block--business {
-    padding: 1.4rem;
+    border-left: 0;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 2rem;
   }
 
   .strategy-session-page .power-thesis__btn {
