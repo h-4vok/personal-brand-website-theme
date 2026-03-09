@@ -30,14 +30,31 @@
   }
 }
 
+.post-single-content,
+.post-content,
+.article-body {
+  margin: 0 auto;
+  max-width: 750px;
+}
+
 .post-single-content p,
-ul,
-a,
-.list-inline-item {
+.post-single-content ul,
+.post-single-content ol,
+.post-single-content li,
+.post-single-content a,
+.post-content p,
+.post-content ul,
+.post-content ol,
+.post-content li,
+.article-body p,
+.article-body ul,
+.article-body ol,
+.article-body li {
+  font-family: "EB Garamond", serif;
   font-optical-sizing: auto;
-  font-size: 1.3rem;
+  font-size: 1.18rem;
   font-style: normal;
-  line-height: 1.7;
+  line-height: 1.75;
 }
 
 .post-single-author,
@@ -96,6 +113,22 @@ a,
   font-weight: 700;
   letter-spacing: -0.02em;
   margin-bottom: 1rem;
+  margin-top: 3rem;
+}
+
+.post-single-content h1,
+.post-single-content h2,
+.post-single-content h3,
+.post-single-content h4,
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.article-body h1,
+.article-body h2,
+.article-body h3,
+.article-body h4 {
+  font-family: "EB Garamond", serif;
   margin-top: 3rem;
 }
 

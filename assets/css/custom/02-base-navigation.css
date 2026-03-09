@@ -83,6 +83,134 @@ a:hover,
   filter: brightness(0.1);
 }
 
+@media (width <= 768px) {
+  .navigation .container {
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
+  }
+
+  .navigation .navbar {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 0.38rem;
+    padding-top: 0.38rem;
+    position: relative;
+  }
+
+  .navigation .navbar-brand {
+    font-family: "EB Garamond", serif;
+    font-size: 1.18rem;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+    margin-right: 0.5rem;
+    max-width: calc(100% - 52px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: none;
+    white-space: nowrap;
+  }
+
+  .navigation .navbar-collapse {
+    flex-basis: 100%;
+    padding-top: 0.4rem;
+  }
+
+  .navigation .navbar-collapse.show {
+    background: var(--surface-base);
+    border-top: 0;
+    box-shadow: none;
+    background: var(--surface-base);
+    display: block !important;
+    margin-top: 0;
+    padding: 0.7rem 0.9rem 0.95rem;
+    position: static;
+    width: 100%;
+  }
+
+  .navigation .navbar:has(.navbar-collapse.show) .navbar-brand {
+    max-width: calc(100% - 52px);
+    opacity: 1 !important;
+    visibility: visible;
+  }
+
+  .navigation .navbar-toggler {
+    align-items: center;
+    background: transparent !important;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none !important;
+    display: inline-flex;
+    height: 32px;
+    justify-content: center;
+    margin-left: auto;
+    padding: 0;
+    position: relative;
+    width: 32px;
+    z-index: 1100;
+  }
+
+  .navigation .navbar-toggler:focus,
+  .navigation .navbar-toggler:hover,
+  .navigation .navbar-toggler:not(:disabled):not(.disabled):active {
+    background: transparent !important;
+    border: 0;
+    box-shadow: none !important;
+    outline: none;
+  }
+
+  .navigation .navbar-toggler-icon {
+    background-image: linear-gradient(
+      to bottom,
+      transparent 1px,
+      rgb(17 17 17 / 85%) 1px,
+      rgb(17 17 17 / 85%) 2px,
+      transparent 2px,
+      transparent 7px,
+      rgb(17 17 17 / 85%) 7px,
+      rgb(17 17 17 / 85%) 8px,
+      transparent 8px,
+      transparent 13px,
+      rgb(17 17 17 / 85%) 13px,
+      rgb(17 17 17 / 85%) 14px,
+      transparent 14px
+    ) !important;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 18px 16px;
+    filter: none;
+    height: 16px;
+    width: 18px;
+  }
+
+  .navigation .navbar-collapse .navbar-nav {
+    margin: 0 auto !important;
+    text-align: center;
+    width: 100%;
+  }
+
+  .navigation .navbar-collapse .navbar-nav .nav-item {
+    margin-bottom: 0.85rem;
+    width: 100%;
+  }
+
+  .navigation .navbar-collapse .navbar-nav .nav-link {
+    display: block;
+    font-family: Inter, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500 !important;
+    letter-spacing: 0.1em;
+    line-height: 1.2;
+    padding: 0.36rem 0;
+    text-transform: uppercase;
+  }
+
+  .navigation .navbar-collapse .navbar-nav .nav-item:last-child {
+    margin-bottom: 0.85rem;
+  }
+}
+
 @media (width >= 992px) {
   .navigation .navbar-nav .nav-item + .nav-item {
     margin-left: 1.8rem;

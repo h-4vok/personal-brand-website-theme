@@ -45,6 +45,10 @@
   min-height: 360px;
 }
 
+.post-block .content p {
+  font-family: "EB Garamond", serif;
+}
+
 .section {
   padding: 50px 0 0;
 }

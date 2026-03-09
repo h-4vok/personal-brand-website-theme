@@ -27,12 +27,12 @@
 
 .author-name {
   color: var(--text-base);
-  font-family: Inter, sans-serif;
-  font-size: 0.82rem;
+  font-family: "EB Garamond", serif;
+  font-size: 1.35rem;
   font-weight: 600;
-  letter-spacing: 0.05em;
+  letter-spacing: -0.01em;
   margin: 0 0 0.25em;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .author-bio {
@@ -99,17 +99,18 @@
 }
 
 .more-like-this .section-title {
-  color: var(--text-base);
+  color: var(--text-muted);
   font-family: Inter, sans-serif;
   font-size: 0.9rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   margin-bottom: 1.5em;
+  opacity: 0.9;
   text-transform: uppercase;
 }
 
 .related-article-item {
-  margin-bottom: 2em;
+  margin-bottom: 2.6em;
 }
 
 .related-article-item h4 {
@@ -135,10 +136,19 @@
 }
 
 .related-article-item p {
-  color: var(--text-inkwashed);
-  font-family: Inter, sans-serif;
-  font-size: 0.82rem;
+  color: var(--text-secondary);
+  font-family: "EB Garamond", serif;
+  font-size: 1rem;
   letter-spacing: 0.02em;
-  margin-top: 0.25em;
-  text-transform: uppercase;
+  line-height: 1.45;
+  margin-top: 0.35em;
+  text-transform: none !important;
+}
+
+@media (width <= 768px) {
+  .related-article-item p {
+    font-family: "EB Garamond", serif;
+    font-size: 1rem;
+    text-transform: none !important;
+  }
 }

@@ -1,0 +1,286 @@
+/** Section: Strategy Session **/
+.strategy-session-page {
+  background: var(--surface-base);
+  padding: 7rem 0 6rem;
+}
+
+.strategy-session-shell {
+  color: var(--text-base);
+  font-family: "EB Garamond", serif;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.strategy-session-hero {
+  align-items: start;
+  border-bottom: 1px solid rgb(17 17 17 / 12%);
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: minmax(0, 3fr) minmax(260px, 2fr);
+  margin-bottom: 4rem;
+  padding-bottom: 3.5rem;
+}
+
+.strategy-session-hero h1,
+.strategy-session-content h2,
+.strategy-session-content p,
+.strategy-session-content li,
+.strategy-session-not-for h3,
+.strategy-session-not-for p,
+.strategy-session-format h3,
+.strategy-session-format p {
+  font-family: "EB Garamond", serif;
+}
+
+.strategy-session-hero h1 {
+  font-size: clamp(2.6rem, 5vw, 4.3rem);
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+  margin: 0;
+}
+
+.strategy-session-subtitle {
+  color: rgb(17 17 17 / 82%);
+  font-size: clamp(1.25rem, 2vw, 1.55rem);
+  line-height: 1.5;
+  margin: 1.5rem 0 0;
+  max-width: 42rem;
+}
+
+.strategy-session-hero__media {
+  align-self: flex-start;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.strategy-session-portrait {
+  border: 1px solid rgb(17 17 17 / 14%);
+  display: block;
+  filter: grayscale(100%) saturate(0.75) contrast(1.05);
+  height: auto;
+  max-width: 300px;
+  width: 100%;
+}
+
+.strategy-session-content {
+  display: grid;
+  gap: 0;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.strategy-session-block {
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
+  padding: 3rem 2rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.strategy-session-block:hover {
+  background: rgb(246 242 236 / 65%);
+}
+
+.strategy-session-block--business {
+  border-left: 1px solid #e2e8f0;
+  margin-left: 0.5rem;
+  padding-left: 2.5rem;
+}
+
+.strategy-session-eyebrow {
+  color: var(--text-base);
+  font-family: Inter, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  margin: 0 0 0.5rem;
+  opacity: 0.7;
+  text-transform: uppercase;
+}
+
+.strategy-session-content h2 {
+  font-size: clamp(2rem, 4vw, 2.85rem);
+  line-height: 1.02;
+  margin: 0 0 1rem;
+}
+
+.strategy-session-context,
+.strategy-session-format p {
+  color: rgb(17 17 17 / 82%);
+  font-size: clamp(1.2rem, 1.85vw, 1.45rem);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.strategy-session-list {
+  list-style: none;
+  margin: 1.75rem 0;
+  padding: 0;
+}
+
+.strategy-session-list li {
+  border-top: 1px solid rgb(17 17 17 / 10%);
+  color: rgb(17 17 17 / 82%);
+  padding: 1rem 0;
+}
+
+.strategy-session-list li:last-child {
+  border-bottom: 1px solid rgb(17 17 17 / 10%);
+}
+
+.strategy-session-list__label {
+  color: #000;
+  display: block;
+  font-family: "EB Garamond", serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 0.25rem;
+}
+
+.strategy-session-list li span:last-child {
+  color: rgb(17 17 17 / 74%);
+  display: block;
+  font-family: Inter, sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.01em;
+  line-height: 1.55;
+}
+
+.strategy-session-not-for {
+  border-top: 1px solid #e2e8f0;
+  margin: 4rem auto 0;
+  max-width: 34rem;
+  padding-top: 2.25rem;
+  text-align: center;
+}
+
+.strategy-session-not-for h3 {
+  font-size: clamp(1.8rem, 3vw, 2.3rem);
+  line-height: 1.05;
+  margin: 0 0 0.85rem;
+}
+
+.strategy-session-not-for p {
+  color: rgb(17 17 17 / 72%);
+  font-size: 1.15rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.strategy-session-format {
+  border: 1px solid rgb(17 17 17 / 12%);
+  margin-top: 3rem;
+  padding: 1.5rem 1.65rem;
+}
+
+.strategy-session-format h3 {
+  font-size: clamp(1.7rem, 3vw, 2.15rem);
+  line-height: 1.05;
+  margin: 0 0 0.85rem;
+}
+
+.strategy-session-page .manifesto-cta {
+  margin: 0;
+  padding-top: 1rem;
+  text-align: center;
+}
+
+.strategy-session-page .power-thesis__btn {
+  align-items: center;
+  background: #000;
+  border: 1px solid #000;
+  border-radius: 0;
+  color: #fff;
+  display: inline-flex;
+  font-family: "EB Garamond", serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  justify-content: center;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  min-height: 56px;
+  padding: 0.95rem 1.5rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+}
+
+.strategy-session-page .power-thesis__btn:hover,
+.strategy-session-page .power-thesis__btn:focus {
+  background: #222;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
+  color: #fff;
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+@media (width <= 768px) {
+  .strategy-session-page {
+    padding: 6rem 0 4.5rem;
+  }
+
+  .strategy-session-hero {
+    align-items: start;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    text-align: center;
+  }
+
+  .strategy-session-hero__copy {
+    text-align: center;
+  }
+
+  .strategy-session-hero__media {
+    justify-content: center;
+  }
+
+  .strategy-session-portrait {
+    border-radius: 50%;
+    margin: 2rem auto;
+    max-width: 200px;
+  }
+
+  .strategy-session-content {
+    gap: 2.25rem;
+    grid-template-columns: 1fr;
+  }
+
+  .strategy-session-block {
+    padding: 2rem 1.25rem;
+    text-align: center;
+  }
+
+  .strategy-session-block--business {
+    border-left: 0;
+    border-top: 1px solid #e2e8f0;
+    margin-left: 0;
+    padding-left: 1.25rem;
+    padding-top: 2rem;
+  }
+
+  .strategy-session-list {
+    margin: 1.5rem 0;
+  }
+
+  .strategy-session-not-for {
+    margin-top: 3rem;
+  }
+
+  .strategy-session-format {
+    line-height: 1.85;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3rem;
+    padding: 2rem;
+    text-align: center;
+    width: 95%;
+  }
+
+  .strategy-session-page .power-thesis__btn {
+    width: 100%;
+  }
+}

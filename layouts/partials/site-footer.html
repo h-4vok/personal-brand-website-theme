@@ -4,26 +4,37 @@
     <div class="footer-main">
 
       <div class="footer-col brand">
-        <a href="{{ site.Home.Permalink }}" class="footer-brand-link footer-brand-headline">Christian Guzman</a>
+        <a href="{{ site.Home.Permalink }}" class="footer-brand-link" aria-label="Christian Guzman Home">
+          <img
+            class="footer-avatar"
+            src="{{ with site.Params.authorbox.image }}{{ . | relURL }}{{ else }}{{ `images/avatar3.jpg` | relURL }}{{ end }}"
+            alt="Christian Guzman"
+            width="60"
+            height="60"
+          >
+          <span class="footer-brand-headline">Christian Guzman</span>
+        </a>
       </div>
 
       <div class="footer-col">
         <h4 class="footer-heading">Navigation</h4>
         <ul class="footer-list">
           <li><a href="{{ site.Home.Permalink }}" class="js-smooth-scroll">Home</a></li>
-          <li><a href="/#about" class="js-smooth-scroll">About Me</a></li>
-          <li><a href="/blog" class="js-smooth-scroll">Latest Articles</a></li>
-          <li><a href="https://cal.com/christian-guzman/60min-one-off" target="_blank" class="js-smooth-scroll">Book Now!</a></li>
+          <li><a href="/manifesto/" class="js-smooth-scroll">Manifesto</a></li>
+          <li><a href="/articles/" class="js-smooth-scroll">Articles</a></li>
+          <li><a href="/strategy-session/">Strategy Session</a></li>
           
         </ul>
       </div>
 
       <div class="footer-col">
-        <h4 class="footer-heading">Social</h4>
+        <h4 class="footer-heading">Connect</h4>
         <ul class="footer-list social-links">
 
           {{ range site.Params.footer.socialLinks }}
+            {{ if eq (lower .name) "linkedin" }}
             <li><a href="{{ .link | safeURL }}" target="_blank" rel="noopener">{{ .name }}</a></li>
+            {{ end }}
           {{ end }}
 
         </ul>
@@ -32,7 +43,7 @@
     </div>
 
     <div class="footer-sub">
-      <p>{{ site.Params.copyright | markdownify }}</p>
+      <p>&copy; 2026 Christian Guzman. All rights reserved.</p>
     </div>
 
   </div>
