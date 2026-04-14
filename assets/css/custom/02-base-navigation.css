@@ -46,6 +46,10 @@ a {
   letter-spacing: -0.02em;
 }
 
+ul.navbar-nav {
+  margin-bottom: 16px;
+}
+
 .navigation a {
   color: var(--custom-navigation-link-color) !important;
   font-size: 0.85rem;
