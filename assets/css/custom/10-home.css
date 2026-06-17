@@ -99,9 +99,21 @@
   background-color: var(--surface-card);
 }
 
-.img-blog {
-  max-height: 325px;
-  min-height: 325px;
+#blog .media-wrapper {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+#blog .media-wrapper a {
+  display: block;
+  height: 100%;
+}
+
+#blog .img-blog {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
 }
 
 /* Power Thesis Hero */
