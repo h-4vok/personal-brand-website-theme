@@ -63,9 +63,11 @@
 }
 
 .strategy-session-content {
+  border-bottom: 1px solid #e2e8f0;
   display: grid;
   gap: 0;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  padding-bottom: 3rem;
 }
 
 .strategy-session-block {
@@ -149,10 +151,8 @@
 }
 
 .strategy-session-not-for {
-  border-top: 1px solid #e2e8f0;
   margin: 4rem auto 0;
   max-width: 34rem;
-  padding-top: 2.25rem;
   text-align: center;
 }
 
@@ -247,6 +247,7 @@
   .strategy-session-content {
     gap: 2.25rem;
     grid-template-columns: 1fr;
+    padding-bottom: 2.5rem;
   }
 
   .strategy-session-block {
