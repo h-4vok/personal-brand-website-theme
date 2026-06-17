@@ -7,6 +7,11 @@
   --surface-dark: #353b43;
   --surface-darker: #292f36;
   --surface-ink: #242930;
+  --code-surface: #2f3640;
+  --code-gutter: #262c35;
+  --code-border: rgb(17 17 17 / 14%);
+  --code-text: #e8edf2;
+  --code-line-number: #9aa6b2;
   --text-base: #111;
   --text-muted: #64748b;
   --text-secondary: #495057;

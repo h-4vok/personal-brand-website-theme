@@ -136,6 +136,166 @@
   color: var(--text-base);
 }
 
+.post-single-content code,
+.post-content code,
+.article-body code {
+  background: rgb(17 17 17 / 6%);
+  border: 1px solid rgb(17 17 17 / 10%);
+  border-radius: 6px;
+  color: var(--text-secondary);
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.9em;
+  padding: 0.16em 0.42em;
+}
+
+.post-single-content pre code,
+.post-content pre code,
+.article-body pre code,
+.post-single-content .highlight code,
+.post-content .highlight code,
+.article-body .highlight code {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  font-size: inherit;
+  padding: 0;
+}
+
+.post-single-content .highlight,
+.post-content .highlight,
+.article-body .highlight {
+  background: var(--code-surface);
+  border: 1px solid var(--code-border);
+  border-radius: 14px;
+  box-shadow: 0 12px 24px rgb(0 0 0 / 10%);
+  margin: 2.25em 0;
+  overflow: hidden;
+}
+
+.post-single-content .highlight .chroma,
+.post-content .highlight .chroma,
+.article-body .highlight .chroma {
+  background: transparent;
+  color: var(--code-text);
+}
+
+.post-single-content .highlight .lntable,
+.post-content .highlight .lntable,
+.article-body .highlight .lntable {
+  background: transparent;
+  border-collapse: collapse;
+  display: table;
+  margin: 0;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.post-single-content .highlight .lntd,
+.post-content .highlight .lntd,
+.article-body .highlight .lntd {
+  padding: 0;
+  vertical-align: top;
+}
+
+.post-single-content .highlight .lntd:first-child,
+.post-content .highlight .lntd:first-child,
+.article-body .highlight .lntd:first-child {
+  background: var(--code-gutter);
+  border-right: 1px solid rgb(255 255 255 / 8%);
+  width: 4.75rem;
+}
+
+.post-single-content .highlight .lntd:last-child,
+.post-content .highlight .lntd:last-child,
+.article-body .highlight .lntd:last-child {
+  width: auto;
+}
+
+.post-single-content .highlight pre,
+.post-content .highlight pre,
+.article-body .highlight pre {
+  background: transparent;
+  color: var(--code-text);
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.92rem;
+  line-height: 1.7;
+  margin: 0;
+  overflow-x: auto;
+  padding: 1.2rem 1.35rem;
+}
+
+.post-single-content .highlight .lntd:first-child pre,
+.post-content .highlight .lntd:first-child pre,
+.article-body .highlight .lntd:first-child pre {
+  color: var(--code-line-number);
+  overflow: hidden;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-align: right;
+}
+
+.post-single-content .highlight .lntd:last-child pre,
+.post-content .highlight .lntd:last-child pre,
+.article-body .highlight .lntd:last-child pre {
+  padding-left: 1.45rem;
+  padding-right: 1.5rem;
+}
+
+.post-single-content .highlight .lnt,
+.post-content .highlight .lnt,
+.article-body .highlight .lnt {
+  color: var(--code-line-number);
+  display: block;
+  min-width: 100%;
+  padding-right: 0.35rem;
+}
+
+.post-single-content .highlight .line,
+.post-content .highlight .line,
+.article-body .highlight .line,
+.post-single-content .highlight .cl,
+.post-content .highlight .cl,
+.article-body .highlight .cl {
+  color: var(--code-text);
+}
+
+@media (width <= 768px) {
+  .post-single-content .highlight,
+  .post-content .highlight,
+  .article-body .highlight {
+    border-radius: 12px;
+    margin: 1.75em 0;
+  }
+
+  .post-single-content .highlight .lntd:first-child,
+  .post-content .highlight .lntd:first-child,
+  .article-body .highlight .lntd:first-child {
+    width: 3.65rem;
+  }
+
+  .post-single-content .highlight pre,
+  .post-content .highlight pre,
+  .article-body .highlight pre {
+    font-size: 0.84rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+  }
+
+  .post-single-content .highlight .lntd:first-child pre,
+  .post-content .highlight .lntd:first-child pre,
+  .article-body .highlight .lntd:first-child pre {
+    padding-left: 0.7rem;
+    padding-right: 0.75rem;
+  }
+
+  .post-single-content .highlight .lntd:last-child pre,
+  .post-content .highlight .lntd:last-child pre,
+  .article-body .highlight .lntd:last-child pre {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
 .post-single-section a:not(.power-thesis__btn) {
   background-image: linear-gradient(
     to right,
