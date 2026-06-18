@@ -1,6 +1,8 @@
 /** Section: Strategy Session **/
 .strategy-session-page {
-  background: var(--surface-base);
+  background:
+    linear-gradient(180deg, rgb(246 242 236 / 72%) 0, rgb(246 242 236 / 0%) 18rem),
+    var(--surface-base);
   padding: 7rem 0 6rem;
 }
 
@@ -8,212 +10,198 @@
   color: var(--text-base);
   font-family: "EB Garamond", serif;
   margin: 0 auto;
-  max-width: 800px;
+  max-width: 760px;
+}
+
+.strategy-session-hero,
+.strategy-session-section,
+.strategy-session-closing {
+  border-top: 1px solid rgb(17 17 17 / 10%);
 }
 
 .strategy-session-hero {
   align-items: start;
-  border-bottom: 1px solid rgb(17 17 17 / 12%);
   display: grid;
   gap: 2.5rem;
-  grid-template-columns: minmax(0, 3fr) minmax(260px, 2fr);
-  margin-bottom: 4rem;
-  padding-bottom: 3.5rem;
+  grid-template-columns: minmax(0, 1.75fr) minmax(220px, 0.9fr);
+  padding-top: 1.5rem;
 }
 
 .strategy-session-hero h1,
-.strategy-session-content h2,
-.strategy-session-content p,
-.strategy-session-content li,
-.strategy-session-not-for h3,
-.strategy-session-not-for p,
-.strategy-session-format h3,
-.strategy-session-format p {
+.strategy-session-section h2,
+.strategy-session-closing h2,
+.strategy-session-prose p,
+.strategy-session-list li {
   font-family: "EB Garamond", serif;
 }
 
 .strategy-session-hero h1 {
-  font-size: clamp(2.6rem, 5vw, 4.3rem);
-  letter-spacing: -0.02em;
-  line-height: 0.95;
+  font-size: clamp(2.8rem, 5vw, 4.4rem);
+  letter-spacing: -0.03em;
+  line-height: 0.96;
   margin: 0;
+  max-width: 10ch;
 }
 
 .strategy-session-subtitle {
-  color: rgb(17 17 17 / 82%);
-  font-size: clamp(1.25rem, 2vw, 1.55rem);
-  line-height: 1.5;
+  color: rgb(17 17 17 / 84%);
+  font-size: clamp(1.2rem, 2.2vw, 1.55rem);
+  line-height: 1.55;
   margin: 1.5rem 0 0;
-  max-width: 42rem;
+  max-width: 34rem;
 }
 
-.strategy-session-hero__media {
-  align-self: flex-start;
-  display: flex;
-  justify-content: flex-end;
+.strategy-session-intro {
+  margin-top: 2rem;
 }
 
-.strategy-session-portrait {
-  border: 1px solid rgb(17 17 17 / 14%);
-  display: block;
-  filter: grayscale(100%) saturate(0.75) contrast(1.05);
-  height: auto;
-  max-width: 300px;
-  width: 100%;
-}
-
-.strategy-session-content {
-  border-bottom: 1px solid #e2e8f0;
-  display: grid;
-  gap: 0;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  padding-bottom: 3rem;
-}
-
-.strategy-session-block {
-  background: transparent;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 100%;
-  padding: 3rem 2rem;
-  transition: all 0.3s ease-in-out;
-}
-
-.strategy-session-block:hover {
-  background: rgb(246 242 236 / 65%);
-}
-
-.strategy-session-block--business {
-  border-left: 1px solid #e2e8f0;
-  margin-left: 0.5rem;
-  padding-left: 2.5rem;
-}
-
-.strategy-session-eyebrow {
-  color: var(--text-base);
-  font-family: Inter, sans-serif;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  margin: 0 0 0.5rem;
-  opacity: 0.7;
-  text-transform: uppercase;
-}
-
-.strategy-session-content h2 {
-  font-size: clamp(2rem, 4vw, 2.85rem);
-  line-height: 1.02;
+.strategy-session-prose p,
+.strategy-session-intro p,
+.strategy-session-closing p {
+  color: rgb(17 17 17 / 82%);
+  font-size: clamp(1.18rem, 1.7vw, 1.38rem);
+  line-height: 1.72;
   margin: 0 0 1rem;
 }
 
-.strategy-session-context,
-.strategy-session-format p {
-  color: rgb(17 17 17 / 82%);
-  font-size: clamp(1.2rem, 1.85vw, 1.45rem);
+.strategy-session-prose p:last-child,
+.strategy-session-intro p:last-child,
+.strategy-session-closing p:last-child {
+  margin-bottom: 0;
+}
+
+.strategy-session-hero__media {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 0.5rem;
+}
+
+.strategy-session-portrait {
+  border: 1px solid rgb(17 17 17 / 12%);
+  display: block;
+  filter: grayscale(100%) saturate(0.82) contrast(1.03);
+  height: auto;
+  max-width: 260px;
+  width: 100%;
+}
+
+.strategy-session-cta {
+  margin: 2rem 0 0;
+}
+
+.strategy-session-section,
+.strategy-session-closing {
+  padding-top: 2.25rem;
+  margin-top: 2.25rem;
+}
+
+.strategy-session-section h2,
+.strategy-session-closing h2 {
+  font-size: clamp(2rem, 3.5vw, 2.7rem);
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin: 0 0 1.25rem;
+}
+
+.strategy-session-prose--first-person {
+  max-width: 40rem;
+}
+
+.strategy-session-topics-grid {
+  display: grid;
+  gap: 1.6rem 2.25rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 1.5rem;
+}
+
+.strategy-session-topic h3 {
+  color: #111;
+  font-family: "EB Garamond", serif;
+  font-size: clamp(1.35rem, 2vw, 1.7rem);
+  line-height: 1.18;
+  margin: 0 0 0.45rem;
+}
+
+.strategy-session-topic p {
+  color: rgb(17 17 17 / 78%);
+  font-family: "EB Garamond", serif;
+  font-size: clamp(1.05rem, 1.45vw, 1.18rem);
   line-height: 1.6;
   margin: 0;
+}
+
+.strategy-session-topics-grid--not-for {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.strategy-session-topic--boxed {
+  border: 1px solid rgb(17 17 17 / 12%);
+  padding: 1.2rem 1.15rem 1.1rem;
+}
+
+.strategy-session-topics-grid--not-for .strategy-session-topic--boxed:last-child {
+  grid-column: 1 / -1;
 }
 
 .strategy-session-list {
-  list-style: none;
-  margin: 1.75rem 0;
-  padding: 0;
+  color: rgb(17 17 17 / 84%);
+  list-style: disc;
+  margin: 1.25rem 0 0;
+  padding-left: 1.4rem;
 }
 
 .strategy-session-list li {
-  border-top: 1px solid rgb(17 17 17 / 10%);
-  color: rgb(17 17 17 / 82%);
-  padding: 1rem 0;
+  font-size: clamp(1.12rem, 1.55vw, 1.28rem);
+  line-height: 1.65;
+  margin-bottom: 0.6rem;
+  padding-left: 0.15rem;
 }
 
 .strategy-session-list li:last-child {
-  border-bottom: 1px solid rgb(17 17 17 / 10%);
+  margin-bottom: 0;
 }
 
-.strategy-session-list__label {
-  color: #000;
-  display: block;
-  font-family: "EB Garamond", serif;
-  font-size: 1.2rem;
-  font-weight: 700;
-  line-height: 1.1;
-  margin-bottom: 0.25rem;
-}
-
-.strategy-session-list li span:last-child {
-  color: rgb(17 17 17 / 74%);
-  display: block;
-  font-family: Inter, sans-serif;
-  font-size: 0.85rem;
-  letter-spacing: 0.01em;
-  line-height: 1.55;
-}
-
-.strategy-session-not-for {
-  margin: 4rem auto 0;
+.strategy-session-list--compact {
   max-width: 34rem;
-  text-align: center;
 }
 
-.strategy-session-not-for h3 {
-  font-size: clamp(1.8rem, 3vw, 2.3rem);
-  line-height: 1.05;
-  margin: 0 0 0.85rem;
+.strategy-session-closing {
+  padding-bottom: 0.5rem;
 }
 
-.strategy-session-not-for p {
-  color: rgb(17 17 17 / 72%);
-  font-size: 1.15rem;
-  line-height: 1.6;
-  margin: 0;
-}
-
-.strategy-session-format {
-  border: 1px solid rgb(17 17 17 / 12%);
-  margin-top: 3rem;
-  padding: 1.5rem 1.65rem;
-}
-
-.strategy-session-format h3 {
-  font-size: clamp(1.7rem, 3vw, 2.15rem);
-  line-height: 1.05;
-  margin: 0 0 0.85rem;
-}
-
-.strategy-session-page .manifesto-cta {
-  margin: 0;
-  padding-top: 1rem;
-  text-align: center;
+.strategy-session-cta--closing {
+  margin-top: 1.75rem;
 }
 
 .strategy-session-page .power-thesis__btn {
   align-items: center;
-  background: #000;
-  border: 1px solid #000;
+  background: #111;
+  border: 1px solid #111;
   border-radius: 0;
   color: #fff;
   display: inline-flex;
-  font-family: "EB Garamond", serif;
-  font-size: 0.95rem;
-  font-weight: 700;
+  font-family: Inter, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
   justify-content: center;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   line-height: 1;
-  min-height: 56px;
-  padding: 0.95rem 1.5rem;
+  min-height: 52px;
+  padding: 0.95rem 1.35rem;
   text-decoration: none;
   text-transform: uppercase;
-  transition: all 0.3s ease-in-out;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .strategy-session-page .power-thesis__btn:hover,
 .strategy-session-page .power-thesis__btn:focus {
-  background: #222;
-  box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
+  background: #2a2a2a;
   color: #fff;
   text-decoration: none;
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 
 @media (width <= 768px) {
@@ -222,63 +210,37 @@
   }
 
   .strategy-session-hero {
-    align-items: start;
     gap: 2rem;
     grid-template-columns: 1fr;
-    margin-bottom: 3rem;
-    padding-bottom: 3rem;
-    text-align: center;
   }
 
   .strategy-session-hero__copy {
-    text-align: center;
+    order: 2;
   }
 
   .strategy-session-hero__media {
-    justify-content: center;
+    justify-content: flex-start;
+    order: 1;
+    padding-top: 0;
   }
 
   .strategy-session-portrait {
-    border-radius: 50%;
-    margin: 2rem auto;
-    max-width: 200px;
+    max-width: 180px;
   }
 
-  .strategy-session-content {
-    gap: 2.25rem;
-    grid-template-columns: 1fr;
-    padding-bottom: 2.5rem;
-  }
-
-  .strategy-session-block {
-    padding: 2rem 1.25rem;
-    text-align: center;
-  }
-
-  .strategy-session-block--business {
-    border-left: 0;
-    border-top: 1px solid #e2e8f0;
-    margin-left: 0;
-    padding-left: 1.25rem;
+  .strategy-session-section,
+  .strategy-session-closing {
+    margin-top: 2rem;
     padding-top: 2rem;
   }
 
-  .strategy-session-list {
-    margin: 1.5rem 0;
+  .strategy-session-topics-grid {
+    gap: 1.4rem;
+    grid-template-columns: 1fr;
   }
 
-  .strategy-session-not-for {
-    margin-top: 3rem;
-  }
-
-  .strategy-session-format {
-    line-height: 1.85;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 3rem;
-    padding: 2rem;
-    text-align: center;
-    width: 95%;
+  .strategy-session-topics-grid--not-for {
+    grid-template-columns: 1fr;
   }
 
   .strategy-session-page .power-thesis__btn {
