@@ -20,7 +20,13 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <div class="post-single-content">
+        <div
+          class="post-single-content"
+          data-article-content
+          data-article-slug="{{ .RelPermalink }}"
+          data-article-title="{{ .Title }}"
+          data-article-reading-time="{{ .ReadingTime }}"
+        >
 
           <div class="article-meta">
 
