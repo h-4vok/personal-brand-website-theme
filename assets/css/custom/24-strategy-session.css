@@ -3,7 +3,7 @@
   background:
     linear-gradient(180deg, rgb(246 242 236 / 72%) 0, rgb(246 242 236 / 0%) 18rem),
     var(--surface-base);
-  padding: 7rem 0 6rem;
+  padding: 3.5rem 0 6rem;
 }
 
 .strategy-session-shell {
@@ -13,18 +13,17 @@
   max-width: 760px;
 }
 
-.strategy-session-hero,
 .strategy-session-section,
 .strategy-session-closing {
   border-top: 1px solid rgb(17 17 17 / 10%);
 }
 
 .strategy-session-hero {
-  align-items: start;
-  display: grid;
-  gap: 2.5rem;
-  grid-template-columns: minmax(0, 1.75fr) minmax(220px, 0.9fr);
-  padding-top: 1.5rem;
+  padding: 0 0 1.25rem;
+}
+
+.strategy-session-hero__copy {
+  max-width: 48rem;
 }
 
 .strategy-session-hero h1,
@@ -40,28 +39,29 @@
   letter-spacing: -0.03em;
   line-height: 0.96;
   margin: 0;
-  max-width: 10ch;
+  max-width: 14ch;
 }
 
 .strategy-session-subtitle {
   color: rgb(17 17 17 / 84%);
-  font-size: clamp(1.2rem, 2.2vw, 1.55rem);
-  line-height: 1.55;
-  margin: 1.5rem 0 0;
-  max-width: 34rem;
+  font-size: clamp(1.28rem, 2.3vw, 1.7rem);
+  line-height: 1.6;
+  margin: 1.75rem 0 0;
+  max-width: 38rem;
 }
 
 .strategy-session-intro {
-  margin-top: 2rem;
+  margin-top: 2.9rem;
+  max-width: 40rem;
 }
 
 .strategy-session-prose p,
 .strategy-session-intro p,
 .strategy-session-closing p {
   color: rgb(17 17 17 / 82%);
-  font-size: clamp(1.18rem, 1.7vw, 1.38rem);
-  line-height: 1.72;
-  margin: 0 0 1rem;
+  font-size: clamp(1.2rem, 1.75vw, 1.42rem);
+  line-height: 1.76;
+  margin: 0 0 1.1rem;
 }
 
 .strategy-session-prose p:last-child,
@@ -70,68 +70,144 @@
   margin-bottom: 0;
 }
 
-.strategy-session-hero__media {
-  display: flex;
-  justify-content: flex-end;
-  padding-top: 0.5rem;
-}
-
 .strategy-session-portrait {
   border: 1px solid rgb(17 17 17 / 12%);
   display: block;
   filter: grayscale(100%) saturate(0.82) contrast(1.03);
   height: auto;
-  max-width: 260px;
   width: 100%;
 }
 
+.strategy-session-portrait--about {
+  max-width: 100%;
+}
+
 .strategy-session-cta {
-  margin: 2rem 0 0;
+  margin: 3rem 0 0;
 }
 
 .strategy-session-section,
 .strategy-session-closing {
-  padding-top: 2.25rem;
-  margin-top: 2.25rem;
+  padding-top: 2.6rem;
+  margin-top: 2.6rem;
 }
 
 .strategy-session-section h2,
 .strategy-session-closing h2 {
-  font-size: clamp(2rem, 3.5vw, 2.7rem);
+  font-size: clamp(2.1rem, 3.7vw, 2.95rem);
   letter-spacing: -0.02em;
-  line-height: 1.05;
-  margin: 0 0 1.25rem;
+  line-height: 1;
+  margin: 0 0 1.45rem;
 }
 
 .strategy-session-prose--first-person {
   max-width: 40rem;
 }
 
+.strategy-session-about {
+  align-items: start;
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: minmax(280px, 0.95fr) minmax(0, 1.15fr);
+}
+
+.strategy-session-about__media {
+  max-width: 100%;
+}
+
+.strategy-session-about__copy {
+  min-width: 0;
+}
+
 .strategy-session-topics-grid {
   display: grid;
-  gap: 1.6rem 2.25rem;
+  gap: 1.9rem 2.4rem;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  margin-top: 1.5rem;
+  margin-top: 1.75rem;
 }
 
 .strategy-session-topic h3 {
   color: #111;
   font-family: "EB Garamond", serif;
-  font-size: clamp(1.35rem, 2vw, 1.7rem);
-  line-height: 1.18;
-  margin: 0 0 0.45rem;
+  font-size: clamp(1.45rem, 2.2vw, 1.82rem);
+  line-height: 1.15;
+  margin: 0 0 0.55rem;
 }
 
 .strategy-session-topic p {
   color: rgb(17 17 17 / 78%);
   font-family: "EB Garamond", serif;
-  font-size: clamp(1.05rem, 1.45vw, 1.18rem);
-  line-height: 1.6;
+  font-size: clamp(1.08rem, 1.5vw, 1.22rem);
+  line-height: 1.65;
   margin: 0;
+}
+
+.strategy-session-quote {
+  margin: 5.5rem auto;
+  max-width: 34rem;
+  padding: 0;
+  text-align: center;
+}
+
+.strategy-session-quote__line {
+  color: rgb(17 17 17 / 84%);
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+  margin: 0;
+}
+
+.strategy-session-quote__line + .strategy-session-quote__line {
+  margin-top: 0.75rem;
+}
+
+.strategy-session-quote__line--accent {
+  color: #111;
+  font-size: clamp(2.7rem, 5.4vw, 4.25rem);
+  font-weight: 600;
+  line-height: 0.96;
+  margin-top: 1rem;
+}
+
+.strategy-session-emphasis {
+  color: #111;
+  font-weight: 600;
 }
 
 .strategy-session-topics-grid--not-for {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.strategy-session-testimonials__list {
+  display: grid;
+  gap: 2rem;
+}
+
+.strategy-session-testimonial {
+  border-left: 1px solid rgb(17 17 17 / 12%);
+  margin: 0;
+  padding: 0 0 0 1.5rem;
+}
+
+.strategy-session-testimonial__quote {
+  color: #111;
+  font-family: "EB Garamond", serif;
+  font-size: clamp(1.75rem, 2.8vw, 2.5rem);
+  letter-spacing: -0.02em;
+  line-height: 1.18;
+  margin: 0;
+  max-width: 22ch;
+  position: relative;
+}
+
+.strategy-session-testimonial__quote::before {
+  color: rgb(17 17 17 / 18%);
+  content: "\201C";
+  font-size: clamp(4.5rem, 8vw, 6.5rem);
+  left: -0.45rem;
+  line-height: 1;
+  position: absolute;
+  top: -1.5rem;
 }
 
 .strategy-session-topic--boxed {
@@ -169,8 +245,28 @@
   padding-bottom: 0.5rem;
 }
 
-.strategy-session-cta--closing {
+.strategy-session-closing__prompt {
   margin-top: 1.75rem;
+}
+
+.strategy-session-closing__line {
+  color: rgb(17 17 17 / 84%);
+  font-size: clamp(1.75rem, 3vw, 2.2rem);
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+  margin: 0;
+}
+
+.strategy-session-closing__line + .strategy-session-closing__line {
+  margin-top: 0.35rem;
+}
+
+.strategy-session-closing__line--accent {
+  color: #111;
+}
+
+.strategy-session-cta--closing {
+  margin-top: 1.25rem;
 }
 
 .strategy-session-page .power-thesis__btn {
@@ -206,32 +302,35 @@
 
 @media (width <= 768px) {
   .strategy-session-page {
-    padding: 6rem 0 4.5rem;
+    padding: 2.75rem 0 4.5rem;
   }
 
   .strategy-session-hero {
-    gap: 2rem;
+    padding: 0 0 1rem;
+  }
+
+  .strategy-session-about {
+    gap: 1.5rem;
     grid-template-columns: 1fr;
-  }
-
-  .strategy-session-hero__copy {
-    order: 2;
-  }
-
-  .strategy-session-hero__media {
-    justify-content: flex-start;
-    order: 1;
-    padding-top: 0;
-  }
-
-  .strategy-session-portrait {
-    max-width: 180px;
   }
 
   .strategy-session-section,
   .strategy-session-closing {
     margin-top: 2rem;
     padding-top: 2rem;
+  }
+
+  .strategy-session-quote {
+    margin: 4.25rem auto;
+    max-width: 24rem;
+  }
+
+  .strategy-session-quote__line + .strategy-session-quote__line {
+    margin-top: 0.6rem;
+  }
+
+  .strategy-session-quote__line--accent {
+    margin-top: 0.8rem;
   }
 
   .strategy-session-topics-grid {
