@@ -19,11 +19,14 @@
 }
 
 .strategy-session-hero {
-  padding: 0 0 1.25rem;
+  border-top: 0;
+  padding: 1rem 0 0;
 }
 
 .strategy-session-hero__copy {
-  max-width: 48rem;
+  margin: 0 auto;
+  max-width: 42rem;
+  text-align: center;
 }
 
 .strategy-session-hero h1,
@@ -34,12 +37,39 @@
   font-family: "EB Garamond", serif;
 }
 
+.strategy-session-screen {
+  margin-left: auto;
+  margin-right: auto;
+  min-height: min(78vh, 48rem);
+  padding-bottom: 1.5rem;
+}
+
+.strategy-session-screen--hero {
+  justify-content: center;
+  min-height: min(84vh, 54rem);
+}
+
+.strategy-session-screen--closing {
+  justify-content: center;
+  min-height: min(72vh, 42rem);
+}
+
 .strategy-session-hero h1 {
   font-size: clamp(2.8rem, 5vw, 4.4rem);
   letter-spacing: -0.03em;
   line-height: 0.96;
   margin: 0;
   max-width: 14ch;
+}
+
+.strategy-session-hero__eyebrow {
+  color: rgb(17 17 17 / 62%);
+  font-family: Inter, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  margin: 0 0 1.5rem;
+  text-transform: uppercase;
 }
 
 .strategy-session-subtitle {
@@ -51,7 +81,7 @@
 }
 
 .strategy-session-intro {
-  margin-top: 2.9rem;
+  margin-top: 2.2rem;
   max-width: 40rem;
 }
 
@@ -75,6 +105,7 @@
   display: block;
   filter: grayscale(100%) saturate(0.82) contrast(1.03);
   height: auto;
+  transform: scaleX(-1);
   width: 100%;
 }
 
@@ -84,14 +115,21 @@
 
 .strategy-session-cta {
   margin: 3rem 0 0;
+  text-align: center;
+}
+
+.strategy-session-testimonials .strategy-session-cta {
+  display: flex;
+  justify-content: center;
 }
 
 .strategy-session-section,
 .strategy-session-closing {
-  padding-top: 2.6rem;
-  margin-top: 2.6rem;
+  padding-top: 4.5rem;
+  margin-top: 4.5rem;
 }
 
+.strategy-session-section h1,
 .strategy-session-section h2,
 .strategy-session-closing h2 {
   font-size: clamp(2.1rem, 3.7vw, 2.95rem);
@@ -100,18 +138,55 @@
   margin: 0 0 1.45rem;
 }
 
+.strategy-session-section h1 {
+  font-size: clamp(2.6rem, 4.8vw, 4rem);
+  margin-bottom: 1rem;
+}
+
+.strategy-session-section h1 + h2 {
+  color: rgb(17 17 17 / 76%);
+  font-size: clamp(1.35rem, 2.2vw, 1.8rem);
+  margin-bottom: 2rem;
+}
+
 .strategy-session-prose--first-person {
+  display: flow-root;
+  max-width: none;
+}
+
+.strategy-session-prose--session,
+.strategy-session-prose--closing,
+.strategy-session-section__inner--narrow {
   max-width: 40rem;
 }
 
+.strategy-session-section__inner--narrow {
+  margin: 0 auto;
+}
+
+.strategy-session-section__inner--topics {
+  margin: 0 auto 2rem;
+  max-width: 52rem;
+}
+
+.strategy-session-section--topics h1 {
+  font-size: clamp(2.1rem, 3.7vw, 2.95rem);
+  margin-bottom: 0.75rem;
+}
+
+.strategy-session-section--topics h2 {
+  color: #111;
+  font-size: clamp(2.1rem, 3.7vw, 2.95rem);
+  margin-bottom: 0;
+}
+
 .strategy-session-about {
-  align-items: start;
-  display: grid;
-  gap: 2.5rem;
-  grid-template-columns: minmax(280px, 0.95fr) minmax(0, 1.15fr);
+  margin: 0 auto;
+  max-width: 52rem;
 }
 
 .strategy-session-about__media {
+  margin: 0 0 2rem;
   max-width: 100%;
 }
 
@@ -119,11 +194,20 @@
   min-width: 0;
 }
 
+@media (width >= 992px) {
+  .strategy-session-about__media {
+    float: right;
+    margin: 0 0 1.5rem 2.5rem;
+    width: min(42%, 22rem);
+  }
+}
+
 .strategy-session-topics-grid {
   display: grid;
   gap: 1.9rem 2.4rem;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  margin-top: 1.75rem;
+  margin-top: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 .strategy-session-topic h3 {
@@ -142,13 +226,6 @@
   margin: 0;
 }
 
-.strategy-session-quote {
-  margin: 5.5rem auto;
-  max-width: 34rem;
-  padding: 0;
-  text-align: center;
-}
-
 .strategy-session-quote__line {
   color: rgb(17 17 17 / 84%);
   font-size: clamp(2rem, 4vw, 3rem);
@@ -157,16 +234,30 @@
   margin: 0;
 }
 
+.strategy-session-quote__line--lead {
+  color: #111;
+  font-size: clamp(2.15rem, 4.2vw, 3.15rem);
+  font-style: italic;
+  line-height: 1.12;
+  margin-bottom: 2.4rem;
+}
+
 .strategy-session-quote__line + .strategy-session-quote__line {
   margin-top: 0.75rem;
 }
 
 .strategy-session-quote__line--accent {
   color: #111;
-  font-size: clamp(2.7rem, 5.4vw, 4.25rem);
-  font-weight: 600;
-  line-height: 0.96;
-  margin-top: 1rem;
+  font-size: clamp(3rem, 5.8vw, 4.8rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 0.94;
+  margin-top: 2.4rem;
+  text-transform: uppercase;
+}
+
+.strategy-session-quote__line--accent-mixed {
+  text-transform: none;
 }
 
 .strategy-session-emphasis {
@@ -174,49 +265,173 @@
   font-weight: 600;
 }
 
-.strategy-session-topics-grid--not-for {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+.strategy-session-testimonials__carousel {
+  background:
+    linear-gradient(180deg, rgb(236 231 220 / 72%) 0%, rgb(246 242 236 / 96%) 100%);
+  border: 1px solid rgb(17 17 17 / 12%);
+  margin-top: 1.5rem;
+  padding: clamp(2rem, 4vw, 3rem);
+}
+
+.strategy-session-testimonials__viewport {
+  min-height: 18rem;
 }
 
 .strategy-session-testimonials__list {
-  display: grid;
-  gap: 2rem;
+  margin: 0 auto;
+  max-width: 40rem;
 }
 
 .strategy-session-testimonial {
-  border-left: 1px solid rgb(17 17 17 / 12%);
   margin: 0;
-  padding: 0 0 0 1.5rem;
+  padding: 0;
+  text-align: center;
 }
 
 .strategy-session-testimonial__quote {
   color: #111;
   font-family: "EB Garamond", serif;
-  font-size: clamp(1.75rem, 2.8vw, 2.5rem);
+  font-size: clamp(1.55rem, 2.3vw, 2rem);
+  font-style: italic;
   letter-spacing: -0.02em;
-  line-height: 1.18;
+  line-height: 1.24;
   margin: 0;
-  max-width: 22ch;
+  max-width: 26ch;
+  margin-left: auto;
+  margin-right: auto;
   position: relative;
 }
 
 .strategy-session-testimonial__quote::before {
-  color: rgb(17 17 17 / 18%);
+  color: rgb(17 17 17 / 16%);
   content: "\201C";
-  font-size: clamp(4.5rem, 8vw, 6.5rem);
-  left: -0.45rem;
+  font-size: clamp(4.8rem, 8.4vw, 6.8rem);
+  left: -0.3rem;
   line-height: 1;
   position: absolute;
-  top: -1.5rem;
+  top: -2rem;
 }
 
-.strategy-session-topic--boxed {
+.strategy-session-testimonial__role {
+  color: rgb(17 17 17 / 56%);
+  font-family: Inter, sans-serif;
+  font-size: 0.82rem;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  margin-top: 1.75rem;
+  text-transform: uppercase;
+}
+
+.strategy-session-testimonials__controls {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.strategy-session-testimonials__button {
+  align-items: center;
+  background: rgb(246 242 236 / 72%);
   border: 1px solid rgb(17 17 17 / 12%);
-  padding: 1.2rem 1.15rem 1.1rem;
+  border-radius: 999px;
+  color: #111;
+  cursor: pointer;
+  display: inline-flex;
+  flex: 0 0 auto;
+  height: 2.9rem;
+  justify-content: center;
+  padding: 0;
+  transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
+  width: 2.9rem;
 }
 
-.strategy-session-topics-grid--not-for .strategy-session-topic--boxed:last-child {
-  grid-column: 1 / -1;
+.strategy-session-testimonials__button svg {
+  fill: none;
+  height: 1.15rem;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.6;
+  width: 1.15rem;
+}
+
+.strategy-session-testimonials__button:hover,
+.strategy-session-testimonials__button:focus-visible {
+  background: rgb(17 17 17 / 4%);
+  border-color: rgb(17 17 17 / 28%);
+  outline: none;
+  transform: translateY(-1px);
+}
+
+.strategy-session-testimonials__dots {
+  display: flex;
+  gap: 0.7rem;
+}
+
+.strategy-session-testimonials__dot {
+  background: rgb(17 17 17 / 16%);
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  height: 0.7rem;
+  padding: 0;
+  transition: transform 160ms ease, background-color 160ms ease;
+  width: 0.7rem;
+}
+
+.strategy-session-testimonials__dot.is-active {
+  background: rgb(17 17 17 / 52%);
+  transform: scale(1.18);
+}
+
+.strategy-session-testimonials__dot:focus-visible {
+  outline: 2px solid rgb(17 17 17 / 34%);
+  outline-offset: 3px;
+}
+
+@media (width <= 767px) {
+  .strategy-session-testimonials__carousel {
+    padding: 1.5rem 1.15rem;
+  }
+
+  .strategy-session-testimonials__viewport {
+    min-height: 16.5rem;
+  }
+
+  .strategy-session-testimonial__quote {
+    font-size: clamp(1.28rem, 4.9vw, 1.55rem);
+    line-height: 1.24;
+    max-width: 18ch;
+  }
+
+  .strategy-session-testimonial__quote::before {
+    font-size: 4.1rem;
+    left: -0.15rem;
+    top: -1.35rem;
+  }
+
+  .strategy-session-testimonial__role {
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    margin-top: 1.35rem;
+  }
+
+  .strategy-session-testimonials__controls {
+    gap: 0.85rem;
+    margin-top: 1.5rem;
+  }
+
+  .strategy-session-testimonials__button {
+    height: 2.6rem;
+    width: 2.6rem;
+  }
+
+  .strategy-session-testimonials__button svg {
+    height: 1rem;
+    width: 1rem;
+  }
 }
 
 .strategy-session-list {
@@ -242,7 +457,8 @@
 }
 
 .strategy-session-closing {
-  padding-bottom: 0.5rem;
+  padding-bottom: 1rem;
+  text-align: center;
 }
 
 .strategy-session-closing__prompt {
@@ -266,7 +482,7 @@
 }
 
 .strategy-session-cta--closing {
-  margin-top: 1.25rem;
+  margin-top: 2rem;
 }
 
 .strategy-session-page .power-thesis__btn {
@@ -309,6 +525,12 @@
     padding: 0 0 1rem;
   }
 
+  .strategy-session-screen,
+  .strategy-session-screen--hero,
+  .strategy-session-screen--closing {
+    min-height: 0;
+  }
+
   .strategy-session-about {
     gap: 1.5rem;
     grid-template-columns: 1fr;
@@ -316,13 +538,8 @@
 
   .strategy-session-section,
   .strategy-session-closing {
-    margin-top: 2rem;
-    padding-top: 2rem;
-  }
-
-  .strategy-session-quote {
-    margin: 4.25rem auto;
-    max-width: 24rem;
+    margin-top: 3rem;
+    padding-top: 3rem;
   }
 
   .strategy-session-quote__line + .strategy-session-quote__line {
