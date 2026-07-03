@@ -270,22 +270,31 @@
     linear-gradient(180deg, rgb(236 231 220 / 72%) 0%, rgb(246 242 236 / 96%) 100%);
   border: 1px solid rgb(17 17 17 / 12%);
   margin-top: 1.5rem;
-  padding: clamp(2rem, 4vw, 3rem);
+  padding: clamp(1.45rem, 2.8vw, 2.2rem);
+  position: relative;
+}
+
+.strategy-session-testimonials__carousel::before,
+.strategy-session-testimonials__carousel::after,
+.strategy-session-testimonial::before,
+.strategy-session-testimonial::after {
+  content: none;
 }
 
 .strategy-session-testimonials__viewport {
-  min-height: 18rem;
+  min-height: clamp(13rem, 18vw, 15rem);
 }
 
 .strategy-session-testimonials__list {
   margin: 0 auto;
-  max-width: 40rem;
+  max-width: 44rem;
 }
 
 .strategy-session-testimonial {
   margin: 0;
   padding: 0;
   text-align: center;
+  border: 0;
 }
 
 .strategy-session-testimonial__quote {
@@ -296,14 +305,14 @@
   letter-spacing: -0.02em;
   line-height: 1.24;
   margin: 0;
-  max-width: 26ch;
+  max-width: 30ch;
   margin-left: auto;
   margin-right: auto;
   position: relative;
 }
 
 .strategy-session-testimonial__quote::before {
-  color: rgb(17 17 17 / 16%);
+  color: rgb(163 139 91 / 38%);
   content: "\201C";
   font-size: clamp(4.8rem, 8.4vw, 6.8rem);
   left: -0.3rem;
@@ -320,6 +329,9 @@
   font-weight: 600;
   letter-spacing: 0.16em;
   margin-top: 1.75rem;
+  max-width: 26ch;
+  margin-left: auto;
+  margin-right: auto;
   text-transform: uppercase;
 }
 
@@ -328,7 +340,7 @@
   display: flex;
   gap: 1rem;
   justify-content: center;
-  margin-top: 2rem;
+  margin-top: 1.35rem;
 }
 
 .strategy-session-testimonials__button {
@@ -393,17 +405,17 @@
 
 @media (width <= 767px) {
   .strategy-session-testimonials__carousel {
-    padding: 1.5rem 1.15rem;
+    padding: 1.25rem 1rem;
   }
 
   .strategy-session-testimonials__viewport {
-    min-height: 16.5rem;
+    min-height: 14.75rem;
   }
 
   .strategy-session-testimonial__quote {
     font-size: clamp(1.28rem, 4.9vw, 1.55rem);
     line-height: 1.24;
-    max-width: 18ch;
+    max-width: 20ch;
   }
 
   .strategy-session-testimonial__quote::before {
@@ -416,11 +428,12 @@
     font-size: 0.74rem;
     letter-spacing: 0.14em;
     margin-top: 1.35rem;
+    max-width: 20ch;
   }
 
   .strategy-session-testimonials__controls {
     gap: 0.85rem;
-    margin-top: 1.5rem;
+    margin-top: 1.1rem;
   }
 
   .strategy-session-testimonials__button {
