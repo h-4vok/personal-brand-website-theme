@@ -91,6 +91,47 @@
   font-weight: inherit;
 }
 
+.post-single-content .final-revelation,
+.post-content .final-revelation,
+.article-body .final-revelation {
+  margin: 3rem 0 1rem;
+}
+
+.final-revelation summary {
+  border: 2px solid var(--text-base);
+  border-radius: 8px;
+  color: var(--text-base);
+  cursor: pointer;
+  font-family: "EB Garamond", serif;
+  font-size: 1.55rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  list-style-position: inside;
+  padding: 0.8rem 1rem;
+  text-align: center;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.final-revelation summary:hover,
+.final-revelation summary:focus-visible {
+  background-color: var(--text-base);
+  color: var(--text-inverse);
+}
+
+.final-revelation-message {
+  background-color: var(--surface-soft);
+  border-left: 2px solid var(--text-muted);
+  color: var(--text-secondary);
+  margin: 1.25rem 0 0;
+  padding: 1.5rem 2rem;
+}
+
+.final-revelation-message p {
+  font-size: 1.28rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
 .goback-section {
   padding: 25px 0 0;
 }
