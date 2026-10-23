@@ -3,6 +3,9 @@
   "version": "2.2.0",
   "license": "MIT",
   "author": "Christian Guzman",
+  "engines": {
+    "node": "^22.23.4"
+  },
   "scripts": {
     "dev": "hugo server",
     "build": "hugo --gc --minify --templateMetrics --templateMetricsHints --buildDrafts --buildExpired --buildFuture --forceSyncStatic",
