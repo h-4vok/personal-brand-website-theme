@@ -1,27 +1,23 @@
-{{ $data := index site.Data site.Language.Lang }} {{ if $data.about.about.enable
-}} {{"<!-- Start About Section -->" | safeHTML}}
+{{ $data := index site.Data site.Language.Lang }}
+{{ if $data.about.about.enable }}
 <section class="bg-one about section power-thesis" id="about">
   <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-12">
-        <div class="power-thesis__inner text-center wow fadeIn" data-wow-duration="900ms">
-          <h1 class="power-thesis__headline">
-            Build organisations as robust as the software you ship.
-          </h1>
-          <p class="power-thesis__subheadline">
-            I help engineering leaders move beyond mindless standardisation to scale trust, clarity, and intentionality.
-          </p>
-          <div class="power-thesis__actions">
-            <a
-              href="/engineering-leadership-coaching/"
-              class="power-thesis__btn power-thesis__btn--primary"
-            >
-              Book a free leadership coaching session
-            </a>
-          </div>
+    <div class="power-thesis__inner">
+      <div class="power-thesis__copy">
+        <h1 class="power-thesis__headline">Build organisations that scale.</h1>
+        <p class="power-thesis__subheadline">
+          I help engineering leaders build the trust, ownership and decision-making that make software teams resilient.
+        </p>
+        <div class="power-thesis__actions">
+          <a href="/engineering-leadership-coaching/" class="power-thesis__btn power-thesis__btn--primary">
+            Book a free conversation
+          </a>
         </div>
       </div>
+      <figure class="power-thesis__portrait">
+        <img src="{{ `images/avatar3.jpg` | relURL }}" alt="Portrait of Christian Guzman" width="720" height="900">
+      </figure>
     </div>
   </div>
 </section>
-{{"<!-- /about -->" | safeHTML}} {{ end }}
+{{ end }}

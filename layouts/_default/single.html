@@ -1,63 +1,37 @@
 {{ define "main" }}
+<header class="ops-report-head">
+  <div class="ops-report-head__bar"><span>FIELD REPORT / {{ with .Params.categories }}{{ index . 0 }}{{ else }}ENGINEERING LEADERSHIP{{ end }}</span><span>REF {{ .Date.Format "060102" }}</span></div>
+  <div class="ops-report-head__grid">
+    <div>
+      <p class="ops-eyebrow">PRACTICE NOTE / FIELD LIBRARY</p>
+      <h1>{{ .Title }}</h1>
+      {{ with .Params.description }}<p class="ops-report-head__summary">{{ . }}</p>{{ end }}
+    </div>
+    <dl class="ops-report-facts">
+      <div><dt>Published</dt><dd>{{ .Date.Format "02 Jan 2006" }}</dd></div>
+      <div><dt>Reading time</dt><dd>{{ .ReadingTime }} min</dd></div>
+      <div><dt>Author</dt><dd>{{ .Params.author | default site.Params.authorbox.name }}</dd></div>
+    </dl>
+  </div>
+</header>
 
-<!-- {{ partial "single-breadcrumb.html" . }} -->
+<section class="ops-report">
+  <aside class="ops-report__rail" aria-label="Report metadata">
+    <div class="ops-report-status"><span class="ops-report-status__dot"></span><span>AVAILABLE / FOR REFERENCE</span></div>
+    <div class="ops-report__rail-block"><span>REPORT TYPE</span><strong>Leadership field note</strong></div>
+    <div class="ops-report__rail-block"><span>SUBJECT</span><strong>{{ with .Params.categories }}{{ index . 0 }}{{ else }}Team systems{{ end }}</strong></div>
+    <a class="ops-report__back" href="{{ `articles/` | absLangURL }}">← Back to field notes</a>
+  </aside>
 
-<div class="article-hero">
-  {{ with .Params.categories }}
-  <p class="category-link">
-    {{ index . 0 }}
-  </p>
-  {{ end }}
-
-  <h1>{{ .Title }}</h1>
-
-  {{ with .Params.description }}
-  <h2 class="subtitle">{{ . }}</h2>
-  {{ end }}
-</div>
-
-<section class="section post-single-section">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <div
-          class="post-single-content"
-          data-article-content
-          data-article-slug="{{ .RelPermalink }}"
-          data-article-title="{{ .Title }}"
-          data-article-reading-time="{{ .ReadingTime }}"
-        >
-
-          <div class="article-meta">
-
-            <div class="reading-time">
-              <i class="ti-timer"></i> {{ .ReadingTime }} min read
-            </div>
-
-            {{ if site.Params.post_share }}
-              <div class="share-icons">
-                {{ partial "post-share.html" . }}
-              </div>
-            {{ end }}
-
-          </div>
-
-          {{ if ne .Type "manifesto" }}
-            {{ partial "image.html" (dict "Src" .Params.Image "Alt" "Blog Image" "Class" "img-fluid mb-50 lozad featured-article-image") }}
-          {{ end }}
-
-          {{ .Content }}
-
-          {{ partial "author-box.html" . }}
-
-          {{ partial "more-like-this.html" . }}
-
-        </div>
-
-
+  <div class="ops-report__main">
+    <div class="post-single-content" id="report-body" data-article-content data-article-slug="{{ .RelPermalink }}" data-article-title="{{ .Title }}" data-article-reading-time="{{ .ReadingTime }}">
+      <div class="article-meta">
+        {{ if site.Params.post_share }}<div class="share-icons">{{ partial "post-share.html" . }}</div>{{ end }}
       </div>
+      {{ .Content }}
+      <div class="ops-report__author" id="author-box">{{ partial "author-box.html" . }}</div>
+      {{ partial "more-like-this.html" . }}
     </div>
   </div>
 </section>
-
 {{ end }}
