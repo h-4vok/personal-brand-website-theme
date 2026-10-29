@@ -1,63 +1,19 @@
 {{ define "main" }}
-
-<!-- {{ partial "single-breadcrumb.html" . }} -->
-
-<div class="article-hero">
-  {{ with .Params.categories }}
-  <p class="category-link">
-    {{ index . 0 }}
-  </p>
-  {{ end }}
-
-  <h1>{{ .Title }}</h1>
-
-  {{ with .Params.description }}
-  <h2 class="subtitle">{{ . }}</h2>
-  {{ end }}
-</div>
-
-<section class="section post-single-section">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <div
-          class="post-single-content"
-          data-article-content
-          data-article-slug="{{ .RelPermalink }}"
-          data-article-title="{{ .Title }}"
-          data-article-reading-time="{{ .ReadingTime }}"
-        >
-
-          <div class="article-meta">
-
-            <div class="reading-time">
-              <i class="ti-timer"></i> {{ .ReadingTime }} min read
-            </div>
-
-            {{ if site.Params.post_share }}
-              <div class="share-icons">
-                {{ partial "post-share.html" . }}
-              </div>
-            {{ end }}
-
-          </div>
-
-          {{ if ne .Type "manifesto" }}
-            {{ partial "image.html" (dict "Src" .Params.Image "Alt" "Blog Image" "Class" "img-fluid mb-50 lozad featured-article-image") }}
-          {{ end }}
-
-          {{ .Content }}
-
-          {{ partial "author-box.html" . }}
-
-          {{ partial "more-like-this.html" . }}
-
-        </div>
-
-
-      </div>
-    </div>
+{{ $category := "FIELD NOTE" }}{{ with .Params.categories }}{{ $category = upper (index . 0) }}{{ end }}
+<main class="zine-article">
+  <div class="zine-article__utility"><a href="/articles/">← BACK TO THE STACK</a><span>CG / NOTE {{ .Date.Format "0601" }}</span><span>{{ .ReadingTime }} MIN READ</span></div>
+  <header class="zine-article__head">
+    <div class="zine-article__title-block"><p class="zine-kicker">{{ $category }} · {{ .Date.Format "02 JAN 2006" }}</p><h1>{{ .Title }}</h1><p class="zine-article__dek">{{ .Params.description }}</p></div>
+    <aside class="zine-article__poster" aria-label="Article cover: field note {{ .Date.Format "0601" }}"><span>FIELD<br>NOTE</span><b>{{ .Date.Format "06" }}<br>{{ .Date.Format "01" }}</b><i aria-hidden="true">✳</i></aside>
+  </header>
+  <div class="zine-article__body-wrap">
+    <aside class="zine-article__margin" aria-hidden="true"><span>READ / THINK / TRY</span><span>↓</span></aside>
+    <article class="post-single-content zine-prose" data-article-content data-article-slug="{{ .RelPermalink }}" data-article-title="{{ .Title }}" data-article-reading-time="{{ .ReadingTime }}">
+      {{ .Content }}
+      {{ if site.Params.post_share }}<div class="zine-share"><span>PASS IT ON</span>{{ partial "post-share.html" . }}</div>{{ end }}
+    </article>
   </div>
-</section>
-
+  <div class="zine-article__endmark" aria-hidden="true">END OF NOTE / KEEP GOING →</div>
+  <div class="zine-article__after">{{ partial "author-box.html" . }}{{ partial "more-like-this.html" . }}</div>
+</main>
 {{ end }}
