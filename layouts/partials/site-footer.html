@@ -1,49 +1,5 @@
-<footer class="new-footer">
-  <div class="footer-container">
-
-    <div class="footer-main">
-
-      <div class="footer-col brand">
-        <a href="{{ site.Home.Permalink }}" class="footer-brand-link" aria-label="Christian Guzman Home">
-          <img
-            class="footer-avatar"
-            src="{{ with site.Params.authorbox.image }}{{ . | relURL }}{{ else }}{{ `images/avatar3.jpg` | relURL }}{{ end }}"
-            alt="Christian Guzman"
-            width="60"
-            height="60"
-          >
-          <span class="footer-brand-headline">Christian Guzman</span>
-        </a>
-      </div>
-
-      <div class="footer-col">
-        <h4 class="footer-heading">Navigation</h4>
-        <ul class="footer-list">
-          <li><a href="{{ site.Home.Permalink }}" class="js-smooth-scroll">Home</a></li>
-          <li><a href="/articles/" class="js-smooth-scroll">Articles</a></li>
-          <li><a href="/engineering-leadership-coaching/">Leadership Coaching</a></li>
-          
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4 class="footer-heading">Connect</h4>
-        <ul class="footer-list social-links">
-
-          {{ range site.Params.footer.socialLinks }}
-            {{ if eq (lower .name) "linkedin" }}
-            <li><a href="{{ .link | safeURL }}" target="_blank" rel="noopener">{{ .name }}</a></li>
-            {{ end }}
-          {{ end }}
-
-        </ul>
-      </div>
-
-    </div>
-
-    <div class="footer-sub">
-      <p>&copy; 2026 Christian Guzman. All rights reserved.</p>
-    </div>
-
-  </div>
+<footer class="arcade-footer">
+  <div class="arcade-footer__top"><a class="arcade-brand" href="{{ site.Home.RelPermalink }}">Christian Guzman</a><span>THANKS FOR READING <span aria-hidden="true">♥</span></span><a class="arcade-footer__top-link" href="{{ site.Home.RelPermalink }}#about">BACK TO TOP ↑</a></div>
+  <div class="arcade-footer__grid"><p>Good teams are<br>built together.</p><nav aria-label="Footer navigation"><a href="{{ site.Home.RelPermalink }}#about">The Bridge</a><a href="{{ site.Home.RelPermalink }}#blog">Captain’s Log</a><a href="{{ `leadership-office-hours/` | relLangURL }}">Office Hours</a></nav><a href="https://www.linkedin.com/in/guzmanchristian" target="_blank" rel="noopener">Find me on LinkedIn ↗</a></div>
+  <div class="arcade-footer__bottom"><span>© {{ now.Year }} CHRISTIAN GUZMAN</span><span>BUILT FOR PEOPLE, NOT PIXELS.</span><span>END OF CAPTAIN’S LOG</span></div>
 </footer>

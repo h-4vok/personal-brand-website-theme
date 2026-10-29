@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 720" role="img" aria-labelledby="title desc">
+  <title id="title">Field notes image placeholder</title>
+  <desc id="desc">An abstract star chart rendered as a terminal navigation display.</desc>
+  <defs>
+    <linearGradient id="space" x2="1" y2="1"><stop stop-color="#11191d"/><stop offset=".52" stop-color="#1b3035"/><stop offset="1" stop-color="#2b2035"/></linearGradient>
+    <radialGradient id="nebula"><stop stop-color="#59e7dc" stop-opacity=".45"/><stop offset="1" stop-color="#59e7dc" stop-opacity="0"/></radialGradient>
+    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse"><path d="M36 0H0v36" fill="none" stroke="#59e7dc" stroke-opacity=".16"/></pattern>
+  </defs>
+  <path fill="url(#space)" d="M0 0h720v720H0z"/>
+  <ellipse cx="480" cy="245" fill="url(#nebula)" rx="300" ry="270"/>
+  <path fill="url(#grid)" d="M0 0h720v720H0z"/>
+  <g fill="#e2f4df">
+    <circle cx="102" cy="136" r="3"/><circle cx="218" cy="96" r="2"/><circle cx="381" cy="153" r="3"/><circle cx="613" cy="102" r="2"/>
+    <circle cx="563" cy="323" r="3"/><circle cx="143" cy="365" r="2"/><circle cx="313" cy="523" r="3"/><circle cx="632" cy="585" r="2"/>
+    <circle cx="94" cy="596" r="2"/><circle cx="431" cy="628" r="2"/>
+  </g>
+  <g fill="none" stroke="#59e7dc" stroke-width="2">
+    <ellipse cx="365" cy="356" rx="230" ry="90" transform="rotate(-24 365 356)" stroke-dasharray="5 11"/>
+    <ellipse cx="365" cy="356" rx="177" ry="250" transform="rotate(31 365 356)" stroke-opacity=".55"/>
+    <path d="m124 462 131-83 103 20 132-159 93 40" stroke="#a5ff79" stroke-width="3"/>
+  </g>
+  <g fill="#a5ff79">
+    <path d="m353 302 16 42 46 12-42 16-14 47-17-43-44-14 42-16z"/>
+    <circle cx="255" cy="379" r="7"/><circle cx="358" cy="399" r="7"/><circle cx="490" cy="240" r="7"/>
+  </g>
+  <g fill="#ff4f9a" font-family="Consolas,monospace" font-size="18" letter-spacing="3">
+    <text x="44" y="58">FIELD STUDY // 01</text><text x="44" y="674">NAVIGATION RECORD / 720 × 720</text>
+  </g>
+  <path fill="none" stroke="#a5ff79" stroke-width="3" d="M20 20h36M20 20v36M700 20h-36m36 0v36M20 700h36m-36 0v-36m680 36h-36m36 0v-36"/>
+</svg>

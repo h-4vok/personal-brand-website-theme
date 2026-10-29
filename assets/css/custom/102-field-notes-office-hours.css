@@ -1,0 +1,334 @@
+@font-face {
+  font-display: swap;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 100 900;
+  src: url("/fonts/inter-latin-wght-normal.woff2") format("woff2");
+}
+
+:root {
+  --arcade-display: Inter, "Helvetica Neue", Arial, sans-serif;
+}
+
+#body .arcade-brand {
+  font-family: var(--arcade-display);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -.035em;
+}
+
+#body .arcade-brand:hover {
+  color: var(--arcade-lime) !important;
+}
+
+#body .arcade-hero__copy h1,
+#body .quest-log__header h2,
+#body .article-run__hero h1,
+#body .office-hours-picker__intro h1,
+#body .office-hours-path .co-op-hero__copy h1,
+#body .arcade-footer__grid > p {
+  font-family: var(--arcade-display) !important;
+  font-weight: 800 !important;
+  letter-spacing: -.065em;
+  line-height: .95;
+}
+
+#body .arcade-hero__copy h1 {
+  font-size: clamp(3rem, 5.7vw, 4.2rem);
+  max-width: 100%;
+}
+
+#body .arcade-hero__copy h1 em {
+  font-size: .76em;
+  white-space: nowrap;
+}
+
+#body .quest-log__header h2 {
+  color: var(--arcade-text) !important;
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  text-transform: none;
+}
+
+#body .article-run__hero h1 {
+  font-size: clamp(2.8rem, 5.4vw, 4.8rem);
+  line-height: 1.02;
+  max-width: 100%;
+}
+
+#body .post-single-content h1,
+#body .post-single-content h2,
+#body .post-single-content h3,
+#body .post-single-content h4,
+#body .office-hours-path h2,
+#body .office-hours-path h3 {
+  font-family: var(--arcade-display) !important;
+  font-weight: 750 !important;
+  letter-spacing: -.04em;
+  line-height: 1.2 !important;
+}
+
+#body .article-run__related .section-title {
+  font-family: var(--arcade-display) !important;
+  font-size: 1.8rem;
+  font-weight: 750;
+  letter-spacing: -.04em;
+}
+
+.quest-card {
+  transform-origin: center;
+  will-change: transform;
+}
+
+.quest-card:hover {
+  transform: none;
+}
+
+.quest-card__top {
+  align-items: flex-start;
+  gap: .5rem;
+}
+
+.quest-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem;
+}
+
+.quest-card__tag {
+  border: 1px solid var(--arcade-cyan);
+  color: var(--arcade-cyan);
+  font-size: .82rem;
+  line-height: 1.2;
+  padding: .15rem .35rem;
+  text-transform: uppercase;
+}
+
+.quest-card__top time { color: var(--arcade-yellow); display: grid; font-size: .86rem; line-height: 1; text-align: right; white-space: nowrap; }
+.quest-card__top time span { color: var(--arcade-muted); font-size: .7rem; letter-spacing: .1em; }
+.quest-card__top time strong { font-weight: 400; margin-top: .25rem; }
+
+.quest-card__image { aspect-ratio: 1; display: block; margin: 1rem 0; overflow: hidden; position: relative; }
+.quest-card__image img { display: block; height: 100%; object-fit: cover; width: 100%; }
+.quest-card__new { display: none; }
+.quest-card--new { animation: new-transmission 2.8s ease-in-out infinite; background: linear-gradient(135deg, #362047, #172b37 55%, #253719); border: 3px solid var(--arcade-lime); }
+.quest-card--new::after { border: 1px solid var(--arcade-pink); content: ''; inset: 5px; pointer-events: none; position: absolute; z-index: 4; }
+.quest-card--new .quest-card__new { align-self: flex-start; background: var(--arcade-pink); box-shadow: 4px 4px 0 var(--arcade-yellow); color: #101017; display: inline-flex; font: 700 .85rem/1 var(--arcade-display); letter-spacing: .09em; margin: .15rem 0 .2rem; max-width: 100%; padding: .65rem .8rem; position: relative; text-transform: uppercase; }
+.quest-card__signal { background: linear-gradient(90deg, transparent, var(--arcade-cyan), #fff, var(--arcade-pink), transparent); display: none; height: 5px; left: 0; opacity: .85; pointer-events: none; position: absolute; right: 0; top: 0; z-index: 3; }
+.quest-card--new .quest-card__signal { display: block; }
+.quest-card--new .quest-card__link { background: linear-gradient(135deg, rgb(37 22 49 / 84%), rgb(13 33 42 / 88%) 58%, rgb(24 42 16 / 86%)); position: relative; z-index: 1; }
+.quest-card--new .quest-card__title { color: #fff8d1; }
+.quest-card--new .quest-card__tag { background: var(--arcade-cyan); color: #081213; }
+.quest-card--new .quest-card__top { border-color: var(--arcade-pink); }
+.quest-card--new .quest-card__read { color: var(--arcade-yellow); }
+
+.arcade-hero { background: #081017; isolation: isolate; overflow: hidden; }
+.arcade-hero::before { animation: galaxy-drift 90s linear infinite; background-image: linear-gradient(90deg, rgb(6 12 19 / 88%) 0%, rgb(6 12 19 / 75%) 42%, rgb(6 12 19 / 18%) 100%), radial-gradient(ellipse at 76% 32%, rgb(26 93 111 / 45%), transparent 39%), radial-gradient(ellipse at 58% 76%, rgb(80 35 88 / 30%), transparent 35%), radial-gradient(1.5px 1.5px at 12% 22%, #fff 99%, transparent), radial-gradient(1px 1px at 32% 72%, #9feaff 99%, transparent), radial-gradient(1.5px 1.5px at 70% 19%, #fff 99%, transparent), radial-gradient(1px 1px at 88% 68%, #ffe889 99%, transparent), radial-gradient(1px 1px at 54% 48%, #fff 99%, transparent), radial-gradient(1px 1px at 19% 89%, #a5ff79 99%, transparent); background-size: auto, auto, auto, 330px 280px, 430px 360px, 520px 410px, 370px 310px, 470px 390px, 400px 330px; content: ''; inset: 0; pointer-events: none; position: absolute; z-index: -1; }
+.arcade-hero__topline, .arcade-hero__grid, .arcade-hero__bottomline { position: relative; }
+.arcade-hero__visual { background: transparent; border: 0; overflow: visible; }
+.arcade-screen-grid { opacity: .3; }
+.arcade-orbit { border-color: rgb(89 231 220 / 30%); }
+.arcade-ship-track { align-items: center; display: flex; justify-content: center; position: relative; width: min(86%, 400px); z-index: 2; }
+.arcade-ship { animation: none; filter: drop-shadow(0 0 12px rgb(89 231 220 / 75%)) drop-shadow(0 0 30px rgb(255 79 154 / 25%)); height: auto; width: min(100%, 480px); }
+.arcade-ship__hull { fill: #a5ff79; stroke: #efffca; stroke-width: 3; }
+.arcade-ship__window { fill: #12272e; stroke: #59e7dc; stroke-width: 4; }
+.arcade-ship__wing { fill: #509caf; stroke: #c7f7ff; stroke-width: 2; }
+.arcade-ship__trail { fill: none; stroke: #59e7dc; stroke-linecap: round; stroke-width: 5; }
+.arcade-ship__flare { fill: #ff4f9a; }
+.arcade-ship__markings { fill: none; stroke: #203d36; stroke-linecap: round; stroke-width: 4; }
+
+.arcade-menu { align-items: stretch; gap: .35rem; }
+.arcade-menu a { border: 1px solid transparent; display: grid; gap: .15rem; min-width: 8.5rem; padding: .4rem .7rem; text-decoration: none; }
+.arcade-menu a::before { display: none; }
+.arcade-menu a span { color: var(--arcade-cyan); font-size: .7rem; letter-spacing: .12em; }
+.arcade-menu a strong { color: var(--arcade-text); font: 600 1rem/1 var(--arcade-display); }
+.arcade-menu a:hover, .arcade-menu a:focus-visible { background: #14262a; border-color: var(--arcade-cyan); box-shadow: inset 0 -3px var(--arcade-lime), 0 0 16px rgb(89 231 220 / 16%); }
+.arcade-menu a:hover strong, .arcade-menu a:focus-visible strong { color: var(--arcade-lime); }
+
+.quest-log__grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.quest-card { clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%); }
+.quest-card:nth-child(4n + 2) { grid-column: span 2; }
+.quest-card:nth-child(4n + 2) .quest-card__link { display: grid; gap: .4rem 1.2rem; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: auto auto 1fr auto auto; min-height: 480px; }
+.quest-card:nth-child(4n + 2) .quest-card__top { grid-column: 1 / -1; }
+.quest-card:nth-child(4n + 2) .quest-card__image { grid-column: 1; grid-row: 2 / 6; margin: 0; }
+.quest-card:nth-child(4n + 2) .quest-card__title { grid-column: 2; grid-row: 3; }
+.quest-card:nth-child(4n + 2) .quest-card__description { grid-column: 2; grid-row: 4; }
+.quest-card:nth-child(4n + 2) .quest-card__read { grid-column: 2; grid-row: 5; }
+.quest-card:nth-child(4n + 2).quest-card--new .quest-card__new { grid-column: 2; grid-row: 2; }
+.quest-card:nth-child(4n + 3) .quest-card__image { margin-top: 1.4rem; }
+.quest-card--new { clip-path: none; }
+.quest-card--new .quest-card__link { min-height: 480px; }
+.quest-log__header h2 { max-width: 12ch; }
+
+@keyframes galaxy-drift { to { background-position: 0 0, 0 0, 0 0, 330px 280px, -430px 360px, 520px -410px, -370px -310px, 470px 390px, -400px 330px; } }
+@keyframes new-transmission { 0%, 100% { box-shadow: 0 0 0 1px var(--arcade-pink), 0 0 14px rgb(89 231 220 / 38%); } 50% { box-shadow: 0 0 0 4px var(--arcade-yellow), 0 0 34px rgb(255 79 154 / 72%), 0 0 58px rgb(89 231 220 / 38%); } }
+
+.field-pagination {
+  align-items: center;
+  border-top: 1px dashed var(--arcade-line);
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  padding-top: 1rem;
+}
+
+.field-pagination a,
+.office-hours-path__back a {
+  color: var(--arcade-cyan);
+  text-decoration: underline;
+  text-underline-offset: .2em;
+}
+
+.field-statement h2 em {
+  color: var(--arcade-pink);
+  font-style: normal;
+}
+
+.office-hours-picker__intro {
+  margin: 3rem auto;
+  max-width: 900px;
+  text-align: center;
+}
+
+#body .office-hours-picker__intro h1 {
+  color: var(--arcade-text) !important;
+  font: clamp(2rem, 5vw, 4rem)/1.1 var(--arcade-pixel);
+  margin: 1rem 0;
+  text-transform: uppercase;
+}
+
+.office-hours-picker__intro p:last-child,
+.office-hours-picker__note {
+  color: var(--arcade-muted);
+  font: 1.45rem/1.35 var(--arcade-mono);
+  margin: 0 auto;
+  max-width: 62ch;
+}
+
+.office-hours-choices {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.office-hours-choice {
+  background: var(--arcade-panel);
+  border: 1px solid var(--arcade-line);
+  display: flex;
+  flex-direction: column;
+  min-height: 22rem;
+  padding: 2rem;
+}
+
+#body .office-hours-choice h2 {
+  color: var(--arcade-lime) !important;
+  font: clamp(1.25rem, 2.5vw, 2rem)/1.1 var(--arcade-mono);
+  margin: 0 0 .75rem;
+}
+
+.office-hours-choice p:not(.arcade-kicker) {
+  color: var(--arcade-text);
+  font: 1.35rem/1.3 var(--arcade-mono);
+  margin: 0 0 1.5rem;
+  max-width: 42ch;
+}
+
+.office-hours-choice .arcade-button {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+#body .office-hours-path h2,
+#body .office-hours-path h3 {
+  color: var(--arcade-lime) !important;
+}
+
+.office-hours-picker__note {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.office-hours-path__lead {
+  color: var(--arcade-text);
+  font: 1.8rem/1.2 var(--arcade-mono);
+  max-width: 42ch;
+}
+
+.office-hours-path__intro {
+  color: var(--arcade-muted);
+  font: 1.25rem/1.35 var(--arcade-mono);
+  max-width: 48ch;
+}
+
+.office-hours-path .co-op-session-copy p {
+  color: var(--arcade-text);
+}
+
+.office-hours-path__back {
+  border-top: 1px dashed var(--arcade-line);
+  margin-top: 3rem;
+  padding-top: 1.25rem;
+}
+
+.field-archive-redirect {
+  margin: 5rem auto;
+  max-width: 60rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+@media (max-width: 760px) {
+  #body .arcade-hero__copy h1 em {
+    white-space: normal;
+  }
+
+  .office-hours-choices {
+    grid-template-columns: 1fr;
+  }
+
+  .office-hours-choice {
+    min-height: 0;
+  }
+
+  .field-pagination {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: .8rem;
+  }
+}
+
+@media (max-width: 900px) {
+  #body .arcade-hero__copy h1 { font-size: clamp(2.3rem, 4.6vw, 2.65rem); }
+  .arcade-menu a { min-width: 7rem; }
+  .arcade-menu a strong { font-size: .9rem; white-space: nowrap; }
+  .quest-log__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .quest-card:nth-child(4n + 2) { grid-column: span 2; }
+  .quest-card:nth-child(4n + 2) .quest-card__link { min-height: 0; }
+}
+
+@media (max-width: 640px) {
+  #body .arcade-hero__copy { min-width: 0; }
+  #body .arcade-hero__copy h1 { font-size: clamp(2.15rem, 8.5vw, 2.7rem); max-width: 100%; }
+  #body .arcade-hero__copy h1 em { white-space: normal; }
+  .arcade-hero__lead { font-size: 1.35rem; max-width: 100%; }
+  .arcade-hero__actions { min-width: 0; }
+  .arcade-hero__actions .arcade-button { font-size: 1.2rem; max-width: 100%; padding: .8rem .65rem; }
+  .arcade-stats div { min-width: 0; }
+  .arcade-stats span { overflow-wrap: anywhere; }
+  .arcade-docking { box-sizing: border-box; max-width: calc(100% - 1rem); width: calc(100% - 1rem); }
+  .arcade-docking h2 { font-size: 1.5rem; max-width: 100%; overflow-wrap: anywhere; }
+  .arcade-docking .arcade-button { font-size: 1.15rem; max-width: 100%; }
+  .arcade-menu { align-items: stretch; }
+  .arcade-menu a { min-width: 0; padding: .65rem .5rem; }
+  .arcade-hero::before { background-image: linear-gradient(90deg, rgb(6 12 19 / 78%), rgb(6 12 19 / 44%)), radial-gradient(ellipse at 68% 66%, rgb(26 93 111 / 38%), transparent 52%), radial-gradient(ellipse at 23% 90%, rgb(80 35 88 / 22%), transparent 48%), radial-gradient(1.5px 1.5px at 12% 22%, #fff 99%, transparent), radial-gradient(1px 1px at 32% 72%, #9feaff 99%, transparent), radial-gradient(1.5px 1.5px at 70% 19%, #fff 99%, transparent), radial-gradient(1px 1px at 88% 68%, #ffe889 99%, transparent), radial-gradient(1px 1px at 54% 48%, #fff 99%, transparent), radial-gradient(1px 1px at 19% 89%, #a5ff79 99%, transparent); }
+  .arcade-hero__visual { margin-top: .5rem !important; max-width: none !important; }
+  .arcade-ship { width: 90%; }
+  .quest-log__grid { grid-template-columns: 1fr; }
+  .quest-card:nth-child(4n + 2) { grid-column: auto; }
+  .quest-card:nth-child(4n + 2) .quest-card__link, .quest-card--new .quest-card__link { display: flex; min-height: 0; }
+  .quest-card:nth-child(4n + 2) .quest-card__top, .quest-card:nth-child(4n + 2) .quest-card__image, .quest-card:nth-child(4n + 2) .quest-card__title, .quest-card:nth-child(4n + 2) .quest-card__description, .quest-card:nth-child(4n + 2) .quest-card__read { grid-column: auto; grid-row: auto; }
+  .quest-card:nth-child(4n + 2) .quest-card__image { margin: 1rem 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arcade-hero::before, .quest-card--new { animation: none; }
+}

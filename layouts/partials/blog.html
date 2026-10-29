@@ -1,27 +1,30 @@
-{{ if gt (where site.RegularPages "Section" "==" "blog") 0}}
-{{"<!-- Start Blog Section -->" | safeHTML}}
-<section id="blog" class="section">
-	<div class="container">
-		<div class="row justify-content-center">
-			<div class="col-lg-12">
-				{{"<!-- section title -->" | safeHTML}}
-				<div class="title text-center wow fadeInDown">
-					<h2> {{ with i18n "blogTitle" }} {{ index (split . " ") 0 | safeHTML }} {{ end }}<span class="color">
-							{{ with i18n "blogTitle" }} {{ index (split . " ") 1 | safeHTML }} {{ end }} </span></h2>
-					<div class="border-guzman"></div>
-				</div>
-			</div>
-			{{"<!-- /section title -->" | safeHTML}}
-
-			{{ range first 6 (where site.RegularPages "Section" "==" "blog")}}
-			{{ .Render "article"}}
-			{{ end }}
-
-			<div class="all-post text-center col-lg-12">
-				<a class="btn btn-main" href="{{ `articles/` | absLangURL }}">{{ i18n "viewAllPost" }}</a>
-			</div>
-		</div>
-	</div>
-</section>
-{{"<!-- /blog -->" | safeHTML}}
+{{ $posts := where (where site.RegularPages "Section" "==" "blog") "Draft" "==" false }}
+{{ $posts = sort $posts "Date" "desc" }}
+{{ if gt (len $posts) 0 }}
+  {{ $paginator := .Paginate $posts 100 }}
+  <section class="quest-log field-notes" id="blog" aria-labelledby="field-notes-title">
+    <div class="quest-log__header">
+      <p class="arcade-kicker">CAPTAIN'S LOG / {{ printf "%02d" (len $posts) }} ENTRIES</p>
+      <h2 id="field-notes-title">Captain's Log<span aria-hidden="true">_</span></h2>
+      <p>Observations from the field of engineering leadership.</p>
+    </div>
+    <div class="field-notes__list" data-field-notes-list>
+      {{ range $paginator.Pages }}{{ partial "field-note-card.html" . }}{{ end }}
+    </div>
+    {{ if gt $paginator.TotalPages 1 }}
+      <nav class="quest-log__pagination" aria-label="Article pages">
+        {{ if $paginator.HasPrev }}<a href="{{ $paginator.Prev.URL }}" rel="prev">Newer</a>{{ end }}
+        <span>Page {{ $paginator.PageNumber }} of {{ $paginator.TotalPages }}</span>
+        {{ if $paginator.HasNext }}<a href="{{ $paginator.Next.URL }}" rel="next">Older</a>{{ end }}
+      </nav>
+    {{ end }}
+  </section>
+  <section class="arcade-docking field-statement" id="office-hours" aria-labelledby="field-statement-title">
+    <div class="field-statement__copy">
+      <p class="arcade-kicker">OFFICE HOURS / OPEN CHANNEL</p>
+      <h2 id="field-statement-title">Make management <em>weird.</em><br>Make teams work.</h2>
+      <p>Bring a career decision or a leadership challenge. We will find a useful next move together.</p>
+      <a class="arcade-button" href="{{ `office-hours/` | relLangURL }}">EXPLORE OFFICE HOURS <span aria-hidden="true">↗</span></a>
+    </div>
+  </section>
 {{ end }}

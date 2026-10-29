@@ -1,0 +1,209 @@
+:root {
+  --bridge-night: #07111b;
+  --bridge-deep: #091725;
+  --bridge-panel: #0c1b28;
+  --bridge-line: #244353;
+  --bridge-text: #f2f6f8;
+  --bridge-muted: #aab9c5;
+  --bridge-cyan: #71d8ef;
+  --bridge-lime: #b8e987;
+  --bridge-pink: #d58bb8;
+  --bridge-ui: "Ubuntu Mono", monospace;
+  --bridge-console: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+}
+
+html { background: var(--bridge-night); scroll-behavior: smooth; }
+#body { background: var(--bridge-night) !important; color: var(--bridge-text) !important; font-family: var(--bridge-ui) !important; font-size: 1rem; margin: 0 !important; }
+#body::before { display: none !important; }
+#body a:focus-visible { outline: 2px solid var(--bridge-cyan); outline-offset: 3px; }
+
+#body .arcade-nav {
+  align-items: center;
+  background: linear-gradient(180deg, #080d13, #060b10);
+  border-bottom: 1px solid rgb(113 216 239 / 26%);
+  box-shadow: 0 8px 28px rgb(0 0 0 / 24%);
+  display: flex;
+  gap: clamp(1rem, 2.5vw, 2.5rem);
+  justify-content: space-between;
+  min-height: 4rem;
+  padding: .5rem 1rem .5rem clamp(1rem, 2.6vw, 2.6rem);
+  position: relative;
+  z-index: 10;
+}
+#body .arcade-brand { align-items: center; color: var(--bridge-text) !important; display: inline-flex; flex: 0 0 auto; font: 600 clamp(.82rem, 1.2vw, 1rem)/1.2 var(--bridge-console) !important; gap: .9rem; letter-spacing: .06em; text-decoration: none; white-space: nowrap; }
+#body .arcade-brand__mark { color: var(--bridge-lime); font-size: 1.25rem; text-shadow: 0 0 14px rgb(184 233 135 / 40%); }
+#body .arcade-brand:hover { color: var(--bridge-cyan) !important; }
+#body .arcade-menu { align-items: center; display: flex; flex: 1 1 auto; gap: clamp(1.5rem, 2.4vw, 2rem); justify-content: flex-start; margin-left: clamp(1rem, 2vw, 2rem); }
+#body .arcade-menu a { border-bottom: 1px solid transparent; color: #c8d0d7; display: inline-flex; flex: 0 0 auto; font: 600 .76rem/1.3 var(--bridge-console); letter-spacing: .1em; min-width: 0 !important; padding: .55rem 0 .7rem; text-decoration: none; text-transform: uppercase; white-space: nowrap; width: max-content !important; }
+#body .arcade-menu a:hover, #body .arcade-menu a:focus-visible, #body .arcade-menu a.is-active { border-bottom-color: var(--bridge-lime); color: var(--bridge-lime); }
+#body .arcade-menu a.is-active { text-shadow: 0 0 14px rgb(184 233 135 / 25%); }
+#body .arcade-nav__telemetry { align-items: center; color: #c8d0d7; display: flex; flex: 0 0 auto; font: 500 .61rem/1.3 var(--bridge-console); gap: 1.05rem; letter-spacing: .1em; white-space: nowrap; }
+#body .arcade-nav__lights { display: flex; gap: .24rem; }
+#body .arcade-nav__lights i { background: #4d6066; height: .36rem; width: .7rem; }
+#body .arcade-nav__lights i:nth-child(-n+3) { animation: bridge-cockpit-light 3.2s ease-in-out infinite; background: var(--bridge-lime); box-shadow: 0 0 8px rgb(184 233 135 / 55%); }
+#body .arcade-nav__lights i:nth-child(2) { animation-delay: .35s; }
+#body .arcade-nav__lights i:nth-child(3) { animation-delay: .7s; }
+#body .arcade-nav__lights i:nth-child(4) { animation: bridge-cockpit-light 3.6s ease-in-out infinite; animation-delay: 1.1s; background: var(--bridge-pink); }
+#body .arcade-nav__toggle { background: transparent; border: 1px solid var(--bridge-line); border-radius: 2px; color: var(--bridge-text); display: none; font: 600 .8rem var(--bridge-console); padding: .55rem .75rem; }
+
+#body .bridge-hero { margin: 0 0 3rem; position: relative; width: 100%; }
+.bridge-telemetry { align-items: center; background: linear-gradient(180deg, #0b141d, #080f17); border-bottom: 1px solid rgb(113 216 239 / 24%); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); min-height: 3.6rem; padding: .5rem clamp(2rem, 5.5vw, 5.6rem); }
+.bridge-telemetry__item { align-items: baseline; border-right: 1px solid rgb(113 216 239 / 20%); display: flex; gap: .8rem; min-width: 0; padding: .2rem clamp(.75rem, 2vw, 2rem); }
+.bridge-telemetry__item:first-child { padding-left: 0; }
+.bridge-telemetry__item:last-child { border: 0; }
+.bridge-telemetry__item strong { color: var(--bridge-lime); font: 600 clamp(1.5rem, 2.3vw, 2rem)/1 var(--bridge-console); letter-spacing: -.05em; text-shadow: 0 0 18px rgb(184 233 135 / 18%); white-space: nowrap; }
+.bridge-telemetry__item span { color: var(--bridge-text); font: 500 clamp(.52rem, .75vw, .7rem)/1.35 var(--bridge-console); letter-spacing: .08em; }
+
+.bridge-scene { height: 68svh; isolation: isolate; min-height: 36rem; overflow: hidden; position: relative; width: 100%; }
+.bridge-galaxy { animation: bridge-space-drift 22s ease-in-out infinite alternate; height: 110%; left: 0; object-fit: cover; object-position: center; position: absolute; top: -10%; transform-origin: 60% 45%; width: 110%; z-index: 0; }
+.bridge-scene__shadow { background: linear-gradient(90deg, #02070c 0%, #03090f 33%, rgb(3 9 15 / 94%) 39%, rgb(3 9 15 / 55%) 47%, transparent 61%); clip-path: polygon(0 0, 37% 0, 48% 79%, 54% 100%, 0 100%); inset: 0; position: absolute; z-index: 1; }
+.bridge-hero__copy { left: 5%; max-width: 40%; position: absolute; top: 12%; z-index: 5; }
+#body .bridge-hero__copy h1 { color: var(--bridge-text) !important; font: 700 clamp(3.5rem, 4.4vw, 4.7rem)/.94 var(--bridge-ui) !important; letter-spacing: -.075em; margin: 0; max-width: 12ch; text-transform: none; }
+#body .bridge-hero__copy h1 em { color: var(--bridge-lime); font-style: normal; }
+.bridge-hero__lead { color: #e0e7ec; font: 400 clamp(1.08rem, 1.45vw, 1.25rem)/1.45 var(--bridge-ui); margin: .8rem 0 0; max-width: 19rem; }
+.bridge-hero__actions { align-items: center; display: flex; flex-wrap: wrap; gap: 1.4rem; margin-top: 1.6rem; }
+#body .bridge-button { align-items: center; background: var(--bridge-lime); border: 1px solid var(--bridge-lime); border-radius: 2px; box-shadow: 0 8px 26px rgb(184 233 135 / 14%); color: #10202a !important; display: inline-flex; font: 700 .9rem/1.2 var(--bridge-ui); gap: 1.1rem; justify-content: center; min-height: 2.8rem; padding: .65rem 1rem; text-decoration: none; transition: background-color .2s ease, box-shadow .2s ease, transform .2s ease; }
+#body .bridge-button:hover { background: #d4f5b2; box-shadow: 0 10px 30px rgb(184 233 135 / 26%); transform: translateY(-2px); }
+#body .bridge-button span { font-size: 1.2rem; }
+#body .bridge-text-link { color: var(--bridge-cyan) !important; font: 600 .9rem/1.4 var(--bridge-ui); text-decoration: none; text-underline-offset: .35em; }
+#body .bridge-text-link:hover { color: #c5f3ff !important; text-decoration: underline; }
+
+.bridge-ship-flight { animation: bridge-ship-flight 8s ease-in-out infinite; position: absolute; right: 7%; top: 37%; width: clamp(210px, 15vw, 280px); z-index: 2; }
+.bridge-ship { display: block; filter: drop-shadow(0 8px 24px rgb(49 160 221 / 24%)); height: auto; transform: scale(-1, 1.15); width: 100%; }
+.bridge-thruster { animation: bridge-thruster-pulse 1.8s ease-in-out infinite; background: radial-gradient(ellipse at 0 50%, #f4ffff 0%, #71d8ef 17%, rgb(52 177 255 / 72%) 38%, rgb(35 126 255 / 0%) 78%); filter: blur(7px); height: 20%; position: absolute; right: -12%; top: 49%; transform: translateY(-50%); width: 32%; z-index: -1; }
+.bridge-cockpit { height: 100%; inset: 0; object-fit: fill; pointer-events: none; position: absolute; user-select: none; width: 100%; z-index: 4; }
+.bridge-cockpit-lights { inset: 0; pointer-events: none; position: absolute; z-index: 6; }
+.bridge-cockpit-lights i { animation: bridge-cockpit-light 2.9s ease-in-out infinite; background: var(--bridge-cyan); border-radius: 50%; box-shadow: 0 0 11px 3px rgb(113 216 239 / 62%); height: .28rem; opacity: .45; position: absolute; width: .28rem; }
+.bridge-cockpit-lights i:nth-child(1) { bottom: 17%; left: 7%; }
+.bridge-cockpit-lights i:nth-child(2) { bottom: 13%; left: 19%; animation-delay: .4s; background: var(--bridge-lime); }
+.bridge-cockpit-lights i:nth-child(3) { bottom: 19%; left: 34%; animation-delay: .85s; }
+.bridge-cockpit-lights i:nth-child(4) { bottom: 15%; left: 48%; animation-delay: 1.25s; background: var(--bridge-pink); }
+.bridge-cockpit-lights i:nth-child(5) { bottom: 18%; left: 62%; animation-delay: .65s; background: var(--bridge-lime); }
+.bridge-cockpit-lights i:nth-child(6) { bottom: 13%; left: 76%; animation-delay: 1.5s; }
+.bridge-cockpit-lights i:nth-child(7) { bottom: 17%; left: 89%; animation-delay: 1s; background: var(--bridge-lime); }
+.bridge-cockpit-lights i:nth-child(8) { bottom: 12%; left: 96%; animation-delay: 1.8s; }
+
+#body .quest-log__header h2, #body .arcade-footer__grid > p { color: var(--bridge-text) !important; font-family: var(--bridge-ui) !important; font-weight: 700 !important; letter-spacing: -.045em; }
+#body .quest-log__header h2 { font-size: clamp(2.6rem, 5vw, 4.6rem); }
+#body .quest-log__header > p:not(.arcade-kicker) { color: var(--bridge-muted); font: 400 1.05rem/1.6 var(--bridge-ui); }
+#body .arcade-kicker { color: var(--bridge-cyan); font-family: var(--bridge-console); }
+#body .quest-card { background: linear-gradient(155deg, #0d1d29, #091521); border: 1px solid rgb(113 216 239 / 22%); box-shadow: 0 18px 48px rgb(0 0 0 / 20%); }
+#body .quest-card__tag { background: rgb(113 216 239 / 10%); border-color: rgb(113 216 239 / 30%); color: #a9eafa; font-family: var(--bridge-console); }
+#body .quest-card__top time, #body .quest-card__description { color: var(--bridge-muted); }
+#body .quest-card__title { color: var(--bridge-text); font-family: var(--bridge-ui); }
+#body .quest-card__description { color: var(--bridge-muted); font: 400 .95rem/1.55 var(--bridge-ui); }
+#body .quest-card__read { color: var(--bridge-cyan); font-family: var(--bridge-console); }
+#body .quest-card--new { animation: bridge-new-signal 3.4s ease-in-out infinite; border-color: var(--bridge-cyan); }
+#body .quest-card--new .quest-card__new { background: var(--bridge-cyan); color: var(--bridge-night); font-family: var(--bridge-console); }
+#body .field-statement { background: linear-gradient(105deg, #0d1f2d, #0a1520); border-color: rgb(113 216 239 / 26%); }
+#body .field-statement h2 { color: var(--bridge-text) !important; font-family: var(--bridge-ui) !important; }
+#body .field-statement h2 em { color: var(--bridge-lime) !important; }
+#body .arcade-footer { background: #050d15; border-top-color: rgb(113 216 239 / 42%); color: var(--bridge-muted); }
+#body .arcade-footer a, #body .arcade-footer__top-link { color: var(--bridge-cyan); font-family: var(--bridge-ui); }
+#body .arcade-footer__bottom { border-top-color: rgb(113 216 239 / 20%); color: var(--bridge-muted); font-family: var(--bridge-console); }
+
+@keyframes bridge-space-drift { from { transform: scale(1.02) translate3d(0, 0, 0); } to { transform: scale(1.06) translate3d(-.25%, -.5%, 0); } }
+@keyframes bridge-ship-flight { 0%, 100% { transform: translate3d(0, -50%, 0); } 50% { transform: translate3d(-.25rem, calc(-50% + .35rem), 0); } }
+@keyframes bridge-thruster-pulse { 0%, 100% { opacity: .58; transform: translateY(-50%) scaleX(.86); } 50% { opacity: 1; transform: translateY(-50%) scaleX(1.12); } }
+@keyframes bridge-cockpit-light { 0%, 100% { filter: brightness(.75); opacity: .4; } 50% { filter: brightness(1.6); opacity: 1; } }
+@keyframes bridge-new-signal { 0%, 100% { box-shadow: 0 0 0 rgb(113 216 239 / 0%); } 50% { box-shadow: 0 0 28px rgb(113 216 239 / 18%); } }
+
+@media (max-width: 1050px) {
+  #body .arcade-nav { gap: 1rem; }
+  #body .arcade-menu { gap: 1.25rem; margin-left: .5rem; }
+  #body .arcade-nav__telemetry { gap: .55rem; font-size: .54rem; }
+  .bridge-hero__copy { left: 4%; max-width: 44%; top: 10%; }
+  #body .bridge-hero__copy h1 { font-size: clamp(3rem, 5.3vw, 4.5rem) !important; }
+  .bridge-ship-flight { right: 6%; top: 38%; width: clamp(190px, 20vw, 260px); }
+}
+
+@media (max-width: 760px) {
+  #body .arcade-nav { flex-wrap: wrap; min-height: 4.4rem; padding: .65rem 1rem; }
+  #body .arcade-nav__toggle { display: inline-flex; margin-left: auto; }
+  #body .arcade-menu { background: #080f16; border: 1px solid var(--bridge-line); display: none; flex-basis: 100%; flex-direction: column; gap: 0; margin: .3rem 0 0; order: 3; padding: .25rem .8rem; }
+  #body .arcade-menu.is-open { display: flex; }
+  #body .arcade-menu a { border-bottom: 1px solid rgb(113 216 239 / 14%); padding: .9rem 0; width: 100%; }
+  #body .arcade-menu a:last-child { border-bottom: 0; }
+  #body .arcade-nav__telemetry { font-size: .48rem; gap: .45rem; letter-spacing: .04em; }
+  #body .arcade-nav__lights { gap: .14rem; }
+  #body .arcade-nav__lights i { height: .26rem; width: .45rem; }
+  .bridge-telemetry { min-height: 4.2rem; padding: .55rem .7rem; }
+  .bridge-telemetry__item { align-items: flex-start; flex-direction: column; gap: .25rem; padding: .2rem .5rem; }
+  .bridge-telemetry__item strong { font-size: clamp(1.3rem, 6vw, 1.8rem); }
+  .bridge-telemetry__item span { font-size: .48rem; letter-spacing: .015em; }
+  .bridge-scene { height: 48rem; min-height: 0; }
+  .bridge-galaxy { object-position: 58% center; }
+  .bridge-scene__shadow { background: linear-gradient(180deg, rgb(3 8 13 / 92%) 0%, rgb(3 8 13 / 84%) 43%, transparent 72%); clip-path: none; }
+  .bridge-hero__copy { left: 1.35rem; max-width: calc(100% - 2.7rem); top: 7%; }
+  #body .bridge-hero__copy h1 { font-size: clamp(2.5rem, 10vw, 3.8rem) !important; max-width: 12ch; }
+  .bridge-hero__lead { font-size: 1rem; margin-top: 1rem; max-width: 25rem; }
+  .bridge-hero__actions { align-items: flex-start; gap: 1rem; margin-top: 1.15rem; }
+  .bridge-ship-flight { right: 6%; top: 63%; width: min(54vw, 260px); }
+  .bridge-cockpit { object-fit: cover; object-position: center bottom; }
+  .bridge-cockpit-lights i { height: .2rem; width: .2rem; }
+  .bridge-cockpit-lights i:nth-child(1) { bottom: 8%; }
+  .bridge-cockpit-lights i:nth-child(2) { bottom: 7%; }
+  .bridge-cockpit-lights i:nth-child(3) { bottom: 9%; }
+  .bridge-cockpit-lights i:nth-child(4) { bottom: 7%; }
+  .bridge-cockpit-lights i:nth-child(5) { bottom: 8%; }
+  .bridge-cockpit-lights i:nth-child(6) { bottom: 7%; }
+  .bridge-cockpit-lights i:nth-child(7) { bottom: 8%; }
+  .bridge-cockpit-lights i:nth-child(8) { bottom: 7%; }
+}
+
+@media (max-width: 430px) {
+  #body .arcade-brand { font-size: .7rem !important; gap: .4rem; }
+  #body .arcade-brand__mark { font-size: 1rem; }
+  #body .arcade-nav__telemetry > span:last-child { display: none; }
+  .bridge-telemetry__item span { line-height: 1.25; }
+  .bridge-hero__actions { flex-direction: column; }
+  .bridge-thruster { filter: blur(3px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .arcade-nav__lights i, .bridge-galaxy, .bridge-ship-flight, .bridge-thruster, .bridge-cockpit-lights i, #body .quest-card--new { animation: none !important; }
+  #body .bridge-button { transition: none; }
+}
+
+
+/* Homepage Field Notes: portrait cards, ordinary vertical page scroll */
+#body #blog .field-notes__list { align-items: center; display: flex; flex-direction: column; gap: clamp(2rem, 5vw, 4rem); margin: 2rem auto 0; }
+#body #blog.quest-log { padding-top: clamp(2.5rem, 4vw, 4rem); }
+#body #blog .quest-log__header { margin-bottom: 1.25rem; padding-bottom: 1rem; }
+#body #blog .quest-log__header h2 { font-size: clamp(2rem, 3.3vw, 2.8rem); white-space: nowrap; }
+#body #blog .field-note-card { background: #0a1119; border: 0; border-left: .65rem solid #f2a16b; border-radius: 1.35rem .4rem .4rem 1.35rem; box-shadow: 0 18px 42px rgb(0 0 0 / 26%); display: flex; flex-direction: column; min-width: 0; overflow: hidden; position: relative; transition: border-color .3s ease, box-shadow .3s ease; width: min(100%, 23rem); }
+#body #blog .field-note-card.is-active { border-color: var(--bridge-cyan); box-shadow: 0 0 0 1px rgb(113 216 239 / 28%), 0 24px 65px rgb(0 0 0 / 32%); }
+#body #blog .field-note-card.is-active::before { animation: field-note-dock .65s ease-out both; border: 1px solid var(--bridge-lime); border-radius: inherit; content: ''; inset: .5rem; pointer-events: none; position: absolute; z-index: 2; }
+#body #blog .field-note-card .quest-card__link { display: flex; flex-direction: column; min-width: 0; }
+#body #blog .field-note-card .quest-card__image { align-self: center; aspect-ratio: 1; display: block; margin: 0; overflow: hidden; width: min(100%, 32vh); }
+#body #blog .field-note-card .quest-card__image img { display: block; height: 100%; object-fit: cover; width: 100%; }
+#body #blog .field-note-card__content { display: grid; gap: .55rem; min-width: 0; padding: 1.75rem clamp(1rem, 4vw, 1.5rem) 1.25rem; position: relative; }
+#body #blog .field-note-card__content::before { background: linear-gradient(90deg, #f2a16b 0 36%, #a899e8 36% 69%, #f2ce74 69%); border-radius: 99px; content: ''; height: .55rem; left: clamp(1rem, 4vw, 1.5rem); position: absolute; right: clamp(1rem, 4vw, 1.5rem); top: .65rem; }
+#body #blog .field-note-card .quest-card__top { align-items: start; border: 0; display: flex; gap: .75rem; justify-content: space-between; padding-bottom: .35rem; }
+#body #blog .field-note-card .quest-card__tags { flex-wrap: wrap; }
+#body #blog .field-note-card .quest-card__tag { background: #77cbd3; border: 0; border-radius: 99px; color: #101923; font: 700 .68rem/1.1 var(--bridge-console); padding: .4rem .7rem; }
+#body #blog .field-note-card .quest-card__tag:nth-child(even) { background: #a899e8; }
+#body #blog .field-note-card .quest-card__top time { background: #f2ce74; border-radius: 99px; color: #141924; padding: .45rem .7rem; text-align: center; }
+#body #blog .field-note-card .quest-card__top time span { color: #35313d; font-size: .57rem; }
+#body #blog .field-note-card .quest-card__title { font: 750 clamp(1.35rem, 2vw, 1.6rem)/1.08 var(--bridge-ui); letter-spacing: -.04em; margin: 0; }
+#body #blog .field-note-card__beats { border-left: 4px solid #77cbd3; color: #dbe7ed; display: block; font: 400 clamp(.95rem, 1.1vw, 1rem)/1.35 var(--bridge-ui); min-height: 2.7em; padding-left: .9rem; }
+#body #blog .field-note-card__beat { display: block; }
+#body #blog.has-field-notes-js .field-note-card__beat:not(.is-active) { display: none; }
+#body #blog .field-note-card__beat.is-active { animation: field-note-beat-in .28s ease-out both; display: block; }
+#body #blog .field-note-card .quest-card__read { color: var(--bridge-cyan); font: 600 .8rem/1.4 var(--bridge-console); letter-spacing: .06em; }
+#body #blog .field-note-card__controls { display: flex; gap: .5rem; padding: 0 clamp(1rem, 4vw, 2rem) .65rem; }
+#body #blog .field-note-card__controls button { background: #142434; border: 0; border-radius: 99px; box-shadow: none; color: var(--bridge-text); cursor: pointer; font: 600 .78rem/1 var(--bridge-console); height: 2rem; width: 3.3rem; }
+#body #blog .field-note-card__controls button[aria-pressed="true"], #body #blog .field-note-card__controls button:hover { background: var(--bridge-lime); border-color: var(--bridge-lime); color: var(--bridge-night); }
+#body #blog .field-note-card__controls button:focus-visible { outline: 2px solid var(--bridge-cyan); outline-offset: 3px; }
+#body #blog .field-note-card.quest-card--new { background: linear-gradient(145deg, #221b2a, #0c1c28 58%, #263022); border: 0; border-left: .65rem solid #e48db5; }
+#body #blog .field-note-card.quest-card--new::after { border: 1px solid rgb(228 141 181 / 55%); border-radius: inherit; content: ''; inset: .45rem; pointer-events: none; position: absolute; }
+#body #blog .field-note-card.quest-card--new .quest-card__new { background: #e48db5; border-radius: 99px; color: #10131a; display: inline-flex; font: 700 .68rem/1 var(--bridge-console); letter-spacing: .08em; padding: .5rem .75rem; }
+#body #blog .quest-log__pagination { align-items: center; display: flex; gap: 1rem; justify-content: center; padding: 1rem; }
+#body #blog .quest-log__pagination a { color: var(--bridge-cyan); }
+@keyframes field-note-dock { 0% { opacity: .8; transform: scale(.985); } 100% { opacity: 0; transform: scale(1); } }
+@keyframes field-note-beat-in { from { opacity: .35; transform: translateY(.35rem); } to { opacity: 1; transform: translateY(0); } }
+@media (prefers-reduced-motion: reduce) {
+  #body #blog .field-note-card, #body #blog .field-note-card__beat.is-active { animation: none !important; transition: none !important; }
+  #body #blog .field-note-card.is-active::before { animation: none !important; display: none; }
+}

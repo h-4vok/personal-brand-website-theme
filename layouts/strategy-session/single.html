@@ -1,0 +1,25 @@
+{{ define "main" }}
+<main class="co-op-page office-hours-picker">
+  <div class="co-op-page__top"><span>◆ OFFICE HOURS / OPEN CHANNEL</span><span>30 MINUTES / ONE FOCUSED CONVERSATION</span></div>
+  <header class="office-hours-picker__intro">
+    <p class="arcade-kicker">CHOOSE A FIELD OF FOCUS</p>
+    <h1>What do you need help with?</h1>
+    <p>Start with the question on your mind. We can talk about your next career move or a leadership problem slowing the team down.</p>
+  </header>
+  <div class="office-hours-choices">
+    <article class="office-hours-choice">
+      <p class="arcade-kicker">PATH 01 / CAREER</p>
+      <h2>My next move</h2>
+      <p>Find a new role, make a case for promotion, or change how work feels day to day.</p>
+      <a class="arcade-button" href="{{ `office-hours/career/` | relLangURL }}">[ CAREER OFFICE HOURS ]</a>
+    </article>
+    <article class="office-hours-choice">
+      <p class="arcade-kicker">PATH 02 / ENGINEERING LEADERSHIP</p>
+      <h2>My team needs to work better</h2>
+      <p>Reduce delivery drag, build ownership, and make better decisions under pressure.</p>
+      <a class="arcade-button arcade-button--pink" href="{{ `office-hours/engineering-leadership/` | relLangURL }}">[ LEADERSHIP OFFICE HOURS ]</a>
+    </article>
+  </div>
+  <p class="office-hours-picker__note">Both paths are a focused, one-off conversation. Choose the one closest to what you need right now.</p>
+</main>
+{{ end }}

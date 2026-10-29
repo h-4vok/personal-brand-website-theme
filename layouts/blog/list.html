@@ -1,0 +1,8 @@
+{{ define "main" }}
+{{ $target := printf "%s#blog" site.Home.RelPermalink }}
+<main class="field-archive-redirect">
+  <meta http-equiv="refresh" content="0;url={{ $target }}">
+  <script>window.location.replace({{ $target | jsonify | safeJS }});</script>
+  <p>Field Notes now live on the <a href="{{ $target }}">home page</a>.</p>
+</main>
+{{ end }}

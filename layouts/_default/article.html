@@ -1,15 +1,18 @@
-<article class="col-lg-4 col-md-6 col-12 clearfix wow fadeInUp mb-4" data-wow-duration="500ms">
-  <div class="post-block">
-    <div class="media-wrapper">
-      <a href="{{ .Permalink }}">
-      {{ partial "image.html" (dict "Src" .Params.Image "Alt" "Image" "Class" "img-fluid lozad img-blog") }}
-      </a>
-    </div>
-
-    <div class="content">
-      <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-      <p>{{ .Description }}</p>
-      <!-- <a class="btn btn-transparent" href="{{ .Permalink }}">{{ i18n "readMore" }}</a> -->
-    </div>
-  </div>
+{{ $tags := slice }}
+{{ with .Params.tags }}{{ $tags = . }}{{ else with .Params.categories }}{{ $tags = . }}{{ end }}
+<article class="quest-card">
+  <a class="quest-card__link" href="{{ .RelPermalink }}">
+    <span class="quest-card__top">
+      <span class="quest-card__tags">
+        {{ if gt (len $tags) 0 }}{{ range first 2 $tags }}<span class="quest-card__tag">{{ . }}</span>{{ end }}{{ else }}<span class="quest-card__tag">FIELD NOTE</span>{{ end }}
+      </span>
+      <time datetime="{{ .Date.Format "2006-01-02" }}"><span>STARDATE</span><strong>{{ .Date.Format "02 Jan 2006" }}</strong></time>
+    </span>
+    <span class="quest-card__new">NEW TRANSMISSION</span>
+    <span class="quest-card__image"><img src="{{ `images/field-notes-mock.svg` | relURL }}" alt="" width="720" height="720" loading="lazy"></span>
+    <span class="quest-card__signal" aria-hidden="true"></span>
+    <span class="quest-card__title">{{ .Title }}</span>
+    <span class="quest-card__description">{{ .Description }}</span>
+    <span class="quest-card__read">OPEN FIELD NOTE <b aria-hidden="true">↗</b></span>
+  </a>
 </article>

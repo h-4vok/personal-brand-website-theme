@@ -1,27 +1,34 @@
-{{ $data := index site.Data site.Language.Lang }} {{ if $data.about.about.enable
-}} {{"<!-- Start About Section -->" | safeHTML}}
-<section class="bg-one about section power-thesis" id="about">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-12">
-        <div class="power-thesis__inner text-center wow fadeIn" data-wow-duration="900ms">
-          <h1 class="power-thesis__headline">
-            Build organisations as robust as the software you ship.
-          </h1>
-          <p class="power-thesis__subheadline">
-            I help engineering leaders move beyond mindless standardisation to scale trust, clarity, and intentionality.
-          </p>
-          <div class="power-thesis__actions">
-            <a
-              href="/engineering-leadership-coaching/"
-              class="power-thesis__btn power-thesis__btn--primary"
-            >
-              Book a free leadership coaching session
-            </a>
-          </div>
-        </div>
+{{ $data := index site.Data site.Language.Lang }}
+{{ if $data.about.about.enable }}
+<section class="bridge-hero" id="about" aria-label="The Bridge">
+  <div class="bridge-telemetry" aria-label="20 plus years in tech, one human at the keyboard, infinite ways to lead">
+    <div class="bridge-telemetry__item"><strong>20+</strong><span>YEARS IN TECH</span></div>
+    <div class="bridge-telemetry__item"><strong>01</strong><span>HUMAN AT THE KEYBOARD</span></div>
+    <div class="bridge-telemetry__item"><strong>∞</strong><span>WAYS TO LEAD</span></div>
+  </div>
+
+  <div class="bridge-scene" aria-label="Command cockpit looking out into a nebula">
+    <img class="bridge-galaxy" src="{{ `images/bridge-galaxy.png` | relURL }}" alt="" fetchpriority="high" decoding="async">
+    <div class="bridge-scene__shadow" aria-hidden="true"></div>
+
+    <div class="bridge-hero__copy">
+      <h1 id="bridge-title">Let’s explore<br><em>new frontiers</em><br>in leadership.</h1>
+      <p class="bridge-hero__lead">Ideas and conversations for engineering leaders building teams that can go further.</p>
+      <div class="bridge-hero__actions">
+        <a class="bridge-button" href="{{ `leadership-office-hours/` | relLangURL }}">Explore Office Hours <span aria-hidden="true">→</span></a>
+        <a class="bridge-text-link" href="#blog">Read Captain’s Log <span aria-hidden="true">→</span></a>
       </div>
+    </div>
+
+    <div class="bridge-ship-flight" aria-hidden="true">
+      <span class="bridge-thruster"></span>
+      <img class="bridge-ship" src="{{ `images/bridge-ship.png` | relURL }}" alt="" decoding="async">
+    </div>
+
+    <img class="bridge-cockpit" src="{{ `images/bridge-cockpit-overlay.png` | relURL }}" alt="" aria-hidden="true" decoding="async">
+    <div class="bridge-cockpit-lights" aria-hidden="true">
+      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
     </div>
   </div>
 </section>
-{{"<!-- /about -->" | safeHTML}} {{ end }}
+{{ end }}

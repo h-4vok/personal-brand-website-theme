@@ -1,0 +1,34 @@
+{{ define "main" }}
+{{ $ctaURL := .Params.cta_url }}
+<main class="co-op-page office-hours-path">
+  <div class="co-op-page__top"><span>◆ OFFICE HOURS / {{ .Params.path_label }}</span><span>30 MINUTES / ONE FOCUSED CONVERSATION</span></div>
+  <header class="co-op-hero">
+    <div class="co-op-hero__copy">
+      <p class="arcade-kicker">{{ .Params.eyebrow }}</p>
+      <h1>{{ .Params.hero_title }}<br><em>{{ .Params.hero_emphasis }}</em></h1>
+      <p class="office-hours-path__lead">{{ .Description }}</p>
+      <p class="office-hours-path__intro">{{ .Params.intro }}</p>
+      {{ with $ctaURL }}<a href="{{ . | safeURL }}" class="arcade-button arcade-button--pink" target="_blank" rel="noopener">[ {{ $.Params.cta_text }} ]</a>{{ end }}
+    </div>
+    <div class="co-op-hero__screen" aria-hidden="true">
+      <div class="co-op-hero__grid"></div><span class="co-op-hero__crosshair">+</span>
+      <span class="co-op-hero__readout">{{ .Params.signal_title }}<br>{{ .Params.signal_detail }}</span>
+      <svg viewBox="0 0 220 220"><path d="M110 18v184M18 110h184M45 45l130 130M175 45 45 175"/><circle cx="110" cy="110" r="72"/><circle cx="110" cy="110" r="34"/><path d="m102 102 30-12-12 30-30 12z"/></svg>
+      <span class="co-op-hero__signal">● OPEN</span>
+    </div>
+  </header>
+  <section class="co-op-content" aria-labelledby="office-hours-topics">
+    <div class="co-op-content__intro"><p class="arcade-kicker">BRING THE QUESTION</p><h2 id="office-hours-topics">{{ .Params.topics_title }}</h2></div>
+    <div class="co-op-session-copy"><p>{{ .Params.session_text }}</p></div>
+    {{ with .Params.topics }}
+      <div class="co-op-topics">
+        {{ range $index, $topic := . }}
+          <article class="co-op-topic"><span>FOCUS {{ printf "%02d" (add $index 1) }}</span><h3>{{ $topic.title }}</h3><p>{{ $topic.text }}</p></article>
+        {{ end }}
+      </div>
+    {{ end }}
+    {{ with $ctaURL }}<a href="{{ . | safeURL }}" class="arcade-button" target="_blank" rel="noopener">[ {{ $.Params.cta_text }} ]</a>{{ end }}
+  </section>
+  <nav class="office-hours-path__back" aria-label="Office Hours navigation"><a href="{{ `leadership-office-hours/` | relLangURL }}">← Choose another Office Hours path</a></nav>
+</main>
+{{ end }}

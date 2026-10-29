@@ -1,0 +1,18 @@
+{{ $tags := slice }}
+{{ with .Params.tags }}{{ $tags = . }}{{ else with .Params.categories }}{{ $tags = . }}{{ end }}
+<article class="quest-card field-note-card" data-field-note-card>
+  <a class="quest-card__link" href="{{ .RelPermalink }}" aria-label="Read {{ .Title }}">
+    <span class="quest-card__image"><img src="{{ `images/field-notes-mock.svg` | relURL }}" alt="" width="720" height="720" loading="lazy"></span>
+    <span class="field-note-card__content">
+      <span class="quest-card__top">
+        <span class="quest-card__tags">{{ if gt (len $tags) 0 }}{{ range first 2 $tags }}<span class="quest-card__tag">{{ . }}</span>{{ end }}{{ else }}<span class="quest-card__tag">FIELD NOTE</span>{{ end }}</span>
+        <time datetime="{{ .Date.Format "2006-01-02" }}"><span>STARDATE</span><strong>{{ .Date.Format "02 Jan 2006" }}</strong></time>
+      </span>
+      <span class="quest-card__new">NEW TRANSMISSION</span><span class="quest-card__signal" aria-hidden="true"></span>
+      <span class="quest-card__title">{{ .Title }}</span>
+      <span class="field-note-card__beats" aria-live="polite" aria-atomic="true">{{ range $i, $beat := .Params.card_beats }}<span class="field-note-card__beat{{ if eq $i 0 }} is-active{{ end }}" data-field-note-beat="{{ $i }}">{{ $beat }}</span>{{ end }}</span>
+      <span class="quest-card__read">OPEN FIELD NOTE <b aria-hidden="true">↗</b></span>
+    </span>
+  </a>
+  <div class="field-note-card__controls" hidden role="group" aria-label="{{ .Title }} key ideas">{{ range $i, $beat := .Params.card_beats }}<button type="button" data-field-note-beat-button="{{ $i }}" aria-label="Show key idea {{ add $i 1 }}" aria-pressed="{{ if eq $i 0 }}true{{ else }}false{{ end }}">{{ add $i 1 }}</button>{{ end }}</div>
+</article>
