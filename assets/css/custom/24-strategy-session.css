@@ -1,578 +1,89 @@
-/** Section: Strategy Session **/
 .strategy-session-page {
-  background:
-    linear-gradient(180deg, rgb(246 242 236 / 72%) 0, rgb(246 242 236 / 0%) 18rem),
-    var(--surface-base);
-  padding: 3.5rem 0 6rem;
+  background: var(--surface-base);
+  color: var(--text-base);
+  padding: 1.5rem 0 2.5rem;
 }
 
-.strategy-session-shell {
+.office-hours { margin: 0 auto; max-width: 1120px; }
+.strategy-session-page > .container { max-width: 1200px; }
+.strategy-session-page .container { padding-left: 24px; padding-right: 24px; }
+.office-hours__header { margin: 0 0 2rem; max-width: 1120px; }
+.office-hours__header h1 {
+  font-family: "EB Garamond", serif;
+  font-size: clamp(3rem, 6vw, 5rem);
+  letter-spacing: -0.04em;
+  line-height: 0.94;
+  margin: 0;
+  max-width: 19ch;
+}
+.office-hours__intro {
   color: var(--text-base);
   font-family: "EB Garamond", serif;
-  margin: 0 auto;
-  max-width: 760px;
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
+  line-height: 1.4;
+  margin: 1.5rem 0 0;
+  max-width: 42ch;
 }
-
-.strategy-session-section,
-.strategy-session-closing {
-  border-top: 1px solid rgb(17 17 17 / 10%);
-}
-
-.strategy-session-hero {
-  border-top: 0;
-  padding: 1rem 0 0;
-}
-
-.strategy-session-hero__copy {
-  margin: 0 auto;
-  max-width: 42rem;
-  text-align: center;
-}
-
-.strategy-session-hero h1,
-.strategy-session-section h2,
-.strategy-session-closing h2,
-.strategy-session-prose p,
-.strategy-session-list li {
-  font-family: "EB Garamond", serif;
-}
-
-.strategy-session-screen {
-  margin-left: auto;
-  margin-right: auto;
-  min-height: min(78vh, 48rem);
-  padding-bottom: 1.5rem;
-}
-
-.strategy-session-screen--hero {
-  justify-content: center;
-  min-height: min(84vh, 54rem);
-}
-
-.strategy-session-screen--closing {
-  justify-content: center;
-  min-height: min(72vh, 42rem);
-}
-
-.strategy-session-hero h1 {
-  font-size: clamp(2.8rem, 5vw, 4.4rem);
-  letter-spacing: -0.03em;
-  line-height: 0.96;
-  margin: 0;
-  max-width: 14ch;
-}
-
-.strategy-session-hero__eyebrow {
-  color: rgb(17 17 17 / 62%);
-  font-family: Inter, sans-serif;
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  margin: 0 0 1.5rem;
-  text-transform: uppercase;
-}
-
-.strategy-session-subtitle {
-  color: rgb(17 17 17 / 84%);
-  font-size: clamp(1.28rem, 2.3vw, 1.7rem);
-  line-height: 1.6;
-  margin: 1.75rem 0 0;
-  max-width: 38rem;
-}
-
-.strategy-session-intro {
-  margin-top: 2.2rem;
-  max-width: 40rem;
-}
-
-.strategy-session-prose p,
-.strategy-session-intro p,
-.strategy-session-closing p {
-  color: rgb(17 17 17 / 82%);
-  font-size: clamp(1.2rem, 1.75vw, 1.42rem);
-  line-height: 1.76;
-  margin: 0 0 1.1rem;
-}
-
-.strategy-session-prose p:last-child,
-.strategy-session-intro p:last-child,
-.strategy-session-closing p:last-child {
-  margin-bottom: 0;
-}
-
-.strategy-session-portrait {
-  border: 1px solid rgb(17 17 17 / 12%);
-  display: block;
-  filter: grayscale(100%) saturate(0.82) contrast(1.03);
-  height: auto;
-  transform: scaleX(-1);
-  width: 100%;
-}
-
-.strategy-session-portrait--about {
-  max-width: 100%;
-}
-
-.strategy-session-cta {
-  margin: 3rem 0 0;
-  text-align: center;
-}
-
-.strategy-session-testimonials .strategy-session-cta {
-  display: flex;
-  justify-content: center;
-}
-
-.strategy-session-section,
-.strategy-session-closing {
-  padding-top: 4.5rem;
-  margin-top: 4.5rem;
-}
-
-.strategy-session-section h1,
-.strategy-session-section h2,
-.strategy-session-closing h2 {
-  font-size: clamp(2.1rem, 3.7vw, 2.95rem);
-  letter-spacing: -0.02em;
-  line-height: 1;
-  margin: 0 0 1.45rem;
-}
-
-.strategy-session-section h1 {
-  font-size: clamp(2.6rem, 4.8vw, 4rem);
-  margin-bottom: 1rem;
-}
-
-.strategy-session-section h1 + h2 {
-  color: rgb(17 17 17 / 76%);
-  font-size: clamp(1.35rem, 2.2vw, 1.8rem);
-  margin-bottom: 2rem;
-}
-
-.strategy-session-prose--first-person {
-  display: flow-root;
-  max-width: none;
-}
-
-.strategy-session-prose--session,
-.strategy-session-prose--closing,
-.strategy-session-section__inner--narrow {
-  max-width: 40rem;
-}
-
-.strategy-session-section__inner--narrow {
-  margin: 0 auto;
-}
-
-.strategy-session-section__inner--topics {
-  margin: 0 auto 2rem;
-  max-width: 52rem;
-}
-
-.strategy-session-section--topics h1 {
-  font-size: clamp(2.1rem, 3.7vw, 2.95rem);
-  margin-bottom: 0.75rem;
-}
-
-.strategy-session-section--topics h2 {
-  color: #111;
-  font-size: clamp(2.1rem, 3.7vw, 2.95rem);
-  margin-bottom: 0;
-}
-
-.strategy-session-about {
-  margin: 0 auto;
-  max-width: 52rem;
-}
-
-.strategy-session-about__media {
-  margin: 0 0 2rem;
-  max-width: 100%;
-}
-
-.strategy-session-about__copy {
-  min-width: 0;
-}
-
-@media (width >= 992px) {
-  .strategy-session-about__media {
-    float: right;
-    margin: 0 0 1.5rem 2.5rem;
-    width: min(42%, 22rem);
-  }
-}
-
-.strategy-session-topics-grid {
+.office-hours__choices {
   display: grid;
-  gap: 1.9rem 2.4rem;
+  gap: clamp(2rem, 5vw, 5rem);
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  margin-top: 2rem;
-  margin-bottom: 2.5rem;
+  align-items: start;
 }
-
-.strategy-session-topic h3 {
-  color: #111;
-  font-family: "EB Garamond", serif;
-  font-size: clamp(1.45rem, 2.2vw, 1.82rem);
-  line-height: 1.15;
-  margin: 0 0 0.55rem;
-}
-
-.strategy-session-topic p {
-  color: rgb(17 17 17 / 78%);
-  font-family: "EB Garamond", serif;
-  font-size: clamp(1.08rem, 1.5vw, 1.22rem);
-  line-height: 1.65;
-  margin: 0;
-}
-
-.strategy-session-quote__line {
-  color: rgb(17 17 17 / 84%);
-  font-size: clamp(2rem, 4vw, 3rem);
-  letter-spacing: -0.02em;
-  line-height: 1.08;
-  margin: 0;
-}
-
-.strategy-session-quote__line--lead {
-  color: #111;
-  font-size: clamp(2.15rem, 4.2vw, 3.15rem);
-  font-style: italic;
-  line-height: 1.12;
-  margin-bottom: 2.4rem;
-}
-
-.strategy-session-quote__line + .strategy-session-quote__line {
-  margin-top: 0.75rem;
-}
-
-.strategy-session-quote__line--accent {
-  color: #111;
-  font-size: clamp(3rem, 5.8vw, 4.8rem);
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 0.94;
-  margin-top: 2.4rem;
-  text-transform: uppercase;
-}
-
-.strategy-session-quote__line--accent-mixed {
-  text-transform: none;
-}
-
-.strategy-session-emphasis {
-  color: #111;
-  font-weight: 600;
-}
-
-.strategy-session-testimonials__carousel {
-  background:
-    linear-gradient(180deg, rgb(236 231 220 / 72%) 0%, rgb(246 242 236 / 96%) 100%);
-  border: 1px solid rgb(17 17 17 / 12%);
-  margin-top: 1.5rem;
-  padding: clamp(1.45rem, 2.8vw, 2.2rem);
-  position: relative;
-}
-
-.strategy-session-testimonials__carousel::before,
-.strategy-session-testimonials__carousel::after,
-.strategy-session-testimonial::before,
-.strategy-session-testimonial::after {
-  content: none;
-}
-
-.strategy-session-testimonials__viewport {
-  min-height: clamp(13rem, 18vw, 15rem);
-}
-
-.strategy-session-testimonials__list {
-  margin: 0 auto;
-  max-width: 44rem;
-}
-
-.strategy-session-testimonial {
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  border: 0;
-}
-
-.strategy-session-testimonial__quote {
-  color: #111;
-  font-family: "EB Garamond", serif;
-  font-size: clamp(1.55rem, 2.3vw, 2rem);
-  font-style: italic;
-  letter-spacing: -0.02em;
-  line-height: 1.24;
-  margin: 0;
-  max-width: 30ch;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-}
-
-.strategy-session-testimonial__quote::before {
-  color: rgb(163 139 91 / 38%);
-  content: "\201C";
-  font-size: clamp(4.8rem, 8.4vw, 6.8rem);
-  left: -0.3rem;
-  line-height: 1;
-  position: absolute;
-  top: -2rem;
-}
-
-.strategy-session-testimonial__role {
-  color: rgb(17 17 17 / 56%);
-  font-family: Inter, sans-serif;
-  font-size: 0.82rem;
-  font-style: normal;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  margin-top: 1.75rem;
-  max-width: 26ch;
-  margin-left: auto;
-  margin-right: auto;
-  text-transform: uppercase;
-}
-
-.strategy-session-testimonials__controls {
-  align-items: center;
+.office-hours__choice {
   display: flex;
-  gap: 1rem;
-  justify-content: center;
-  margin-top: 1.35rem;
+  flex-direction: column;
+  min-height: 220px;
+  padding: 1.5rem 0 0;
 }
-
-.strategy-session-testimonials__button {
-  align-items: center;
-  background: rgb(246 242 236 / 72%);
-  border: 1px solid rgb(17 17 17 / 12%);
-  border-radius: 999px;
-  color: #111;
-  cursor: pointer;
-  display: inline-flex;
-  flex: 0 0 auto;
-  height: 2.9rem;
-  justify-content: center;
-  padding: 0;
-  transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
-  width: 2.9rem;
-}
-
-.strategy-session-testimonials__button svg {
-  fill: none;
-  height: 1.15rem;
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 1.6;
-  width: 1.15rem;
-}
-
-.strategy-session-testimonials__button:hover,
-.strategy-session-testimonials__button:focus-visible {
-  background: rgb(17 17 17 / 4%);
-  border-color: rgb(17 17 17 / 28%);
-  outline: none;
-  transform: translateY(-1px);
-}
-
-.strategy-session-testimonials__dots {
-  display: flex;
-  gap: 0.7rem;
-}
-
-.strategy-session-testimonials__dot {
-  background: rgb(17 17 17 / 16%);
-  border: 0;
-  border-radius: 999px;
-  cursor: pointer;
-  height: 0.7rem;
-  padding: 0;
-  transition: transform 160ms ease, background-color 160ms ease;
-  width: 0.7rem;
-}
-
-.strategy-session-testimonials__dot.is-active {
-  background: rgb(17 17 17 / 52%);
-  transform: scale(1.18);
-}
-
-.strategy-session-testimonials__dot:focus-visible {
-  outline: 2px solid rgb(17 17 17 / 34%);
-  outline-offset: 3px;
-}
-
-@media (width <= 767px) {
-  .strategy-session-testimonials__carousel {
-    padding: 1.25rem 1rem;
-  }
-
-  .strategy-session-testimonials__viewport {
-    min-height: 14.75rem;
-  }
-
-  .strategy-session-testimonial__quote {
-    font-size: clamp(1.28rem, 4.9vw, 1.55rem);
-    line-height: 1.24;
-    max-width: 20ch;
-  }
-
-  .strategy-session-testimonial__quote::before {
-    font-size: 4.1rem;
-    left: -0.15rem;
-    top: -1.35rem;
-  }
-
-  .strategy-session-testimonial__role {
-    font-size: 0.74rem;
-    letter-spacing: 0.14em;
-    margin-top: 1.35rem;
-    max-width: 20ch;
-  }
-
-  .strategy-session-testimonials__controls {
-    gap: 0.85rem;
-    margin-top: 1.1rem;
-  }
-
-  .strategy-session-testimonials__button {
-    height: 2.6rem;
-    width: 2.6rem;
-  }
-
-  .strategy-session-testimonials__button svg {
-    height: 1rem;
-    width: 1rem;
-  }
-}
-
-.strategy-session-list {
-  color: rgb(17 17 17 / 84%);
-  list-style: disc;
-  margin: 1.25rem 0 0;
-  padding-left: 1.4rem;
-}
-
-.strategy-session-list li {
-  font-size: clamp(1.12rem, 1.55vw, 1.28rem);
-  line-height: 1.65;
-  margin-bottom: 0.6rem;
-  padding-left: 0.15rem;
-}
-
-.strategy-session-list li:last-child {
-  margin-bottom: 0;
-}
-
-.strategy-session-list--compact {
-  max-width: 34rem;
-}
-
-.strategy-session-closing {
-  padding-bottom: 1rem;
-  text-align: center;
-}
-
-.strategy-session-closing__prompt {
-  margin-top: 1.75rem;
-}
-
-.strategy-session-closing__line {
-  color: rgb(17 17 17 / 84%);
-  font-size: clamp(1.75rem, 3vw, 2.2rem);
-  letter-spacing: -0.02em;
-  line-height: 1.08;
-  margin: 0;
-}
-
-.strategy-session-closing__line + .strategy-session-closing__line {
-  margin-top: 0.35rem;
-}
-
-.strategy-session-closing__line--accent {
-  color: #111;
-}
-
-.strategy-session-cta--closing {
-  margin-top: 2rem;
-}
-
-.strategy-session-page .power-thesis__btn {
-  align-items: center;
-  background: #111;
-  border: 1px solid #111;
-  border-radius: 0;
-  color: #fff;
-  display: inline-flex;
-  font-family: Inter, sans-serif;
-  font-size: 0.8rem;
-  font-weight: 600;
-  justify-content: center;
-  letter-spacing: 0.16em;
+.office-hours__choice--career { border-top: 8px solid var(--text-base); }
+.office-hours__choice--leadership { border-top: 8px solid var(--brand-primary); }
+.office-hours__choice h2 {
+  font-family: "EB Garamond", serif;
+  font-size: clamp(2rem, 3vw, 2.75rem);
+  letter-spacing: -0.025em;
   line-height: 1;
-  min-height: 52px;
-  padding: 0.95rem 1.35rem;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition:
-    background-color 0.2s ease,
-    color 0.2s ease,
-    transform 0.2s ease;
+  margin: 0;
+  max-width: 13ch;
 }
-
-.strategy-session-page .power-thesis__btn:hover,
-.strategy-session-page .power-thesis__btn:focus {
-  background: #2a2a2a;
-  color: #fff;
-  text-decoration: none;
-  transform: translateY(-1px);
+.office-hours__choice p {
+  color: var(--text-base);
+  font-family: "EB Garamond", serif;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin: 1rem 0;
+  max-width: 38ch;
 }
+.office-hours__button {
+  align-items: center;
+  background: var(--text-base);
+  color: var(--surface-base) !important;
+  display: inline-flex;
+  font-family: sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  gap: 0.65rem;
+  margin-top: auto;
+  min-height: 44px;
+  padding: 0.55rem 0.8rem;
+  text-decoration: none;
+  transition: background-color 160ms ease, transform 160ms ease;
+  width: fit-content;
+}
+.office-hours__button:visited,
+.office-hours__button:hover,
+.office-hours__button:focus,
+.office-hours__button:active { color: var(--surface-base) !important; text-decoration: none !important; }
+.office-hours__button:hover,
+.office-hours__button:focus-visible { background: var(--brand-primary-hover); transform: translateY(-1px); }
+.office-hours__button:focus-visible { outline: 3px solid var(--text-base); outline-offset: 3px; }
+.office-hours__note { color: var(--text-base); font-family: sans-serif; font-size: 1rem; line-height: 1.5; margin: 3rem 0 0; }
 
-@media (width <= 768px) {
-  .strategy-session-page {
-    padding: 2.75rem 0 4.5rem;
-  }
-
-  .strategy-session-hero {
-    padding: 0 0 1rem;
-  }
-
-  .strategy-session-screen,
-  .strategy-session-screen--hero,
-  .strategy-session-screen--closing {
-    min-height: 0;
-  }
-
-  .strategy-session-about {
-    gap: 1.5rem;
-    grid-template-columns: 1fr;
-  }
-
-  .strategy-session-section,
-  .strategy-session-closing {
-    margin-top: 3rem;
-    padding-top: 3rem;
-  }
-
-  .strategy-session-quote__line + .strategy-session-quote__line {
-    margin-top: 0.6rem;
-  }
-
-  .strategy-session-quote__line--accent {
-    margin-top: 0.8rem;
-  }
-
-  .strategy-session-topics-grid {
-    gap: 1.4rem;
-    grid-template-columns: 1fr;
-  }
-
-  .strategy-session-topics-grid--not-for {
-    grid-template-columns: 1fr;
-  }
-
-  .strategy-session-page .power-thesis__btn {
-    width: 100%;
-  }
+@media (max-width: 700px) {
+  .strategy-session-page { padding: 3rem 0; }
+  .office-hours__header { margin-bottom: 2.5rem; }
+  .office-hours__header h1 { font-size: clamp(3rem, 13vw, 4.5rem); }
+  .office-hours__choices { grid-template-columns: 1fr; gap: 2.5rem; }
+  .office-hours__choice, .office-hours__choice--leadership { margin-top: 0; min-height: 0; }
+  .office-hours__button { justify-content: center; width: 100%; }
 }
